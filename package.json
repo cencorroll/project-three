@@ -1,0 +1,19 @@
+{
+  "name": "project-three",
+  "version": "1.0.0",
+  "description": "abdallah <<<<<<< HEAD matthew =======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cencorroll/project-three.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cencorroll/project-three/issues"
+  },
+  "homepage": "https://github.com/cencorroll/project-three#readme"
+}
