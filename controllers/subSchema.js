@@ -1,4 +1,72 @@
 import City from '../models/citiesSchema.js'
+// import { thingsToDoSchema } from '../models/citiesSchema.js'
+
+// REVIEWS
+export const addReviewCities = async (req, res) => { 
+  const { id } = req.params
+  try {
+    const review = await City.findById(id)
+    if (!review) throw new Error('City Not Found')
+    const reviewOwner = { ...req.body, owner: req.verifiedUser._id }
+    review.reviews.push(reviewOwner)
+    review.save()
+    return res.status(200).json(reviewOwner)
+  } catch (error) {
+    console.log(error)
+    return res.status(422).json(error.name)
+  }
+}
+
+// export const addReviewFun = async (req, res) => { 
+//   const { id } = req.params
+//   try {
+//     const review = await thingsToDoSchema.findById(id)
+//     if (!review) throw new Error('City Not Found')
+//     const reviewOwner = { ...req.body, owner: req.verifiedUser._id }
+//     review.reviews.push(reviewOwner)
+//     review.save()
+//     return res.status(200).json(reviewOwner)
+//   } catch (error) {
+//     console.log(error)
+//     return res.status(422).json(error.name)
+//   }
+// }
+
+// export const deleteReviewFun = async (req, res) => { 
+//   const { id, reviewId } = req.params
+//   try {
+//     const review = await thingsToDoSchema.findById(id)
+//     if (!review) throw new Error('Not Found !')
+//     const reviewDelete = review.reviews.id(reviewId)
+//     if (!reviewDelete) throw new Error()
+//     if (!reviewDelete.owner.equals(req.verifiedUser._id)) throw new Error('Unauthorised !')
+//     reviewDelete.remove()
+//     review.save()
+//     return res.sendStatus(204)
+//   } catch (error) {
+//     console.log(error)
+//     return res.status(401).json({ message: 'Unauthorised:( ' })
+//   }
+// }
+
+
+export const deleteReviewCities = async (req, res) => { 
+  const { id, reviewId } = req.params
+  try {
+    const review = await City.findById(id)
+    if (!review) throw new Error('Not Found !')
+    const reviewDelete = review.reviews.id(reviewId)
+    if (!reviewDelete) throw new Error()
+    if (!reviewDelete.owner.equals(req.verifiedUser._id)) throw new Error('Unauthorised !')
+    reviewDelete.remove()
+    review.save()
+    return res.sendStatus(204)
+  } catch (error) {
+    console.log(error)
+    return res.status(401).json({ message: 'Unauthorised:( ' })
+  }
+}
+
 
 // THINGS TO DO 
 export const addThingsToDo = async (req, res) => { 
@@ -40,7 +108,7 @@ export const addRestaurant = async (req, res) => {
   try {
     const restaurant = await City.findById(id)
     if (!restaurant) throw new Error('City Not Found!')
-    const restaurantOwner = { ...restaurant, owner: req.verifiedUser._id }
+    const restaurantOwner = { ...req.body, owner: req.verifiedUser._id }
     restaurant.restaurants.push(restaurantOwner)
     restaurant.save()
     return res.status(200).json(restaurantOwner)
@@ -74,7 +142,7 @@ export const addHotel = async (req, res) => {
   try {
     const hotel = await City.findById(id)
     if (!hotel) throw new Error('City Not Found!')
-    const hotelOwner = { ...hotel, owner: req.verifiedUser._id }
+    const hotelOwner = { ...req.body, owner: req.verifiedUser._id }
     hotel.hotels.push(hotelOwner)
     hotel.save()
     return res.status(200).json(hotelOwner)
@@ -84,12 +152,54 @@ export const addHotel = async (req, res) => {
   }
 }
 
-// export const deleteHotel = async (req, res) => { 
-//   const { id, hotelId } = req.params
-//   try {
-//     const hotel = await City.findById(id)
-//     if (h)
-//   } catch (error) {
-    
-//   }
-// }
+export const deleteHotel = async (req, res) => { 
+  const { id, hotelId } = req.params
+  try {
+    const hotel = await City.findById(id)
+    if (!hotel) throw new Error('Not Found!')
+    const deleteHotel = hotel.hotels.id(hotelId)
+    if (!deleteHotel) throw new Error('Not Found!')
+    if (!deleteHotel.owner.equals(req.verifiedUser._id)) throw new Error('Unauthorised :(')
+    deleteHotel.remove()
+    hotel.save()
+    return res.sendStatus(204)
+  } catch (error) {
+    console.log(error)
+    return res.status(401).json({ message: 'Unauthorised:( ' })
+  }
+}
+
+
+// Short History 
+export const addHistory = async (req, res) => { 
+  const { id } = req.params
+  try {
+    const story = await City.findById(id)
+    if (!story) throw new Error('City Not Found')
+    const storyOwner = { ...req.body, owner: req.verifiedUser._id } 
+    if (!storyOwner) throw new Error()
+    story.shortHistory.push(storyOwner)
+    story.save()
+    return res.status(200).json(storyOwner)
+  } catch (error) {
+    console.log(error)
+    return res.status(422).json(error.name)
+  }
+}
+
+export const deleteHistory = async (req, res) => { 
+  const { id, storyId } = req.params
+  try {
+    const story = await City.findById(id)
+    if (!story) throw new Error('Not Found!')
+    const deleteStory = story.shortHistory.id(storyId)
+    if (!deleteStory) throw new Error()
+    if (!deleteStory.owner.equals(req.verifiedUser._id)) throw new Error( 'Unauthorised ! :(')
+    deleteStory.remove()
+    story.save()
+    return res.sendStatus(204)
+  } catch (error) {
+    console.log(error)
+    return res.status(401).json({ message: 'Unauthorised:( ' })
+  }
+}
