@@ -24,7 +24,6 @@ userSchema
     this._passwordConfirmation = passConfirmValue
   })
 
-
 // preValidate
 userSchema
   .pre('validate', function (next){
