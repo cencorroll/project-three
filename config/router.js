@@ -2,6 +2,7 @@ import express from 'express'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 
 
+
 //import controllers
 import { userRegister, userLogin } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
