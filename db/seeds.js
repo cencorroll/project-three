@@ -1,7 +1,7 @@
 
 import City from '../models/citiesSchema.js'
 import citiesData from './data/citiesData.js'
-import { mongoURL } from '../config/enviroments.js'
+import { mongoURL } from '../config/environments.js'
 import mongoose from 'mongoose'
 
 
