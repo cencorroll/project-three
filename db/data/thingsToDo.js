@@ -45,7 +45,11 @@ export const thingsToDoInLondon = [
   },
   {
     name: 'Phonebooth',
+<<<<<<< HEAD
     description: 'Take the most Londonish image ever!',
+=======
+    description: 'Take the most Londonishimage ever!',
+>>>>>>> 37896395489139ec59eaafddef86d3350a3967c1
     image: 'ssss',
     price: '$$$',
     location: 'Downtown',

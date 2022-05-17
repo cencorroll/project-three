@@ -1,9 +1,13 @@
 import mongoose from 'mongoose'
 
-const reviewSchemaCities = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true, maxlength: 150 },
   description: { type: String, required: true },
+<<<<<<< HEAD
   rating: { type: String, required: true, min: 1, max: 5 },
+=======
+  rating: { type: String, required: true, 'default': 0, min: 0, max: 5 },
+>>>>>>> 37896395489139ec59eaafddef86d3350a3967c1
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
@@ -18,14 +22,23 @@ const reviewSchemaCities = new mongoose.Schema({
 //   timestamps: true, 
 // })
 
+<<<<<<< HEAD
 const thingsToDoSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true, maxlength: 50 },
   description: { type: String, required: true, maxlength: 150 },
   image: { type: String, required: true },
   price: { type: String, required: true },
   location: { type: String, unique: true },
+=======
+export const thingsToDoSchema = new mongoose.Schema({
+  name: { type: String, required: true,  maxlength: 50 },
+  description: { type: String, required: true, maxlength: 150 },
+  image: { type: String, required: true  },
+  price: { type: String, required: true }, 
+  location: { type: String }, 
+>>>>>>> 37896395489139ec59eaafddef86d3350a3967c1
   link: { type: String },
-  // reviews: [reviewSchemaThingsToDo],
+  reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
@@ -34,11 +47,17 @@ const thingsToDoSchema = new mongoose.Schema({
 const restaurantSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   description: { type: String, required: true, maxlength: 150 },
+<<<<<<< HEAD
   image: { type: String, required: true },
   price: { type: String, required: true },
   location: { type: String, unique: true },
+=======
+  image: { type: String, required: true  },
+  price: { type: String, required: true }, 
+  location: { type: String, unique: true }, 
+>>>>>>> 37896395489139ec59eaafddef86d3350a3967c1
   link: { type: String },
-  // reviews: [reviewSchema],
+  reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
@@ -47,11 +66,17 @@ const restaurantSchema = new mongoose.Schema({
 const hotelSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   description: { type: String, required: true, maxlength: 150 },
+<<<<<<< HEAD
   image: { type: String, required: true },
   price: { type: String, required: true },
   location: { type: String, unique: true },
+=======
+  image: { type: String, required: true  },
+  price: { type: String, required: true }, 
+  location: { type: String, unique: true }, 
+>>>>>>> 37896395489139ec59eaafddef86d3350a3967c1
   link: { type: String },
-  // reviews: [reviewSchema],
+  reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
@@ -72,7 +97,7 @@ const citiesSchema = new mongoose.Schema({
   restaurants: [restaurantSchema],
   hotels: [hotelSchema],
   shortHistory: [shortHistorySchema],
-  reviews: [reviewSchemaCities],
+  reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
