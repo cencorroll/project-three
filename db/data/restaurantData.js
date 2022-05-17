@@ -2,7 +2,7 @@ export const restaurantDataParis = [
   {
     name: 'La vie e belle',
     description: 'One of the best restaurants in the city!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -10,7 +10,7 @@ export const restaurantDataParis = [
   {
     name: 'Burger on the street',
     description: 'Not going back there!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -18,7 +18,7 @@ export const restaurantDataParis = [
   {
     name: 'Piazzetta',
     description: 'Great for price!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -30,7 +30,7 @@ export const restaurantDataBarcelona = [
   {
     name: 'Vino',
     description: 'One of the best wines in the city!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -38,7 +38,7 @@ export const restaurantDataBarcelona = [
   {
     name: 'Quesadilla',
     description: 'Worst quesadilla ever!!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -46,7 +46,7 @@ export const restaurantDataBarcelona = [
   {
     name: 'Gourmet',
     description: 'Best pizza for price!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -59,7 +59,7 @@ export const restaurantDataLondon = [
   {
     name: 'Manhattan',
     description: 'One of the best subs in the city!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -67,7 +67,7 @@ export const restaurantDataLondon = [
   {
     name: 'Picadilli',
     description: 'Amaizing!!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -75,7 +75,7 @@ export const restaurantDataLondon = [
   {
     name: 'Gourmet',
     description: 'Best pizza for price!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',

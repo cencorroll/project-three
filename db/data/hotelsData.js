@@ -2,7 +2,7 @@ export const hotelsoInBarcelona = [
   {
     name: 'Gallery',
     description: 'Very clean!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -11,7 +11,7 @@ export const hotelsoInBarcelona = [
   {
     name: 'Wine',
     description: 'Drink lots of Sangria!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -19,7 +19,7 @@ export const hotelsoInBarcelona = [
   {
     name: 'Museum',
     description: 'Check out the art museum!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -30,7 +30,7 @@ export const hotelsoInLondon = [
   {
     name: 'Gallery',
     description: 'Very clean!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -39,7 +39,7 @@ export const hotelsoInLondon = [
   {
     name: 'Wine',
     description: 'Drink lots of Sangria!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -47,7 +47,7 @@ export const hotelsoInLondon = [
   {
     name: 'Museum',
     description: 'Check out the art museum!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -58,7 +58,7 @@ export const hotelsoInParis = [
   {
     name: 'Gallery',
     description: 'Very clean!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -67,7 +67,7 @@ export const hotelsoInParis = [
   {
     name: 'Wine',
     description: 'Drink lots of Sangria!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -75,7 +75,7 @@ export const hotelsoInParis = [
   {
     name: 'Museum',
     description: 'Check out the art museum!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',

@@ -1,20 +1,12 @@
 import express from 'express'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
-<<<<<<< HEAD
-
 
 //import controllers
-import { userRegister, userLogin } from '../controllers/auth.js'
 
-=======
 import { userRegister, userLogin } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
-<<<<<<< HEAD
+
 import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
-=======
-import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant } from '../controllers/subSchema.js'
->>>>>>> c8b7b75c7af30467fa6234afd7e4234edeb1f8ef
->>>>>>> 59ccd8b51a455bb8dea71499c1c1361f5bf9f157
 
 const router = express.Router()
 
