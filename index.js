@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import { PORT, mongoURL } from './config/enviroments.js'
+import { PORT, mongoURL } from './config/environments.js'
 import router from './config/router.js'
 
 
