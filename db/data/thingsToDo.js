@@ -54,30 +54,53 @@ export const thingsToDoInLondon = [
 
 ] 
 
-export const thingsToDoInBarcelona = [
+export const thingsToDoInLisbon = [
   {
-    name: 'Football',
-    description: 'Check out one of the best leagues in the world !',
-    picture: 'ssss',
-    price: '$$$',
-    location: 'Downtown',
-    link: 'wwww.google.com',
-  },
-  {
-    name: 'Wine',
-    description: 'Drink lots of Sangria!',
-    picture: 'ssss',
-    price: '$$$',
-    location: 'Downtown',
-    link: 'wwww.google.com',
-  },
-  {
-    name: 'Museum',
-    description: 'Check out the art museum!',
-    picture: 'ssss',
-    price: '$$$',
-    location: 'Downtown',
-    link: 'wwww.google.com',
+    name: 'Lisbon',
+    description: 'Lisbon',
+    picture: 'Lisbon',
+    price: 'Lisbon',
+    location: 'Lisbon',
+    link: 'Lisbon',
   }
-
+] 
+export const thingsToDoInIstanbul = [
+  {
+    name: 'Istanbul',
+    description: 'Istanbul',
+    picture: 'Istanbul',
+    price: 'Istanbul',
+    location: 'Istanbul',
+    link: 'Istanbul',
+  }
+] 
+export const thingsToDoInPorto = [
+  {
+    name: 'Porto',
+    description: 'Porto',
+    picture: 'Porto',
+    price: 'Porto',
+    location: 'Porto',
+    link: 'Porto',
+  }
+] 
+export const thingsToDoInSeville = [
+  {
+    name: 'Seville',
+    description: 'Seville',
+    picture: 'Seville',
+    price: 'Seville',
+    location: 'Seville',
+    link: 'Seville',
+  }
+] 
+export const thingsToDoInAmsterdam = [
+  {
+    name: 'Amsterdam',
+    description: 'Amsterdam',
+    picture: 'Amsterdam',
+    price: 'Amsterdam',
+    location: 'Amsterdam',
+    link: 'Amsterdam',
+  }
 ] 
