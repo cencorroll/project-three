@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const reviewSchemaCities = new mongoose.Schema({
   text: { type: String, required: true, maxlength: 150 },
   description: { type: String, required: true },
-  rating: { type: Number, required: true, min: 1, max: 5 },
+  rating: { type: String, required: true, min: 1, max: 5 },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
@@ -12,7 +12,7 @@ const reviewSchemaCities = new mongoose.Schema({
 // const reviewSchemaThingsToDo = new mongoose.Schema({
 //   text: { type: String, required: true, maxlength: 150 },
 //   description: { type: String, required: true },
-//   rating: { type: Number, required: true, min: 1, max: 5 },
+//   rating: { type: String, required: true, min: 1, max: 5 },
 //   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 // }, {
 //   timestamps: true, 
@@ -22,7 +22,7 @@ const thingsToDoSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true, maxlength: 50 },
   description: { type: String, required: true, maxlength: 150 },
   image: { type: String, required: true },
-  price: { type: Number, required: true },
+  price: { type: String, required: true },
   location: { type: String, unique: true },
   link: { type: String },
   // reviews: [reviewSchemaThingsToDo],
@@ -35,7 +35,7 @@ const restaurantSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   description: { type: String, required: true, maxlength: 150 },
   image: { type: String, required: true },
-  price: { type: Number, required: true },
+  price: { type: String, required: true },
   location: { type: String, unique: true },
   link: { type: String },
   // reviews: [reviewSchema],
@@ -48,7 +48,7 @@ const hotelSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   description: { type: String, required: true, maxlength: 150 },
   image: { type: String, required: true },
-  price: { type: Number, required: true },
+  price: { type: String, required: true },
   location: { type: String, unique: true },
   link: { type: String },
   // reviews: [reviewSchema],
