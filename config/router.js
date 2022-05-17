@@ -17,7 +17,7 @@ router.route('/cities')
   .post(secureRoute, addCity)
 
 router.route('/cities/:id')
-  .get(secureRoute, getSingleCity)
+  .get(getSingleCity)
   .put(secureRoute, updateCity)
   .delete(secureRoute, deleteCity)
 
