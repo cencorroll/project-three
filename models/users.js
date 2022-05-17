@@ -1,17 +1,15 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 
 
-const userSchema = new mongoose.Schema ({
+const userSchema = new mongoose.Schema({
 
   username: { type: String, required: true, unique: true, maxlength: 25 },
-  email: { type: String, required: true, unique: true},
-  password:{ type: String, required: true}
-
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
 })
 
 // virtual
-
 userSchema
   .virtual('passwordConfirmation')
   .set(function (passConfirmValue){
@@ -22,9 +20,9 @@ userSchema
 // preValidate
 userSchema
   .pre('validate', function (next){
- 
+
     if (this.isModified('password') && this.password !== this._passwordConfirmation) {
-        this.invalidate('passwordConfirmation', 'does not match password field')
+      this.invalidate('passwordConfirmation', 'does not match password field')
     }
     next()
   })
@@ -39,8 +37,8 @@ userSchema
   })
 
 
-  userSchema.methods.validatePassword = function (plainPassword) {
-    return bcrypt.compareSync(plainPassword, this.password)
-  }
+userSchema.methods.validatePassword = function (plainPassword) {
+  return bcrypt.compareSync(plainPassword, this.password)
+}
   
-  export default mongoose.model('User', userSchema)
+export default mongoose.model('User', userSchema)

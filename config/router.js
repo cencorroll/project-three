@@ -1,14 +1,7 @@
 import express from 'express'
-<<<<<<< HEAD
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
-=======
-
-
-//import controllers
-import { getCities, welcomeMessage } from '../controllers/cities.js'
 import { userRegister, userLogin } from '../controllers/auth.js'
-
->>>>>>> development
+import { secureRoute } from './secureRoute.js'
 
 const router = express.Router()
 
@@ -17,12 +10,12 @@ router.route('/')
 
 router.route('/cities')
   .get(getCities)
-  .post(addCity)
+  .post(secureRoute, addCity)
 
 router.route('/cities/:id')
-  .get(getSingleCity)
-  .put(updateCity)
-  .delete(deleteCity)
+  .get(secureRoute,getSingleCity)
+  .put(secureRoute,updateCity)
+  .delete(secureRoute,deleteCity)
 
 
 
