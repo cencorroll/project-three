@@ -15,7 +15,11 @@ export const getCities = async (req, res) => {
 export const getSingleCity = async (req, res) => {
   const { id } = req.params
   try {
+<<<<<<< HEAD
     const requestedCity = await City.findById(id).populate('owner').populate('reviews.owner')
+=======
+    const requestedCity = await City.findById(id).populate('owner').populate('thingsToDo.owner').populate('restaurants.owner').populate('hotels.owner').populate('shortHistory.owner').populate('reviews.owner')
+>>>>>>> development
     if (!requestedCity) {
       return res.status(404).json({ message: 'City not found' })
     }
