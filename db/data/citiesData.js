@@ -4,5 +4,9 @@ export default [
   {
     name: 'Paris',
     thingsToDo: thingsToDoData,
+  },
+  {
+    name: 'London',
+    thingsToDo: thingsToDoData,
   }
 ]
