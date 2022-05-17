@@ -25,5 +25,4 @@ const citiesSchema = new mongoose.Schema({
   timestamps: true,
 })
 
-
 export default mongoose.model('City', citiesSchema)

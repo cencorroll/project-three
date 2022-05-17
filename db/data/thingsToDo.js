@@ -28,7 +28,7 @@ export const thingsToDoInParis = [
 
 export const thingsToDoInLondon = [
   {
-    name: 'Football',
+    name: 'Football1',
     description: 'Check out one of the best leagues in the world !',
     picture: 'ssss',
     price: '$$$',
@@ -56,7 +56,7 @@ export const thingsToDoInLondon = [
 
 export const thingsToDoInBarcelona = [
   {
-    name: 'Football',
+    name: 'Football2',
     description: 'Check out one of the best leagues in the world !',
     picture: 'ssss',
     price: '$$$',

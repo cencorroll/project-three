@@ -1,6 +1,6 @@
 import  { thingsToDoInBarcelona, thingsToDoInLondon, thingsToDoInParis, thingsToDoInEdinburgh, thingsToDoInAberdeen, thingsToDoInGlasgow } from './thingsToDo.js'
-import { restaurantDataBarcelona, restaurantDataLondon, restaurantDataParis } from './restaurantData.js'
-import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis } from './hotelsData.js'
+import { restaurantDataBarcelona, restaurantDataLondon, restaurantDataParis, restaurantDataEdinburgh, restaurantDataGlasgow, restaurantDataAberdeen } from './restaurantData.js'
+import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis, hotelsoInEdinburgh, hotelsoInGlasgow, hotelsoInAberdeen } from './hotelsData.js'
 
 export default [
   {
@@ -26,7 +26,7 @@ export default [
     hotels: hotelsoInBarcelona,
     // shortHistory: shortHistroyData,
   },
-  
+
   //? scottish cities
   {
     name: 'Edinburgh',

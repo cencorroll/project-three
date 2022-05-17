@@ -81,3 +81,36 @@ export const hotelsoInParis = [
     link: 'wwww.google.com',
   }
 ]
+
+export const hotelsoInEdinburgh = [
+  {
+    name: 'The Balmoral',
+    description: 'Nice but pricey',
+    picture: 'ssss',
+    price: '$$$$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  }
+]
+
+export const hotelsoInGlasgow = [
+  {
+    name: 'Hilton',
+    description: 'Very clean!',
+    picture: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  }
+]
+
+export const hotelsoInAberdeen = [
+  {
+    name: 'Malmaison Aberdeen',
+    description: 'Very clean!',
+    picture: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  }
+]
