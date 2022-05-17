@@ -1,14 +1,10 @@
 import express from 'express'
-<<<<<<< HEAD
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
-=======
 
 
 //import controllers
-import { getCities, welcomeMessage } from '../controllers/cities.js'
 import { userRegister, userLogin } from '../controllers/auth.js'
 
->>>>>>> development
 
 const router = express.Router()
 

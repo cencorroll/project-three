@@ -17,8 +17,8 @@ export const secureRoute = async (req, res, next) => {
     console.log('paylod-->', payload)
 
     const userToVerify = await User.findById(payload.sub)
-   
-    if (!userToVerify) throw new error('user not found')
+
+    if (!userToVerify) throw new Error('user not found')
     next()
 
   } catch (error) {
