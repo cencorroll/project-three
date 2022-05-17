@@ -5,6 +5,7 @@ import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis } from './hotelsDat
 export default [
   {
     name: 'Paris',
+    image: 'sss',
     thingsToDo: thingsToDoInParis,
     restaurants: restaurantDataParis,
     hotels: hotelsoInParis,
