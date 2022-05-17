@@ -5,7 +5,7 @@ import { mongoURL } from '../config/enviroments.js'
 import mongoose from 'mongoose'
 
 
-const seeds = async () => { 
+const seedDataBase = async () => { 
   try {
     await mongoose.connect(mongoURL)
     await mongoose.connection.db.dropDatabase()
@@ -18,4 +18,4 @@ const seeds = async () => {
   }
 }
 
-seeds()
+seedDataBase()
