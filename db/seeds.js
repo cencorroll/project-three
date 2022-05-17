@@ -3,13 +3,18 @@ import City from '../models/citiesSchema.js'
 import citiesData from './data/citiesData.js'
 import { mongoURL } from '../config/environments.js'
 import mongoose from 'mongoose'
-
+import userData from './data/userData.js'
+import User from '../models/users.js'
 
 const seedDataBase = async () => { 
   try {
     await mongoose.connect(mongoURL)
     await mongoose.connection.db.dropDatabase()
-    const cities = await City.create(citiesData)
+    const users = await User.create(userData)
+    const citiesWithOwner = citiesData.map(city => { 
+      return { ...city, owner: users[0]._id }
+    })
+    const cities = await City.create(citiesWithOwner)
     console.log(cities.length)
     await mongoose.connection.close()
   } catch (error) {

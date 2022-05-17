@@ -15,7 +15,7 @@ export const getCities = async (req, res) => {
 export const getSingleCity = async (req, res) => {
   const { id } = req.params
   try {
-    const requestedCity = await City.findById(id)
+    const requestedCity = await City.findById(id).populate('owner')
     if (!requestedCity) {
       return res.status(404).json({ message: 'City not found' })
     }
@@ -28,14 +28,14 @@ export const getSingleCity = async (req, res) => {
 
 //? Add a city
 export const addCity = async (req, res) => {
-  const { body: newCity } = req // add verified user to req
+  const { body: newCity, verifiedUser } = req // add verified user to req
   try {
-    const addedCity = await City.create(newCity) // add owner
+    const addedCity = await City.create({ ...newCity, owner: verifiedUser._id })
     return res.status(200).json(addedCity)
   } catch (error) {
     console.log('Can\'t add this city')
     console.log(error)
-    return res.status(400).json(error)
+    return res.status(400).json(error.name)
   }
 }
 
