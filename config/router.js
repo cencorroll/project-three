@@ -13,11 +13,9 @@ router.route('/cities')
   .post(secureRoute, addCity)
 
 router.route('/cities/:id')
-  .get(secureRoute,getSingleCity)
-  .put(secureRoute,updateCity)
-  .delete(secureRoute,deleteCity)
-
-
+  .get(secureRoute, getSingleCity)
+  .put(secureRoute, updateCity)
+  .delete(secureRoute, deleteCity)
 
 //Authentication
 router.route('/register')

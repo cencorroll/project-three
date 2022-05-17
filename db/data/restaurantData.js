@@ -82,3 +82,38 @@ export const restaurantDataLondon = [
   }
 
 ] 
+
+export const restaurantDataEdinburgh = [
+  {
+    name: 'Makars Gourmet Mash Bar',
+    description: 'Unfussy restaurant specialising in mashed potatoes flavoured with meat or vegetarian toppings.',
+    picture: 'ssss',
+    price: '$$',
+    location: 'Near Royal Mile',
+    link: 'wwww.google.com',
+  }
+
+] 
+
+export const restaurantDataGlasgow = [
+  {
+    name: 'Ox and Finch',
+    description: 'Trendy, high-ceilinged venue with a casual vibe, offering creative, contemporary tapas-style dishes.',
+    picture: 'ssss',
+    price: '$$',
+    location: 'Sauchiehall St',
+    link: 'oxandfinch.com',
+  }
+
+] 
+export const restaurantDataAberdeen = [
+  {
+    name: 'Mi Amore',
+    description: 'Traditionally decorated trattoria with checked tablecloths, Italian wall murals and a classic menu.',
+    picture: 'ssss',
+    price: '$$',
+    location: 'Aberdeen',
+    link: 'amoreitalianrestaurant.co.uk',
+  }
+
+] 

@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
-
+// * sub documents/schema
+//review
 const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true, maxlength: 150 },
   description: { type: String, required: true },
@@ -8,6 +9,8 @@ const reviewSchema = new mongoose.Schema({
 }, {
   timestamps: true, 
 })
+
+//
 
 const citiesSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },

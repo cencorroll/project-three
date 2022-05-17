@@ -81,3 +81,44 @@ export const thingsToDoInBarcelona = [
   }
 
 ] 
+export const thingsToDoInEdinburgh = [
+  {
+    name: 'Edinburgh Castle',
+    description: 'Iconic castle over looking Edinburgh city!',
+    picture: 'edin_castle_picture',
+    price: '££',
+    location: 'Town Center',
+    link: 'wwww.google.com',
+  },
+  {
+    name: 'The National Museum of Scotland',
+    description: 'The National Museum of Scotland',
+    picture: 'picture of museum',
+    price: 'free',
+    location: 'Downtown',
+    link: 'https://www.nms.ac.uk/',
+  }
+
+]
+
+export const thingsToDoInGlasgow = [
+  {
+    name: 'Hunterian Museum and Art Gallery',
+    description: 'Check out one of the best Gallery',
+    picture: 'ssss',
+    price: 'free',
+    location: 'University of Glasgow',
+    link: 'https://www.gla.ac.uk/hunterian/',
+  }
+]
+export const thingsToDoInAberdeen = [
+  {
+    name: 'Duthie Park',
+    description: 'Duthie Park is Scotland\'s third most visited gardens for its wide range of exotic plants, family play areas, boating ponds, sports fields and recently restored Victorian design features.',
+    picture: 'sssss',
+    price: '$free',
+    location: 'South Aberdeen',
+    link: 'https://www.visitabdn.com/listing/duthie-park?',
+  },
+
+] 
