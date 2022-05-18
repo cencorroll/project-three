@@ -24,6 +24,33 @@ export const thingsToDoInParis = [
     link: 'wwww.google.com',
   }
 
+] 
+export const thingsToDoInBarcelona = [
+  {
+    name: 'Shopping',
+    description: 'Go shopping on some of the most famous streets in Europe!',
+    image: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  },
+  {
+    name: 'Discover all the parks',
+    description: 'Walk arround the city, you will discover a lot of cool parks that are worth seeing!',
+    image: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  },
+  {
+    name: 'Go to the beach',
+    description: 'Enjoy a full day at the beach!',
+    image: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  }
+
 ]
 
 export const thingsToDoInLondon = [
@@ -54,7 +81,55 @@ export const thingsToDoInLondon = [
 
 ]
 
-export const thingsToDoInBarcelona = [
+export const thingsToDoInLisbon = [
+  {
+    name: 'Lisbon',
+    description: 'Lisbon',
+    image: 'Lisbon',
+    price: 'Lisbon',
+    location: 'Lisbon',
+    link: 'Lisbon',
+  }
+] 
+export const thingsToDoInIstanbul = [
+  {
+    name: 'Istanbul',
+    description: 'Istanbul',
+    image: 'Istanbul',
+    price: 'Istanbul',
+    location: 'Istanbul',
+    link: 'Istanbul',
+  }
+] 
+export const thingsToDoInPorto = [
+  {
+    name: 'Porto',
+    description: 'Porto',
+    image: 'Porto',
+    price: 'Porto',
+    location: 'Porto',
+    link: 'Porto',
+  }
+] 
+export const thingsToDoInSeville = [
+  {
+    name: 'Seville',
+    description: 'Seville',
+    image: 'Seville',
+    price: 'Seville',
+    location: 'Seville',
+    link: 'Seville',
+  }
+] 
+export const thingsToDoInAmsterdam = [
+  {
+    name: 'Amsterdam',
+    description: 'Amsterdam',
+    image: 'Amsterdam',
+    price: 'Amsterdam',
+    location: 'Amsterdam',
+    link: 'Amsterdam',
+  },
   {
     name: 'Football2',
     description: 'Check out one of the best leagues in the world !',
@@ -79,7 +154,6 @@ export const thingsToDoInBarcelona = [
     location: 'Downtown',
     link: 'wwww.google.com',
   }
-
 ]
 export const thingsToDoInEdinburgh = [
   {
@@ -119,6 +193,6 @@ export const thingsToDoInAberdeen = [
     price: '$free',
     location: 'South Aberdeen',
     link: 'https://www.visitabdn.com/listing/duthie-park?',
-  },
+  }
 
 ] 

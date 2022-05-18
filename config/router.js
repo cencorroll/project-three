@@ -1,10 +1,13 @@
 import express from 'express'
+
+
 import { secureRoute } from './secureRoute.js'
 
 //import controllers
 import { userRegister, userLogin } from '../controllers/auth.js'
+import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
-import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities, addReviewFun } from '../controllers/subSchema.js'
+
 import { getProfile } from '../controllers/users.js'
 
 const router = express.Router()
@@ -37,8 +40,8 @@ router.route('/cities/:id/fun')
 router.route('/cities/:id/fun/:funId')
   .delete(secureRoute, deleteThingsToDo)
 
-router.route('/cities/:id/fun/:funId/review')
-  .post(secureRoute, addReviewFun)
+// router.route('/cities/:id/fun/:funId/review')
+//   .post(secureRoute, addReviewFun)
 // router.route('/cities/:id/fun/:funId/review/:reviewID')
 //   .delete(secureRoute, deleteReviewFun)
 

@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 
 const reviewSchema = new mongoose.Schema({
-  text: { type: String, required: true, maxlength: 150 },
+  text: { type: String, required: true, maxlength: 1000 },
   description: { type: String, required: true },
   rating: { type: String, required: true, 'default': 0, min: 0, max: 5 },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -11,7 +11,7 @@ const reviewSchema = new mongoose.Schema({
 })
 
 // const reviewSchemaThingsToDo = new mongoose.Schema({
-//   text: { type: String, required: true, maxlength: 150 },
+//   text: { type: String, required: true, maxlength: 1000 },
 //   description: { type: String, required: true },
 //   rating: { type: String, required: true, min: 1, max: 5 },
 //   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -22,7 +22,7 @@ const reviewSchema = new mongoose.Schema({
 
 export const thingsToDoSchema = new mongoose.Schema({
   name: { type: String, required: true,  maxlength: 50 },
-  description: { type: String, required: true, maxlength: 300 },
+  description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true  },
   price: { type: String, required: true }, 
   location: { type: String }, 
@@ -35,10 +35,10 @@ export const thingsToDoSchema = new mongoose.Schema({
 
 const restaurantSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
-  description: { type: String, required: true, maxlength: 150 },
+  description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true  },
   price: { type: String, required: true }, 
-  location: { type: String, unique: true }, 
+  location: { type: String }, 
   link: { type: String },
   reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -48,10 +48,10 @@ const restaurantSchema = new mongoose.Schema({
 
 const hotelSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
-  description: { type: String, required: true, maxlength: 150 },
+  description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true  },
   price: { type: String, required: true }, 
-  location: { type: String, unique: true }, 
+  location: { type: String }, 
   link: { type: String },
   reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -61,7 +61,7 @@ const hotelSchema = new mongoose.Schema({
 
 const shortHistorySchema =  new mongoose.Schema({
   name: { type: String, required: true, unique: true, maxlength: 50 },
-  description: { type: String, required: true, maxlength: 150 },
+  description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 })

@@ -1,14 +1,14 @@
 
 import City from '../models/citiesSchema.js'
 import citiesData from './data/citiesData.js'
-import { mongoURL } from '../config/environments.js'
 import mongoose from 'mongoose'
 import userData from './data/userData.js'
 import User from '../models/users.js'
+import 'dotenv/config'
 
 const seedDataBase = async () => { 
   try {
-    await mongoose.connect(mongoURL)
+    await mongoose.connect(process.env.mongoURL)
     await mongoose.connection.db.dropDatabase()
     const users = await User.create(userData)
     const citiesWithOwner = citiesData.map(city => { 

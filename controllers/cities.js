@@ -28,7 +28,7 @@ export const getSingleCity = async (req, res) => {
 
 //? Add a city
 export const addCity = async (req, res) => {
-  const { body: newCity, verifiedUser } = req // add verified user to req
+  const { body: newCity, verifiedUser } = req
   try {
     const addedCity = await City.create({ ...newCity, owner: verifiedUser._id })
     return res.status(200).json(addedCity)
@@ -42,7 +42,7 @@ export const addCity = async (req, res) => {
 //? Update a city
 export const updateCity = async(req, res) => {
   const { id } = req.params
-  const { body: editCity } = req // add verifiedUser to req
+  const { body: editCity } = req
   try {
     const updatedCity = await City.findById(id)
     if (!updatedCity) throw new Error()

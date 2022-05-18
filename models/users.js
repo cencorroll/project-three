@@ -13,8 +13,8 @@ const userSchema = new mongoose.Schema({
 userSchema.virtual('createdCities',{
   ref: 'City',
   localField: '_id',
-  foreignField:'owner'
- })
+  foreignField: 'owner',
+})
 // userSchema.virtual('createdFun',{
 //   ref: 'thingsToDoSchema',
 //   localField: '_id',
@@ -45,7 +45,6 @@ userSchema
   .set(function (passConfirmValue){
     this._passwordConfirmation = passConfirmValue
   })
-
 
 // preValidate
 userSchema

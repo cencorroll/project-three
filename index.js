@@ -1,8 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import { PORT, mongoURL } from './config/environments.js'
 import router from './config/router.js'
-
+import 'dotenv/config'
 
 const logger = (req, res, next) => { 
   console.log(`Incoming request on ${req.method} - ${req.url} `)
@@ -14,10 +13,10 @@ const startServer = async () => {
 
   app.use(logger)
   app.use(express.json())
-  app.use(router)
+  app.use('/api', router)
 
-  await mongoose.connect(mongoURL)
-  app.listen(PORT, () => console.log(`PORT listening on Port ${PORT}`))
+  await mongoose.connect(process.env.mongoURL)
+  app.listen(process.env.PORT, () => console.log(`PORT listening on Port ${process.env.PORT}`))
 }
 
 startServer()
