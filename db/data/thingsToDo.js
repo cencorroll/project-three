@@ -25,6 +25,33 @@ export const thingsToDoInParis = [
   }
 
 ] 
+export const thingsToDoInBarcelona = [
+  {
+    name: 'Shopping',
+    description: 'Go shopping on some of the most famous streets in Europe!',
+    picture: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  },
+  {
+    name: 'Discover all the parks',
+    description: 'Walk arround the city, you will discover a lot of cool parks that are worth seeing!',
+    picture: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  },
+  {
+    name: 'Go to the beach',
+    description: 'Enjoy a full day at the beach!',
+    picture: 'ssss',
+    price: '$$$',
+    location: 'Downtown',
+    link: 'wwww.google.com',
+  }
+
+] 
 
 export const thingsToDoInLondon = [
   {
