@@ -45,8 +45,8 @@ export const updateCity = async(req, res) => {
   const { body: editCity } = req // add verifiedUser to req
   try {
     const updatedCity = await City.findById(id)
-
-    // if statement to check if owner is verified user goes here
+    if (!updatedCity) throw new Error()
+    if (!updatedCity.owner.equals(req.verifiedUser._id)) throw new Error('Unauthorised :( ')
 
     Object.assign(updatedCity, editCity)
     await updatedCity.save()
