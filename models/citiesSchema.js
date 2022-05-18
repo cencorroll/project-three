@@ -18,9 +18,10 @@ const reviewSchema = new mongoose.Schema({
 //   timestamps: true, 
 // })
 
+
 export const thingsToDoSchema = new mongoose.Schema({
   name: { type: String, required: true,  maxlength: 50 },
-  description: { type: String, required: true, maxlength: 150 },
+  description: { type: String, required: true, maxlength: 300 },
   image: { type: String, required: true  },
   price: { type: String, required: true }, 
   location: { type: String }, 

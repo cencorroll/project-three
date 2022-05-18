@@ -71,7 +71,7 @@ export const restaurantDataLondon = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Gourmet',
+    name: 'Gourmeta',
     description: 'Best pizza for price!',
     image: 'ssss',
     price: '$$$',
