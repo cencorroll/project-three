@@ -40,7 +40,7 @@ export const restaurantDataBarcelona = [
     description: 'Worst quesadilla ever!!',
     image: 'ssss',
     price: '$$$',
-    location: 'Downtown',
+    location: 'Downtown2',
     link: 'wwww.google.com',
   },
   {
@@ -48,7 +48,7 @@ export const restaurantDataBarcelona = [
     description: 'Best pizza for price!',
     image: 'ssss',
     price: '$$$',
-    location: 'Downtown',
+    location: 'Downtown2',
     link: 'wwww.google.com',
   }
 

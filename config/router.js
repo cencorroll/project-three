@@ -5,11 +5,7 @@ import { secureRoute } from './secureRoute.js'
 import { userRegister, userLogin } from '../controllers/auth.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
-<<<<<<< HEAD
 import { getProfile } from '../controllers/users.js'
-=======
-
->>>>>>> development
 
 const router = express.Router()
 
