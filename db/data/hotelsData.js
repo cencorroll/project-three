@@ -1,6 +1,6 @@
 export const hotelsoInBarcelona = [
   {
-    name: 'Gallery',
+    name: 'Gallery1',
     description: 'Very clean!',
     image: 'ssss',
     price: '$$$',
@@ -82,28 +82,27 @@ export const hotelsoInParis = [
   }
 ]
 
-<<<<<<< HEAD
 export const hotelsoInLisbon = [
   {
-    name: 'Hotel1',
+    name: 'Hoteldszdscd1',
     description: 'Hotel1',
-    picture: 'Hotel1',
+    image: 'Hotel1',
     price: 'Hotel1',
     location: 'Hotel1',
     link: 'Hotel1',
   },
   {
-    name: 'Hotel2',
+    name: 'Hotelbdfbgdfgb2',
     description: 'Hotel2',
-    picture: 'Hotel2',
+    image: 'Hotel2',
     price: 'Hotel2',
     location: 'Hotel2',
     link: 'Hotel2',
   },
   {
-    name: 'Hotel3',
+    name: 'Hotelfgbxcvf3',
     description: 'Hotel3',
-    picture: 'Hotel3',
+    image: 'Hotel3',
     price: 'Hotel3',
     location: 'Hotel3',
     link: 'Hotel3',
@@ -111,25 +110,25 @@ export const hotelsoInLisbon = [
 ]
 export const hotelsoInIstanbul = [
   {
-    name: 'Hotel4',
+    name: 'Hotelbxvbxd4',
     description: 'Hotel4',
-    picture: 'Hotel4',
+    image: 'Hotel4',
     price: 'Hotel4',
     location: 'Hotel4',
     link: 'Hotel4',
   },
   {
-    name: 'Hotel5',
+    name: 'Hoteldbdx5',
     description: 'Hotel5',
-    picture: 'Hotel5',
+    image: 'Hotel5',
     price: 'Hotel5',
     location: 'Hotel5',
     link: 'Hotel5',
   },
   {
-    name: 'Hotel6',
+    name: 'Hoteldbbdbgdf6',
     description: 'Hotel6',
-    picture: 'Hotel6',
+    image: 'Hotel6',
     price: 'Hotel6',
     location: 'Hotel6',
     link: 'Hotel6',
@@ -137,25 +136,25 @@ export const hotelsoInIstanbul = [
 ]
 export const hotelsoInPorto = [
   {
-    name: 'Hotel7',
+    name: 'Hoteldbdbdf7',
     description: 'Hotel7',
-    picture: 'Hotel7',
+    image: 'Hotel7',
     price: 'Hotel7',
     location: 'Hotel7',
     link: 'Hotel7',
   },
   {
-    name: 'Hotel8',
+    name: 'Hotelddfzbzdf8',
     description: 'Hotel8',
-    picture: 'Hotel8',
+    image: 'Hotel8',
     price: 'Hotel8',
     location: 'Hotel8',
     link: 'Hotel8',
   },
   {
-    name: 'Hotel9',
+    name: 'Hoteldzbddfz9',
     description: 'Hotel9',
-    picture: 'Hotel9',
+    image: 'Hotel9',
     price: 'Hotel9',
     location: 'Hotel9',
     link: 'Hotel9',
@@ -163,25 +162,25 @@ export const hotelsoInPorto = [
 ]
 export const hotelsoInSeville = [
   {
-    name: 'Hotel10',
+    name: 'Hoteldbdzvf10',
     description: 'Hotel10',
-    picture: 'Hotel10',
+    image: 'Hotel10',
     price: 'Hotel10',
     location: 'Hotel10',
     link: 'Hotel10',
   },
   {
-    name: 'Hotel11',
+    name: 'Hotelzdfzdvfdz11',
     description: 'Hotel11',
-    picture: 'Hotel11',
+    image: 'Hotel11',
     price: 'Hotel11',
     location: 'Hotel11',
     link: 'Hotel11',
   },
   {
-    name: 'Hotel12',
+    name: 'Hotelzdbfbfd12',
     description: 'Hotel12',
-    picture: 'Hotel12',
+    image: 'Hotel12',
     price: 'Hotel12',
     location: 'Hotel12',
     link: 'Hotel12',
@@ -189,31 +188,30 @@ export const hotelsoInSeville = [
 ]
 export const hotelsoInAmsterdam = [
   {
-    name: 'Hotel13',
+    name: 'Hoteldzbfzd13',
     description: 'Hotel13',
-    picture: 'Hotel13',
+    image: 'Hotel13',
     price: 'Hotel13',
     location: 'Hotel13',
     link: 'Hotel13',
   },
   {
-    name: 'Hotel14',
+    name: 'Hoteldbdzfbg14',
     description: 'Hotel14',
-    picture: 'Hotel14',
+    image: 'Hotel14',
     price: 'Hotel14',
     location: 'Hotel14',
     link: 'Hotel14',
   },
   {
-    name: 'Hotel15',
+    name: 'Hotelzfbfzdbdfz15',
     description: 'Hotel15',
-    picture: 'Hotel15',
+    image: 'Hotel15',
     price: 'Hotel15',
     location: 'Hotel15',
     link: 'Hotel15',
   }
 ]
-=======
 export const hotelsoInEdinburgh = [
   {
     name: 'The Balmoral',
@@ -249,4 +247,3 @@ export const hotelsoInAberdeen = [
 
   }
 ]
->>>>>>> development

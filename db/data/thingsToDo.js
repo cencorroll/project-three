@@ -29,7 +29,7 @@ export const thingsToDoInBarcelona = [
   {
     name: 'Shopping',
     description: 'Go shopping on some of the most famous streets in Europe!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -37,7 +37,7 @@ export const thingsToDoInBarcelona = [
   {
     name: 'Discover all the parks',
     description: 'Walk arround the city, you will discover a lot of cool parks that are worth seeing!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -45,7 +45,7 @@ export const thingsToDoInBarcelona = [
   {
     name: 'Go to the beach',
     description: 'Enjoy a full day at the beach!',
-    picture: 'ssss',
+    image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -85,7 +85,7 @@ export const thingsToDoInLisbon = [
   {
     name: 'Lisbon',
     description: 'Lisbon',
-    picture: 'Lisbon',
+    image: 'Lisbon',
     price: 'Lisbon',
     location: 'Lisbon',
     link: 'Lisbon',
@@ -95,7 +95,7 @@ export const thingsToDoInIstanbul = [
   {
     name: 'Istanbul',
     description: 'Istanbul',
-    picture: 'Istanbul',
+    image: 'Istanbul',
     price: 'Istanbul',
     location: 'Istanbul',
     link: 'Istanbul',
@@ -105,7 +105,7 @@ export const thingsToDoInPorto = [
   {
     name: 'Porto',
     description: 'Porto',
-    picture: 'Porto',
+    image: 'Porto',
     price: 'Porto',
     location: 'Porto',
     link: 'Porto',
@@ -115,7 +115,7 @@ export const thingsToDoInSeville = [
   {
     name: 'Seville',
     description: 'Seville',
-    picture: 'Seville',
+    image: 'Seville',
     price: 'Seville',
     location: 'Seville',
     link: 'Seville',
@@ -125,7 +125,7 @@ export const thingsToDoInAmsterdam = [
   {
     name: 'Amsterdam',
     description: 'Amsterdam',
-    picture: 'Amsterdam',
+    image: 'Amsterdam',
     price: 'Amsterdam',
     location: 'Amsterdam',
     link: 'Amsterdam',

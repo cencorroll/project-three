@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 
 const App = () => {
+
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get('/api/cities/') // * <-- replace with your endpoint
