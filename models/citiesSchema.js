@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+
 const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true, maxlength: 150 },
   description: { type: String, required: true },
@@ -20,7 +21,7 @@ const reviewSchema = new mongoose.Schema({
 
 export const thingsToDoSchema = new mongoose.Schema({
   name: { type: String, required: true,  maxlength: 50 },
-  description: { type: String, required: true, maxlength: 150 },
+  description: { type: String, required: true, maxlength: 300 },
   image: { type: String, required: true  },
   price: { type: String, required: true }, 
   location: { type: String }, 
