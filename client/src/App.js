@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 import axios from 'axios'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CitiesIndex from './components/CitiesIndex'
 
 const App = () => {
 
@@ -11,7 +13,17 @@ const App = () => {
     getData()
   })
 
-  return <h1>Hello World</h1>
+  return (
+    <>
+
+      <BrowserRouter>
+        {/* <PageNav /> */}
+        <Routes>
+          <Route path="/" element={<CitiesIndex />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App
