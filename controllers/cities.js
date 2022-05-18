@@ -15,11 +15,7 @@ export const getCities = async (req, res) => {
 export const getSingleCity = async (req, res) => {
   const { id } = req.params
   try {
-<<<<<<< HEAD
-    const requestedCity = await City.findById(id).populate('owner').populate('reviews.owner')
-=======
     const requestedCity = await City.findById(id).populate('owner').populate('thingsToDo.owner').populate('restaurants.owner').populate('hotels.owner').populate('shortHistory.owner').populate('reviews.owner')
->>>>>>> development
     if (!requestedCity) {
       return res.status(404).json({ message: 'City not found' })
     }
@@ -49,8 +45,8 @@ export const updateCity = async(req, res) => {
   const { body: editCity } = req // add verifiedUser to req
   try {
     const updatedCity = await City.findById(id)
-
-    // if statement to check if owner is verified user goes here
+    if (!updatedCity) throw new Error()
+    if (!updatedCity.owner.equals(req.verifiedUser._id)) throw new Error('Unauthorised :( ')
 
     Object.assign(updatedCity, editCity)
     await updatedCity.save()

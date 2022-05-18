@@ -1,5 +1,5 @@
 import City from '../models/citiesSchema.js'
-// import { thingsToDoSchema } from '../models/citiesSchema.js'
+import { thingsToDoSchema } from '../models/citiesSchema.js'
 
 // REVIEWS
 export const addReviewCities = async (req, res) => { 
@@ -20,7 +20,8 @@ export const addReviewCities = async (req, res) => {
 // export const addReviewFun = async (req, res) => { 
 //   const { id } = req.params
 //   try {
-//     const review = await thingsToDoSchema.findById(id)
+//     console.log('THings TO Do ->>>>>',thingsToDoSchema)
+//     const review = await City.findById(id)
 //     if (!review) throw new Error('City Not Found')
 //     const reviewOwner = { ...req.body, owner: req.verifiedUser._id }
 //     review.reviews.push(reviewOwner)
