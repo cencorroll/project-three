@@ -14,7 +14,7 @@ const startServer = async () => {
 
   app.use(logger)
   app.use(express.json())
-  app.use(router)
+  app.use('/api', router)
 
   await mongoose.connect(mongoURL)
   app.listen(PORT, () => console.log(`PORT listening on Port ${PORT}`))
