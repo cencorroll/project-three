@@ -1,6 +1,9 @@
 import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis, hotelsoInAberdeen, hotelsoInEdinburgh, hotelsoInGlasgow } from './hotelsData.js'
 import { restaurantDataBarcelona, restaurantDataLondon, restaurantDataParis, restaurantDataAberdeen, restaurantDataEdinburgh, restaurantDataGlasgow } from './restaurantData.js'
 import  { thingsToDoInBarcelona, thingsToDoInLondon, thingsToDoInParis, thingsToDoInAberdeen, thingsToDoInEdinburgh, thingsToDoInGlasgow } from './thingsToDo.js'
+// import { restaurantDataBarcelona, restaurantDataLondon, restaurantDataParis } from './restaurantData.js'
+// import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis } from './hotelsData.js'
+
 export default [
   {
     name: 'Paris',

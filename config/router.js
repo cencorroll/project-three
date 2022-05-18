@@ -10,6 +10,7 @@ import { secureRoute } from './secureRoute.js'
 import { userRegister, userLogin } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
 import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -19,6 +20,9 @@ import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessa
 
 =======
 >>>>>>> 1f7e2cc0059e7270e7eafa305185e5f1ffc134d2
+=======
+import { getProfile } from '../controllers/users.js'
+>>>>>>> 1fd92dead2887917394abeefe994e5771e195ac1
 
 const router = express.Router()
 
@@ -87,5 +91,9 @@ router.route('/register')
 
 router.route('/login')
   .post(userLogin)
+
+//user
+router.route('/profile')
+  .get(secureRoute, getProfile)
 
 export default router
