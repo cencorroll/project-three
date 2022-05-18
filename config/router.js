@@ -1,5 +1,4 @@
 import express from 'express'
-import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 
 
 
@@ -7,6 +6,12 @@ import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessa
 import { userRegister, userLogin } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
 import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
+
+
+//import controllers
+import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
+
+
 
 const router = express.Router()
 
@@ -18,9 +23,9 @@ router.route('/cities')
   .post(secureRoute, addCity)
 
 router.route('/cities/:id')
-  .get(secureRoute,getSingleCity)
-  .put(secureRoute,updateCity)
-  .delete(secureRoute,deleteCity)
+  .get(getSingleCity)
+  .put(secureRoute, updateCity)
+  .delete(secureRoute, deleteCity)
 
 
 // ?SubSchema ROUTES
@@ -36,7 +41,7 @@ router.route('/cities/:id/fun')
   .post(secureRoute, addThingsToDo)
 
 router.route('/cities/:id/fun/:funId')
-  .delete(secureRoute, deleteThingsToDo )
+  .delete(secureRoute, deleteThingsToDo)
 
 // router.route('/cities/:id/fun/:funId/review')
 //   .post(secureRoute, addReviewFun)
@@ -49,7 +54,7 @@ router.route('/cities/:id/restaurant')
   .post(secureRoute, addRestaurant)
 
 router.route('/cities/:id/restaurant/:restaurantId')
-  .delete(secureRoute, deleteRestaurant )
+  .delete(secureRoute, deleteRestaurant)
 
 // router.route('/cities/:id/restaurant/review')
 //   .post(secureRoute, addReview)
