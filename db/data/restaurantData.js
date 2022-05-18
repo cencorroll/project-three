@@ -40,15 +40,15 @@ export const restaurantDataBarcelona = [
     description: 'Worst quesadilla ever!!',
     image: 'ssss',
     price: '$$$',
-    location: 'Downtown',
+    location: 'Downtown2',
     link: 'wwww.google.com',
   },
   {
-    name: 'Gourmet',
+    name: 'Gourmet1',
     description: 'Best pizza for price!',
     image: 'ssss',
     price: '$$$',
-    location: 'Downtown',
+    location: 'Downtown2',
     link: 'wwww.google.com',
   }
 ]

@@ -8,7 +8,7 @@ import { userRegister, userLogin } from '../controllers/auth.js'
 import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 
-
+import { getProfile } from '../controllers/users.js'
 
 const router = express.Router()
 
@@ -77,5 +77,9 @@ router.route('/register')
 
 router.route('/login')
   .post(userLogin)
+
+//user
+router.route('/profile')
+  .get(secureRoute, getProfile)
 
 export default router

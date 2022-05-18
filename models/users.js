@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
+import mongooseUniqueValidator from 'mongoose-unique-validator'
 
 
 const userSchema = new mongoose.Schema({
@@ -8,6 +9,27 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
 }, { id: false })
+// created virutal fields
+userSchema.virtual('createdCities',{
+  ref: 'City',
+  localField: '_id',
+  foreignField: 'owner',
+})
+// userSchema.virtual('createdFun',{
+//   ref: 'thingsToDoSchema',
+//   localField: '_id',
+//   foreignField:'owner'
+// })
+// userSchema.virtual('createdRestaurants',{
+//   ref: 'City',
+//   localField: '_id',
+//   foreignField:'owner'
+// })
+// userSchema.virtual('createdHotels',{
+//   ref: 'City',
+//   localField: '_id',
+//   foreignField:'owner'
+// })
 
 userSchema.set('toJSON', {
   virtuals: true,
@@ -47,5 +69,5 @@ userSchema
 userSchema.methods.validatePassword = function (plainPassword) {
   return bcrypt.compareSync(plainPassword, this.password)
 }
-  
+userSchema.plugin(mongooseUniqueValidator)
 export default mongoose.model('User', userSchema)
