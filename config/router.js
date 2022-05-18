@@ -1,5 +1,4 @@
 import express from 'express'
-<<<<<<< HEAD
 import { secureRoute } from './secureRoute.js'
 
 //import controllers
@@ -7,16 +6,6 @@ import { userRegister, userLogin } from '../controllers/auth.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
 
-=======
-import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
-
-//import controllers
-
-import { userRegister, userLogin } from '../controllers/auth.js'
-import { secureRoute } from './secureRoute.js'
-
-import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
->>>>>>> 37896395489139ec59eaafddef86d3350a3967c1
 
 const router = express.Router()
 
@@ -48,9 +37,7 @@ router.route('/cities/:id/fun')
 router.route('/cities/:id/fun/:funId')
   .delete(secureRoute, deleteThingsToDo)
 
-// router.route('/cities/:id/fun/:funId/review')
-//   .post(secureRoute, addReviewFun)
-
+// router.route('/cities/:id/fun/:fuy
 // router.route('/cities/:id/fun/:funId/review/:reviewID')
 //   .delete(secureRoute, deleteReviewFun)
 
