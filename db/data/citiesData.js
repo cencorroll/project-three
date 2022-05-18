@@ -1,6 +1,6 @@
-import  { thingsToDoInBarcelona, thingsToDoInLondon, thingsToDoInParis, thingsToDoInLisbon, thingsToDoInAmsterdam, thingsToDoInIstanbul, thingsToDoInPorto, thingsToDoInSeville } from './thingsToDo.js'
-import { restaurantDataBarcelona, restaurantDataLondon, restaurantDataParis, restaurantDataLisbon, restaurantDataIstanbul, restaurantDataPorto, restaurantDataSeville, restaurantDataAmsterdam } from './restaurantData.js'
-import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis, hotelsoInLisbon, hotelsoInIstanbul, hotelsoInPorto, hotelsoInSeville, hotelsoInAmsterdam } from './hotelsData.js'
+import  { thingsToDoInBarcelona, thingsToDoInLondon, thingsToDoInParis, thingsToDoInLisbon, thingsToDoInAmsterdam, thingsToDoInIstanbul, thingsToDoInPorto, thingsToDoInSeville, thingsToDoInAberdeen, thingsToDoInEdinburgh, thingsToDoInGlasgow } from './thingsToDo.js'
+import { restaurantDataBarcelona, restaurantDataLondon, restaurantDataParis, restaurantDataLisbon, restaurantDataIstanbul, restaurantDataPorto, restaurantDataSeville, restaurantDataAmsterdam, restaurantDataAberdeen, restaurantDataEdinburgh, restaurantDataGlasgow } from './restaurantData.js'
+import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis, hotelsoInLisbon, hotelsoInIstanbul, hotelsoInPorto, hotelsoInSeville, hotelsoInAmsterdam, hotelsoInAberdeen, hotelsoInEdinburgh, hotelsoInGlasgow } from './hotelsData.js'
 
 export default [
   {
@@ -10,19 +10,21 @@ export default [
     restaurants: restaurantDataParis,
     hotels: hotelsoInParis,
   },
+
   {
     name: 'London',
     image: 'sss',
     thingsToDo: thingsToDoInLondon,
-    restaurants: restaurantDataLondon,
+    restaurants: restaurantDataLondon ,
     hotels: hotelsoInLondon,
     // shortHistory: shortHistroyData,
   },
+  
   {
     name: 'Barcelona',
     image: 'sss',
     thingsToDo: thingsToDoInBarcelona,
-    restaurants: restaurantDataBarcelona,
+    restaurants: restaurantDataBarcelona ,
     hotels: hotelsoInBarcelona,
     // shortHistory: shortHistroyData,
   },
@@ -60,6 +62,31 @@ export default [
     thingsToDo: thingsToDoInAmsterdam,
     restaurants: restaurantDataAmsterdam,
     hotels: hotelsoInAmsterdam,
+  },
+  //? scottish cities
+  {
+    name: 'Edinburgh',
+    image: 'edin',
+    thingsToDo: thingsToDoInEdinburgh,
+    restaurants: restaurantDataEdinburgh,
+    hotels: hotelsoInEdinburgh,
+    // shortHistory: shortHistroyData,
+  },
+  {
+    name: 'Aberdeen',
+    image: 'aberdeen',
+    thingsToDo: thingsToDoInAberdeen,
+    restaurants: restaurantDataAberdeen,
+    hotels: hotelsoInAberdeen,
+    // shortHistory: shortHistroyData,
+  },
+  {
+    name: 'Glasgow',
+    image: 'glasgow',
+    thingsToDo: thingsToDoInGlasgow,
+    restaurants: restaurantDataGlasgow,
+    hotels: hotelsoInGlasgow,
+    // shortHistory: shortHistroyData,
   }
 
 ]
