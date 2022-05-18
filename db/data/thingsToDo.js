@@ -24,7 +24,7 @@ export const thingsToDoInParis = [
     link: 'wwww.google.com',
   }
 
-] 
+]
 
 export const thingsToDoInLondon = [
   {
@@ -52,7 +52,7 @@ export const thingsToDoInLondon = [
     link: 'wwww.google.com',
   }
 
-] 
+]
 
 export const thingsToDoInBarcelona = [
   {
@@ -80,7 +80,7 @@ export const thingsToDoInBarcelona = [
     link: 'wwww.google.com',
   }
 
-] 
+]
 export const thingsToDoInEdinburgh = [
   {
     name: 'Edinburgh Castle',
