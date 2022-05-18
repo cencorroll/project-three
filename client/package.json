@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.24",
     "axios": "^0.25.0",
     "eslint-plugin-react": "^7.29.4",
     "fullpage.js": "^4.0.7",
