@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import axios from 'axios'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import CitiesIndex from './components/CitiesIndex'
+import Home from './components/Home'
+import CitiesShow from './components/Cities/CitiesShow'
 
 const App = () => {
 
@@ -14,15 +15,14 @@ const App = () => {
   })
 
   return (
-    <>
-
+    <main className='site-wrapper'>
       <BrowserRouter>
         {/* <PageNav /> */}
         <Routes>
-          <Route path="/" element={<CitiesIndex />} />
+          <Route path="/" element={<CitiesShow />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </main>
   )
 }
 
