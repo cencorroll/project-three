@@ -66,10 +66,7 @@ export const deleteCity = async(req, res) => {
   const { id } = req.params
   try {
     const cityToDelete = await City.findById(id)
-    // Add the check to see if verified user and owner are the same 
-    if (!cityToDelete) {
-      return res.status(404).json({ message: 'City not found' })
-    }
+    if (!cityToDelete.owner.equals(req.verifiedUser._id)) throw new Error('Unauthorised !')
     await cityToDelete.remove()
     return res.sendStatus(204)
   } catch (error) {
