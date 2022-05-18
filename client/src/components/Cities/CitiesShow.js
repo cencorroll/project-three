@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate, Link, useParams } from 'react-router-dom'
 
 import Carousel from 'react-bootstrap/Carousel'
-// import BootstrapCarousel from '../BootstrapCarousel'
+
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -70,7 +70,6 @@ const CitiesShow = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      {/* </div> */}
     </Container>
   )
 
