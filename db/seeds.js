@@ -22,21 +22,6 @@ const seedDataBase = async () => {
       city.thingsToDo.forEach(thingToDo => thingToDo.owner = users[0]._id )
     })
 
-    
-
-    // citiesWithOwner.hotels = citiesWithOwner.hotels.map(hotel => {
-    //   console.log('hotel',hotel)
-    //   return { ...hotel, owner: users[0]._id }
-    // })
-    
-    // citiesWithOwner.restaurants = citiesWithOwner.restaurants.map(restaurant => {
-    //   return { ...restaurant, owner: users[0]._id }
-    // })
-
-    // citiesWithOwner.thingsToDo = citiesWithOwner.thingsToDo.map(fun => {
-    //   return { ...fun, owner: users[0]._id }
-    // })
-    
     const cities = await City.create(citiesWithOwner)
     console.log(cities.length)
     await mongoose.connection.close()

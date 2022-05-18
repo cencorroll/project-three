@@ -1,6 +1,6 @@
 export const thingsToDoInParis = [
   {
-    name: 'Shopping',
+    name: 'Shopphhhing',
     description: 'Go shopping on some of the most famous streets in Europe!',
     image: 'ssss',
     price: '$$$',
@@ -8,7 +8,7 @@ export const thingsToDoInParis = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Discover all the parks',
+    name: 'Discoverfffy all the parks',
     description: 'Walk arround the city, you will discover a lot of cool parks that are worth seeing!',
     image: 'ssss',
     price: '$$$',
@@ -16,19 +16,22 @@ export const thingsToDoInParis = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Go to the beach',
+    name: 'Go to  vvvthe beach',
     description: 'Enjoy a full day at the beach!',
     image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
   }
-
-] 
+]
 
 export const thingsToDoInLondon = [
   {
+<<<<<<< HEAD
     name: 'Football1',
+=======
+    name: 'Football8',
+>>>>>>> 95c9b6be051b0eeeea2d3eb61cd799303dc5a70b
     description: 'Check out one of the best leagues in the world !',
     image: 'ssss',
     price: '$$$',
@@ -36,7 +39,7 @@ export const thingsToDoInLondon = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Discover all the parks',
+    name: 'Discover all the parks0',
     description: 'Walk arround the city, you will discover a lot of cool parks that are worth seeing!',
     image: 'ssss',
     price: '$$$',
@@ -44,19 +47,22 @@ export const thingsToDoInLondon = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Phonebooth',
+    name: 'Phonebooth4',
     description: 'Take the most Londonishimage ever!',
     image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
   }
-
-] 
+]
 
 export const thingsToDoInBarcelona = [
   {
+<<<<<<< HEAD
     name: 'Football2',
+=======
+    name: 'Footballlll',
+>>>>>>> 95c9b6be051b0eeeea2d3eb61cd799303dc5a70b
     description: 'Check out one of the best leagues in the world !',
     image: 'ssss',
     price: '$$$',
@@ -64,7 +70,7 @@ export const thingsToDoInBarcelona = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Wine',
+    name: 'Wineee',
     description: 'Drink lots of Sangria!',
     image: 'ssss',
     price: '$$$',
@@ -72,13 +78,14 @@ export const thingsToDoInBarcelona = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Museum',
+    name: 'Museu',
     description: 'Check out the art museum!',
     image: 'ssss',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
   }
+<<<<<<< HEAD
 
 ] 
 export const thingsToDoInEdinburgh = [
@@ -122,3 +129,6 @@ export const thingsToDoInAberdeen = [
   },
 
 ] 
+=======
+]
+>>>>>>> 95c9b6be051b0eeeea2d3eb61cd799303dc5a70b
