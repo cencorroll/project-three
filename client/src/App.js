@@ -20,7 +20,7 @@ const App = () => {
       <BrowserRouter>
         {/* <PageNav /> */}
         <Routes>
-          <Route path="/" element={<FullPageCities />} />
+          <Route path="/cities/:id" element={<CitiesShow/>} />
         </Routes>
       </BrowserRouter>
     </main>

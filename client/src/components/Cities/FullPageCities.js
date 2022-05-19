@@ -4,33 +4,35 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import ReactFullpage from '@fullpage/react-fullpage'
 import CitiesShow from './CitiesShow'
 import Button from 'react-bootstrap/Button'
-
-
-
+import axios from 'axios'
 
 
 const Fullpage = () => (
 
+  
+
   <ReactFullpage
     //fullpage options
     licenseKey = {'YOUR_KEY_HERE'}
-    scrollingSpeed = {1000} /* Options here */
+    scrollingSpeed = { 1000 } /* Options here */
+
 
     render={({ state, fullpageApi }) => {
+      // fullpageApi.responsiveSlides.toSlides()
       return (
         <ReactFullpage.Wrapper>
           <div className="section">
-            <div id='1'>
-              <p>PARIS</p>
+            <div>
+              <p>Paris</p>
               <Button variant = 'dark' onClick={() => fullpageApi.moveSectionDown()}>
               CITIES TO SHOW 
               </Button>
             </div>
           </div>
           <div className="section" >
-            <div id='2'>
-              <p>Restaurants</p>
-            </div>
+            <p>Restaurants</p>
+            <div className="slide" data-anchor="slide1">Slide 2.1</div>
+            <div className="slide" data-anchor="slide2">Slide 2.2</div>
           </div>
           <div className="section">
             <p>Hotels</p>
@@ -44,6 +46,7 @@ const Fullpage = () => (
         </ReactFullpage.Wrapper>
       )
     }}
+
   />
 )
 
