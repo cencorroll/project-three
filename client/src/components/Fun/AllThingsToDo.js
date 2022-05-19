@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
+
 import axios from 'axios'
 
+// import bootstrap components
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 const AllThingsToDo = () => {
 
@@ -26,7 +32,26 @@ const AllThingsToDo = () => {
 
 
   return (
-    <h1>things to do</h1>
+    <Container>
+      <Row>
+        {funList.map(fun => {
+          const { _id, name, image } = fun
+          return (
+            <Col key={_id} lg="3" md="6" className='fun container-fluid mb-4'>
+              <Link to={`/Cities/${id}/fun/${_id}`}>
+                <Card>
+                  <Card.Img className="img-fluid" variant="top" src={image} />
+                  <Card.Body >
+                    <Card.Title className="text-center mb-0">{name}</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
+          )
+        }
+        )}
+      </Row>
+    </Container >
 
   )
 }
