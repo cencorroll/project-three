@@ -1,25 +1,22 @@
-import { useEffect } from 'react'
 import axios from 'axios'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import CitiesIndex from './components/CitiesIndex'
+
+//Components
+import Home from './components/Home'
+import PageNavBar from './components/PageNavBar'
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
 
 const App = () => {
-
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('/api/cities/') // * <-- replace with your endpoint
-      console.log(data)
-    }
-    getData()
-  })
-
   return (
     <>
-
       <BrowserRouter>
-        {/* <PageNav /> */}
+        <PageNavBar />
         <Routes>
-          <Route path="/" element={<CitiesIndex />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>
