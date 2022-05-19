@@ -7,34 +7,50 @@ import { Col, Container, Row, Card, Img } from 'react-bootstrap'
 const Home = () => {
 
   const [cities, setCities] = useState([])
-  const [randomCity, setRandomCity] = useState()
+  const [randomCities, setRandomCities] = useState([])
+  const [errors, setErrors] = useState(false)
 
   useEffect(() => {
-    const getData = async () => {
+    const getCities = async () => {
       try {
         const { data } = await axios.get('/api/cities/')
         setCities(data)
         console.log(data)
       } catch (error) {
         console.log(error)
+        setErrors(true)
       }
     }
-    getData()
+    getCities()
   }, [])
 
   useEffect(() => {
-    const randomCity = cities[Math.floor(Math.random() * cities.length)]
-    console.log(randomCity)
-    setRandomCity(randomCity)
-  }, [])
+    const getRandomCity = () => {
+      const randomCity = cities[Math.floor(Math.random() * cities.length)]
+      console.log(randomCity)
+      setRandomCities(randomCity)
+    }
+    getRandomCity()
+  }, [cities])
 
   return (
     <>
       <Container>
-        <img src={randomCity.image} />
-        <h1>{randomCity.name}</h1>
+        {
+          randomCities ?
+            <>
+              <Card.Img src={randomCities.image} />
+              <Card.Body>
+                <h1>{randomCities.name}</h1>
+              </Card.Body>
+            </>
+            :
+            <div className='text-center'>
+              {errors ? 'Something went wrong! Please try again later!' : <h2>Loading...</h2>}
+            </div>
+        }
       </Container>
-      <Container className='launch-list'>
+      {/* <Container className='launch-list'>
         <Row>
           {cities.map(city => {
             const { name, _id, image } = city
@@ -52,7 +68,7 @@ const Home = () => {
             )
           })}
         </Row>
-      </Container>
+      </Container> */}
     </>
   )
 }

@@ -9,7 +9,7 @@ export const hotelsoInBarcelona = [
 
   },
   {
-    name: 'Wine',
+    name: 'Wine1',
     description: 'Drink lots of Sangria!',
     image: 'ssss',
     price: '$$$',
@@ -17,7 +17,7 @@ export const hotelsoInBarcelona = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Museum',
+    name: 'Museum1',
     description: 'Check out the art museum!',
     image: 'ssss',
     price: '$$$',
@@ -56,7 +56,7 @@ export const hotelsoInLondon = [
 
 export const hotelsoInParis = [
   {
-    name: 'Gallery',
+    name: 'Gallery2',
     description: 'Very clean!',
     image: 'ssss',
     price: '$$$',
@@ -65,7 +65,7 @@ export const hotelsoInParis = [
 
   },
   {
-    name: 'Wine',
+    name: 'Wine2',
     description: 'Drink lots of Sangria!',
     image: 'ssss',
     price: '$$$',
@@ -73,7 +73,7 @@ export const hotelsoInParis = [
     link: 'wwww.google.com',
   },
   {
-    name: 'Museum',
+    name: 'Museum2',
     description: 'Check out the art museum!',
     image: 'ssss',
     price: '$$$',
