@@ -74,7 +74,7 @@ const citiesSchema = new mongoose.Schema({
   restaurants: [restaurantSchema],
   hotels: [hotelSchema],
   shortHistory: [shortHistorySchema],
-  // reviews: [reviewSchema],
+  reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,

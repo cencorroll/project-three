@@ -3,8 +3,8 @@ import axios from 'axios'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import CitiesShow from './components/Cities/CitiesShow'
-import FullPageCities from '../src/components/Cities/FullPageCities'
-
+import CitiesIndex from './components/Cities/CitiesIndex'
+// import FullPageCities from '../src/components/Cities/FullPageCities'
 const App = () => {
 
   useEffect(() => {
@@ -20,7 +20,9 @@ const App = () => {
       <BrowserRouter>
         {/* <PageNav /> */}
         <Routes>
-          <Route path="/cities/:id" element={<CitiesShow/>} />
+          <Route path="/" element={<CitiesIndex/>} />
+          {/* <Route path="/" element={<CitiesIndex/>} /> */}
+          <Route path="/api/cities/:id" element={<CitiesShow/>} />
         </Routes>
       </BrowserRouter>
     </main>

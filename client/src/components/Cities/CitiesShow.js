@@ -21,7 +21,7 @@ const CitiesShow = () => {
   useEffect(() => { 
     const getCities = async () => { 
       try {
-        const { data } = await axios.get('api/cities')
+        const { data } = await axios.get(`/api/cities/${id}`)
         console.log(data)
         setCities(data)
       } catch (error) {
@@ -30,23 +30,30 @@ const CitiesShow = () => {
       }
     }
     getCities()
-  }, [])
+  }, [id])
 
   return (
     <Container className='mt-3'>
-      <Carousel variant="dark" style={ { width: '70%' } }>
-        <Carousel.Item>
-          <img
-            className="d-block"
-            src="https://media.istockphoto.com/photos/eiffel-tower-in-paris-skyline-at-dawn-picture-id1280246120?b=1&k=20&m=1280246120&s=170667a&w=0&h=9g8hb-FTp7TfrN6gItpxDFKG0wPjwvnZQlNHZaxyeeI="
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
+      {cities.forEach(city => {
+        const { restaurant, hotels } = city
+        return (
+          <Carousel variant="dark" style={ { width: '70%' } }>
+            <Carousel.Item>
+              <img
+                className="d-block"
+                src = {city.restaurants}
+                alt="First slide"
+              />
+              <Carousel.Caption>
+                <h5>{cities.hotels}</h5>
+                <p>Check it out !</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+        )
+      })}
+      
+      {/* <Carousel.Item>
           <img
             className="d-block "
             src="https://media.istockphoto.com/photos/eiffel-tower-aerial-view-paris-picture-id1145422105?k=20&m=1145422105&s=612x612&w=0&h=IVTtz9ao9ywd5AltRNbr_K64LeuHeJ68J9ivjpztbEs="
@@ -67,8 +74,8 @@ const CitiesShow = () => {
             <h5>Third slide label</h5>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+        </Carousel.Item> */}
+      {/* </Carousel> */}
     </Container>
   )
 

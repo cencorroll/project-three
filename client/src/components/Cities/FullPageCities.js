@@ -9,7 +9,6 @@ import axios from 'axios'
 
 const Fullpage = () => (
 
-  
 
   <ReactFullpage
     //fullpage options
