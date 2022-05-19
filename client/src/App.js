@@ -3,6 +3,7 @@ import axios from 'axios'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import CitiesShow from './components/Cities/CitiesShow'
+import FullPageCities from '../src/components/Cities/FullPageCities'
 
 const App = () => {
 
@@ -19,7 +20,7 @@ const App = () => {
       <BrowserRouter>
         {/* <PageNav /> */}
         <Routes>
-          <Route path="/" element={<CitiesShow />} />
+          <Route path="/" element={<FullPageCities />} />
         </Routes>
       </BrowserRouter>
     </main>
