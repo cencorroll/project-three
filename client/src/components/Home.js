@@ -30,7 +30,11 @@ const Home = () => {
 
   return (
     <>
-      {/* <Container className='launch-list'>
+      <Container>
+        <img src={randomCity.image} />
+        <h1>{randomCity.name}</h1>
+      </Container>
+      <Container className='launch-list'>
         <Row>
           {cities.map(city => {
             const { name, _id, image } = city
@@ -48,9 +52,7 @@ const Home = () => {
             )
           })}
         </Row>
-      </Container> */}
-      <img src={randomCity.image} />
-      <h1>{randomCity.name}</h1>
+      </Container>
     </>
   )
 }

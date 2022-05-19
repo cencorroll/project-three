@@ -5,7 +5,9 @@ import { thingsToDoSchema } from '../models/citiesSchema.js'
 export const addReviewCities = async (req, res) => { 
   const { id } = req.params
   try {
-    const review = await City.findById(id)
+    const review = await City.findOne(City.forEach(city => { 
+      city.thingsToDo.forEach(fun => fun.reviews = req.body )
+    }))
     if (!review) throw new Error('City Not Found')
     const reviewOwner = { ...req.body, owner: req.verifiedUser._id }
     review.reviews.push(reviewOwner)
@@ -17,21 +19,21 @@ export const addReviewCities = async (req, res) => {
   }
 }
 
-// export const addReviewFun = async (req, res) => { 
-//   const { id } = req.params
-//   try {
-//     console.log('THings TO Do ->>>>>',thingsToDoSchema)
-//     const review = await City.findById(id)
-//     if (!review) throw new Error('City Not Found')
-//     const reviewOwner = { ...req.body, owner: req.verifiedUser._id }
-//     review.reviews.push(reviewOwner)
-//     review.save()
-//     return res.status(200).json(reviewOwner)
-//   } catch (error) {
-//     console.log(error)
-//     return res.status(422).json(error.name)
-//   }
-// }
+export const addReviewFun = async (req, res) => { 
+  const { id } = req.params
+  try {
+    console.log('THings TO Do ->>>>>',thingsToDoSchema)
+    const review = await City.findById(id)
+    if (!review) throw new Error('City Not Found')
+    const reviewOwner = { ...req.body, owner: req.verifiedUser._id }
+    review.reviews.push(reviewOwner)
+    review.save()
+    return res.status(200).json(reviewOwner)
+  } catch (error) {
+    console.log(error)
+    return res.status(422).json(error.name)
+  }
+}
 
 // export const deleteReviewFun = async (req, res) => { 
 //   const { id, reviewId } = req.params

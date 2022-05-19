@@ -40,7 +40,8 @@ router.route('/cities/:id/fun')
 router.route('/cities/:id/fun/:funId')
   .delete(secureRoute, deleteThingsToDo)
 
-// router.route('/cities/:id/fun/:fuy
+// router.route('/cities/:id/fun/:funId/review')
+//   .post(secureRoute, addReviewFun)
 // router.route('/cities/:id/fun/:funId/review/:reviewID')
 //   .delete(secureRoute, deleteReviewFun)
 
@@ -53,7 +54,6 @@ router.route('/cities/:id/restaurant/:restaurantId')
 
 // router.route('/cities/:id/restaurant/review')
 //   .post(secureRoute, addReview)
-
 
 
 //HOTELS
