@@ -20,7 +20,8 @@ const AllThingsToDo = () => {
   useEffect(() => {
     const getFunList = async () => {
       try {
-        const { data } = await axios.get(`api/cities/${id}`)
+        const { data } = await axios.get(`api/cities/${id}/fun`)
+        console.log(data)
         setFunList(data)
         console.log('loging',data)
       } catch (error) {

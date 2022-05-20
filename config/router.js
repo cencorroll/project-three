@@ -5,7 +5,7 @@ import { secureRoute } from './secureRoute.js'
 
 //import controllers
 import { userRegister, userLogin } from '../controllers/auth.js'
-import { getThingsToDo, getOneThingsToDo, addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities } from '../controllers/subSchema.js'
+import { getAllThingsToDo, getSingleThingsTodo , addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities, getSingleRestaurant, getAllRestaurants } from '../controllers/subSchema.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 
 import { getProfile } from '../controllers/users.js'
@@ -36,11 +36,11 @@ router.route('/cities/:id/review/:reviewId')
 
 //THINGS TO DO
 router.route('/cities/:id/fun')
-  .get(getThingsToDo)
+  .get(getAllThingsToDo)
   .post(secureRoute, addThingsToDo)
 
 router.route('/cities/:id/fun/:funId')
-  .get(getOneThingsToDo)
+  .get(getSingleThingsTodo)
   .delete(secureRoute, deleteThingsToDo)
 
 // router.route('/cities/:id/fun/:funId/review')
@@ -50,10 +50,11 @@ router.route('/cities/:id/fun/:funId')
 
 //RESTAURANTS
 router.route('/cities/:id/restaurant')
-  // .get(getRestaurants)
+  .get(getAllRestaurants)
   .post(secureRoute, addRestaurant)
 
-router.route('/cities/:id/restaurant/:restaurantId')
+router.route('/cities/:id/restaurants/:restaurantId')
+  .get(getSingleRestaurant)
   .delete(secureRoute, deleteRestaurant)
 
 // router.route('/cities/:id/restaurant/review')

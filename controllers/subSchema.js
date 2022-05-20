@@ -74,20 +74,30 @@ export const deleteReviewCities = async (req, res) => {
 
 // THINGS TO DO 
 
-export const getThingsToDo = async (req, res) => { 
-  const fun = await City.find().select('thingsToDo')
-  console.log(`There are ${fun.length} things to do inside this database!`)
-  return res.status(200).json(fun)
-}
-
-export const getOneThingsToDo = async (req, res) => {
+export const getAllThingsToDo = async (req, res, next) => { 
   const { id } = req.params
   try {
-    const requestedCity = await City.findById(id).select('thingsToDo').populate('_id')
-    if (!requestedCity) {
-      return res.status(404).json({ message: 'City not found' })
+    const city = await City.findOne( { id: id }).populate('thingsToDo')
+    const thingsToDoList = city.thingsToDo
+    // console.log('RESTAURANT ->', restaurantsList)
+    res.status(200).json(thingsToDoList)
+  } catch (error) {
+    console.log(error)
+    next(error)
+  }
+}
+
+export const getSingleThingsTodo = async (req, res) => { 
+  const { id, funId } = req.params
+  try {
+    const city = await City.findById(id).populate('thingsToDo')
+    console.log(city)
+    if (!city) return res.status(404).json({ message: 'City Not Found' })
+    const thingsTodo = await city.thingsToDo.find(thingsToDo => thingsToDo._id.toString() === funId )
+    if (!thingsTodo) {
+      return res.status(404).json({ message: 'Activity  not found' })
     }
-    return res.status(200).json(requestedCity)
+    return res.status(200).json(thingsTodo)
   } catch (error) {
     console.log(error)
     return res.status(404).json({ message: 'Something went wrong.' })
@@ -128,6 +138,37 @@ export const deleteThingsToDo = async (req, res) => {
 
 
 // RESTAURANTS 
+export const getSingleRestaurant = async (req, res) => { 
+  const { id, restaurantId } = req.params
+  console.log('PARAMS ->>>>',req.params)
+  try {
+    const city = await City.findById(id).populate('restaurants')
+    console.log(city)
+    if (!city) return res.status(404).json({ message: 'City Not Found' })
+    const restaurant = await city.restaurants.find(restaurant => restaurant._id.toString() === restaurantId )
+    if (!restaurant) {
+      return res.status(404).json({ message: 'Restaurant not found' })
+    }
+    return res.status(200).json(restaurant)
+  } catch (error) {
+    console.log(error)
+    return res.status(404).json({ message: 'Something went wrong.' })
+  }
+}
+
+export const getAllRestaurants = async (req, res, next) => { 
+  const { id } = req.params
+  try {
+    const city = await City.findOne( { id: id }).populate('restaurants')
+    const restaurantsList = city.restaurants
+    console.log('RESTAURANT ->', restaurantsList)
+    res.status(200).json(restaurantsList)
+  } catch (error) {
+    console.log(error)
+    next(error)
+  }
+}
+
 export const addRestaurant = async (req, res) => { 
   const { id } = req.params
   try {
