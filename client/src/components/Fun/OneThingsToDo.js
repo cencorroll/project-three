@@ -51,7 +51,7 @@ const GetFun = () => {
           </>
           :
           <h2 className='text-center'>
-            {errors ? 'No Hotel In Here :(' : 'Looking 👀...'}
+            {errors ? 'No Fun In Here :(' : 'Looking 👀...'}
           </h2>
         }
       </Row>
