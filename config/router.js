@@ -49,7 +49,7 @@ router.route('/cities/:id/fun/:funId')
 //   .delete(secureRoute, deleteReviewFun)
 
 //RESTAURANTS
-router.route('/cities/:id/restaurant')
+router.route('/cities/:id/restaurants')
   .get(getAllRestaurants)
   .post(secureRoute, addRestaurant)
 
@@ -62,11 +62,11 @@ router.route('/cities/:id/restaurants/:restaurantId')
 
 
 //HOTELS
-router.route('/cities/:id/hotel')
+router.route('/cities/:id/hotels')
   .get(getAllHotels)
   .post(secureRoute, addHotel)
 
-router.route('/cities/:id/hotel/:hotelId')
+router.route('/cities/:id/hotels/:hotelId')
   .get(getSingleHotels)
   .delete(secureRoute, deleteHotel)
 
