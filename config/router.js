@@ -49,7 +49,7 @@ router.route('/cities/:id/fun/:funId')
 //   .delete(secureRoute, deleteReviewFun)
 
 //RESTAURANTS
-router.route('/cities/:id/restaurant')
+router.route('/cities/:id/restaurants')
   .get(getAllRestaurants)
   .post(secureRoute, addRestaurant)
 
