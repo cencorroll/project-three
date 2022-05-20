@@ -88,7 +88,7 @@ const CitiesShow = () => {
           const { _id, name, description, image } = fun
           return (
             <Col key={_id} md='6' lg='4' className='hotel mb-4'>
-              <Link to={`/${cities.id}/fun/`}>
+              <Link to={`/api/cities/${cities._id}/fun/${_id}`}>
                 <Card>
                   <Card.Img varian='top' src={image} />
                   <Card.Body className='bd-light'>
@@ -101,6 +101,7 @@ const CitiesShow = () => {
             </Col>
           )
         })}
+        <Link to={`/api/cities/${cities._id}/fun/`} className="btn btn-secondary">View all</Link>
       </Row>
       <hr />
       <Row>

@@ -73,6 +73,27 @@ export const deleteReviewCities = async (req, res) => {
 
 
 // THINGS TO DO 
+
+export const getThingsToDo = async (req, res) => { 
+  const fun = await City.find().select('thingsToDo')
+  console.log(`There are ${fun.length} things to do inside this database!`)
+  return res.status(200).json(fun)
+}
+
+export const getOneThingsToDo = async (req, res) => {
+  const { id } = req.params
+  try {
+    const requestedCity = await City.findById(id).select('thingsToDo').populate('_id')
+    if (!requestedCity) {
+      return res.status(404).json({ message: 'City not found' })
+    }
+    return res.status(200).json(requestedCity)
+  } catch (error) {
+    console.log(error)
+    return res.status(404).json({ message: 'Something went wrong.' })
+  }
+}
+
 export const addThingsToDo = async (req, res) => { 
   const { id } = req.params
   try {

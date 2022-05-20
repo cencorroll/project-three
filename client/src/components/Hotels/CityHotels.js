@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
-const AllThingsToDo = () => {
+const CityHotels = () => {
 
   const { id } = useParams
 
@@ -57,4 +57,4 @@ const AllThingsToDo = () => {
   )
 }
 
-export default AllThingsToDo
+export default CityHotels

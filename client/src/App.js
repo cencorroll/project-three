@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/" element={<CitiesIndex />} />
           <Route path="/api/cities/:id" element={<CitiesShow />} />
           <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
-          <Route path="/api/cities/:id:id/fun/:funId" element={<OneThingsToDo />} />
+          <Route path="/api/cities/:id/fun/:funId" element={<OneThingsToDo />} />
           <Route path="*" element={<PageNotFound />} />
 
 
