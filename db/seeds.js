@@ -20,7 +20,7 @@ const seedDataBase = async () => {
       city.hotels.forEach(hotel => hotel.owner = users[0]._id )
       city.restaurants.forEach(restaurant => restaurant.owner = users[0]._id )
       city.thingsToDo.forEach(thingToDo => thingToDo.owner = users[0]._id )
-      city.shortHistory.forEach(history => history.owner = users[0]._id)
+      // city.shortHistory.forEach(history => history.owner = users[0]._id)
     })
     
     const cities = await City.create(citiesWithOwner)
