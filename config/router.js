@@ -31,7 +31,7 @@ router.route('/cities/:id/review')
   .post(secureRoute, addReviewCities)
 
 router.route('/cities/:id/review/:reviewId')
-  .delete(secureRoute, deleteReviewCities )
+  .delete(secureRoute, deleteReviewCities)
 
 //THINGS TO DO
 router.route('/cities/:id/fun')
