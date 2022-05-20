@@ -39,16 +39,19 @@ const Home = () => {
         {
           randomCities ?
             <>
-              <Card.Img src={randomCities.image} />
-              <Card.Body>
-                <h1>{randomCities.name}</h1>
-              </Card.Body>
+              <Link to={`/cities/${randomCities._id}`}>
+                <Card.Img src={randomCities.image} />
+                <Card.Body>
+                  <h1>{randomCities.name}</h1>
+                </Card.Body>
+              </Link>
             </>
             :
             <div className='text-center'>
               {errors ? 'Something went wrong! Please try again later!' : <h2>Loading...</h2>}
             </div>
         }
+
       </Container>
       {/* <Container className='launch-list'>
         <Row>
