@@ -21,11 +21,11 @@ const reviewSchema = new mongoose.Schema({
 
 
 export const thingsToDoSchema = new mongoose.Schema({
-  name: { type: String, required: true,  maxlength: 50 },
+  name: { type: String, required: true, maxlength: 50 },
   description: { type: String, required: true, maxlength: 1000 },
-  image: { type: String, required: true  },
-  price: { type: String, required: true }, 
-  location: { type: String }, 
+  image: { type: String, required: true },
+  price: { type: String, required: true },
+  location: { type: String },
   link: { type: String },
   reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -36,9 +36,9 @@ export const thingsToDoSchema = new mongoose.Schema({
 const restaurantSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   description: { type: String, required: true, maxlength: 1000 },
-  image: { type: String, required: true  },
-  price: { type: String, required: true }, 
-  location: { type: String }, 
+  image: { type: String, required: true },
+  price: { type: String, required: true },
+  location: { type: String },
   link: { type: String },
   reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -49,9 +49,9 @@ const restaurantSchema = new mongoose.Schema({
 const hotelSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   description: { type: String, required: true, maxlength: 1000 },
-  image: { type: String, required: true  },
-  price: { type: String, required: true }, 
-  location: { type: String }, 
+  image: { type: String, required: true },
+  price: { type: String, required: true },
+  location: { type: String },
   link: { type: String },
   reviews: [reviewSchema],
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -59,7 +59,7 @@ const hotelSchema = new mongoose.Schema({
   timestamps: true,
 })
 
-const shortHistorySchema =  new mongoose.Schema({
+const shortHistorySchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true, maxlength: 50 },
   description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true },

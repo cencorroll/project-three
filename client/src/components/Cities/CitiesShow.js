@@ -103,6 +103,7 @@ const CitiesShow = () => {
             </Col>
           )
         })}
+        <Link to={`/api/cities/${cities._id}/fun/`} className="btn btn-secondary">View all</Link>
       </Row>
       <hr />
       <Row>
