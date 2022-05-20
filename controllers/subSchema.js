@@ -70,6 +70,37 @@ export const deleteReviewCities = async (req, res) => {
 
 
 // THINGS TO DO 
+
+export const getAllThingsToDo = async (req, res, next) => { 
+  const { id } = req.params
+  try {
+    const city = await City.findOne( { id: id }).populate('thingsToDo')
+    const thingsToDoList = city.thingsToDo
+    // console.log('RESTAURANT ->', restaurantsList)
+    res.status(200).json(thingsToDoList)
+  } catch (error) {
+    console.log(error)
+    next(error)
+  }
+}
+
+export const getSingleThingsTodo = async (req, res) => { 
+  const { id, funId } = req.params
+  try {
+    const city = await City.findById(id).populate('thingsToDo')
+    console.log(city)
+    if (!city) return res.status(404).json({ message: 'City Not Found' })
+    const thingsTodo = await city.thingsToDo.find(thingsToDo => thingsToDo._id.toString() === funId )
+    if (!thingsTodo) {
+      return res.status(404).json({ message: 'Activity  not found' })
+    }
+    return res.status(200).json(thingsTodo)
+  } catch (error) {
+    console.log(error)
+    return res.status(404).json({ message: 'Something went wrong.' })
+  }
+}
+
 export const addThingsToDo = async (req, res) => { 
   const { id } = req.params
   try {
@@ -169,6 +200,38 @@ export const deleteRestaurant = async (req, res) => {
 
 
 // HOTELS
+// get
+//all
+export const getAllHotels = async (req, res, next) => { 
+  const { id } = req.params
+  try {
+    const city = await City.findOne( { id: id }).populate('hotels')
+    const hotelsList = city.hotels
+    console.log('RESTAURANT ->', hotelsList)
+    res.status(200).json(hotelsList)
+  } catch (error) {
+    console.log(error)
+    next(error)
+  }
+}
+//single
+export const getSingleHotels = async (req, res) => { 
+  const { id, hotelId } = req.params
+  try {
+    const city = await City.findById(id).populate('hotels')
+    console.log(city)
+    if (!city) return res.status(404).json({ message: 'City Not Found' })
+    const hotels = await city.hotels.find(hotels => hotels._id.toString() === hotelId )
+    if (!hotels) {
+      return res.status(404).json({ message: 'Hotel not found' })
+    }
+    return res.status(200).json(hotels)
+  } catch (error) {
+    console.log(error)
+    return res.status(404).json({ message: 'Something went wrong.' })
+  }
+}
+
 export const addHotel = async (req, res) => { 
   const { id } = req.params
   try {
@@ -203,6 +266,21 @@ export const deleteHotel = async (req, res) => {
 
 
 // Short History 
+
+//get
+export const getHistory = async (req, res, next) => { 
+  const { id } = req.params
+  try {
+    const city = await City.findOne( { id: id }).populate('shortHistory')
+    const history = city.shortHistory
+    res.status(200).json(history)
+  } catch (error) {
+    console.log(error)
+    next(error)
+  }
+}
+
+
 export const addHistory = async (req, res) => { 
   const { id } = req.params
   try {

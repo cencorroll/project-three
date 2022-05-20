@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
-const AllThingsToDo = () => {
+const CityHotels = () => {
 
   const { id } = useParams
 
@@ -20,8 +20,7 @@ const AllThingsToDo = () => {
   useEffect(() => {
     const getFunList = async () => {
       try {
-        const { data } = await axios.get(`api/cities/${id}/fun`)
-        console.log(data)
+        const { data } = await axios.get(`api/cities/${id}`)
         setFunList(data)
         console.log('loging',data)
       } catch (error) {
@@ -58,4 +57,4 @@ const AllThingsToDo = () => {
   )
 }
 
-export default AllThingsToDo
+export default CityHotels

@@ -42,7 +42,7 @@ const CitiesIndex = () => {
         {
           randomCities ?
             <>
-              <Link to={`/api/cities/${randomCities._id}`}>
+              <Link to={`api/cities/${randomCities._id}`}>
                 <Card.Img src={randomCities.image} />
                 <Card.Body>
                   <h1>{randomCities.name}</h1>
