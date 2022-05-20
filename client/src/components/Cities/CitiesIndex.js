@@ -51,7 +51,7 @@ const CitiesIndex = () => {
             </>
             :
             <div className='text-center'>
-              {errors ? 'Something went wrong! Please try again later!' : <h2>Loading...</h2>}
+              {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
             </div>
         }
       </Container>
