@@ -11,8 +11,6 @@ import Image from 'react-bootstrap/Image'
 
 const GetOneRestaurant = () => { 
 
-  const navigate = 
-
   return (
     <h1>Restaurant</h1>
   )
