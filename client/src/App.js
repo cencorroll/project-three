@@ -8,9 +8,7 @@ import PageNavBar from './components/PageNavBar'
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
 // import components
-import Home from './components/Home'
 import CitiesShow from './components/Cities/CitiesShow'
-
 import AllThingsToDo from './components/Fun/AllThingsToDo'
 import OneThingsToDo from './components/Fun/OneThingsToDo'
 import GetOneRestaurant from './components/Restaurants/GetOneRestaurant'
