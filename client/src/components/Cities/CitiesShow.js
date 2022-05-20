@@ -29,6 +29,8 @@ const CitiesShow = () => {
         const { data } = await axios.get(`/api/cities/${id}`)
         console.log(data)
         console.log(data.hotels)
+        console.log('FUN->',data.thingsToDo)
+        console.log('RESTAURANTS->', data.restaurants)
         setCities(data)
         setCitiesHotels(data.hotels)
         setCitiesRestaurants(data.restaurants)
@@ -39,7 +41,7 @@ const CitiesShow = () => {
       }
     }
     getCities()
-  }, [id])
+  }, [navigate])
 
   return (
 
@@ -68,7 +70,7 @@ const CitiesShow = () => {
           const { _id, name, description, image } = hotels
           return (
             <Col key={_id} md='6' lg='4' className='hotel mb-4'>
-              <Link to={`api/cities/${_id}`}>
+              <Link to={`/api/cities/${cities._id}/hotels/${_id}`}>
                 <Card>
                   <Card.Img varian='top' src={image} />
                   <Card.Body className='bd-light'>
@@ -85,15 +87,16 @@ const CitiesShow = () => {
       <hr />
       <Row>
         {citiesFun.map(fun => {
+          console.log(fun)
           const { _id, name, description, image } = fun
           return (
             <Col key={_id} md='6' lg='4' className='hotel mb-4'>
-              <Link to={`/${cities.id}/fun/`}>
+              <Link to={`/api/cities/${cities._id}/fun/${fun._id}`}>
                 <Card>
-                  <Card.Img varian='top' src={image} />
+                  <Card.Img varian='top' src={fun.image} />
                   <Card.Body className='bd-light'>
                     <Card.Title className='text-center mb-0'>
-                      {name}
+                      {fun.name}
                     </Card.Title>
                   </Card.Body>
                 </Card>
@@ -104,11 +107,11 @@ const CitiesShow = () => {
       </Row>
       <hr />
       <Row>
-        {citiesRestaurants.map(restaurants => {
-          const { _id, name, description, image } = restaurants
+        {citiesRestaurants.map(restaurant => {
+          const { _id, name, description, image } = restaurant
           return (
             <Col key={_id} md='6' lg='4' className='hotel mb-4'>
-              <Link to={`api/cities/${_id}`}>
+              <Link to={`/api/cities/${cities._id}/restaurants/${restaurant._id}`}>
                 <Card>
                   <Card.Img varian='top' src={image} />
                   <Card.Body className='bd-light'>

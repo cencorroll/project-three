@@ -107,6 +107,24 @@ export const deleteThingsToDo = async (req, res) => {
 
 
 // RESTAURANTS 
+export const getARestaurant = async (req, res) => { 
+  const { id } = req.params
+  console.log('PARAMS ->>>>',req.params)
+  try {
+    const city = await City.findById(id)
+    console.log(city)
+    console.log('CITY RESTAURANT --->>>>>', city.restaurants)
+    const restaurant = await City.restaurants.findById(id)
+    if (!restaurant) {
+      return res.status(404).json({ message: 'Restaurant not found' })
+    }
+    return res.status(200).json(restaurant)
+  } catch (error) {
+    console.log(error)
+    return res.status(404).json({ message: 'Something went wrong.' })
+  }
+}
+
 export const addRestaurant = async (req, res) => { 
   const { id } = req.params
   try {
