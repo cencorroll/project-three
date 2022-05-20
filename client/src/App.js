@@ -7,10 +7,19 @@ import Home from './components/Home'
 import PageNavBar from './components/PageNavBar'
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
+// import components
+// import Home from './components/Home'
 import CitiesShow from './components/Cities/CitiesShow'
+// import FullPageCities from '../src/components/Cities/FullPageCities'
+import AllThingsToDo from './components/Fun/AllThingsToDo'
+import OneThingsToDo from './components/Fun/OneThingsToDo'
+import PageNotFound from './components/utilities/PageNotFound'
+
+
 import CitiesIndex from './components/Cities/CitiesIndex'
 // import FullPageCities from '../src/components/Cities/FullPageCities'
 const App = () => {
+
   return (
     <main className='site-wrapper'>
       <BrowserRouter>
@@ -20,8 +29,14 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/cities" element={<CitiesIndex/>} />
+          <Route path="/" element={<CitiesIndex />} />
+          <Route path="/api/cities/:id" element={<CitiesShow />} />
+          <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
+          <Route path="/api/cities/:id:id/fun/:funId" element={<OneThingsToDo />} />
+          <Route path="*" element={<PageNotFound />} />
+
+
           {/* <Route path="/" element={<CitiesIndex/>} /> */}
-          <Route path="/api/cities/:id" element={<CitiesShow/>} />
         </Routes>
       </BrowserRouter>
     </main>

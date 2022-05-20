@@ -9,21 +9,30 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
+import PageNotFound from '../utilities/PageNotFound'
 
-const CitiesShow = () => { 
+const CitiesShow = () => {
 
   const navigate = useNavigate()
   const { id } = useParams()
 
-  const [ cities, setCities ] = useState([])
-  const [ errors, setErrors ] = useState(false)
+  const [cities, setCities] = useState([])
+  const [citiesHotels, setCitiesHotels] = useState([])
+  const [citiesRestaurants, setCitiesRestaurants] = useState([])
+  const [citiesFun, setCitiesFun] = useState([])
+  const [errors, setErrors] = useState(false)
 
-  useEffect(() => { 
-    const getCities = async () => { 
+  useEffect(() => {
+    const getCities = async () => {
       try {
         const { data } = await axios.get(`/api/cities/${id}`)
         console.log(data)
+        console.log(data.hotels)
         setCities(data)
+        setCitiesHotels(data.hotels)
+        setCitiesRestaurants(data.restaurants)
+        setCitiesFun(data.thingsToDo)
       } catch (error) {
         console.log(error)
         setErrors(true)
@@ -33,77 +42,88 @@ const CitiesShow = () => {
   }, [id])
 
   return (
-    <Container className='mt-3'>
-      {cities.forEach(city => {
-        const { restaurant, hotels } = city
-        return (
-          <Carousel variant="dark" style={ { width: '70%' } }>
-            <Carousel.Item>
-              <img
-                className="d-block"
-                src = {city.restaurants}
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h5>{cities.hotels}</h5>
-                <p>Check it out !</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-        )
-      })}
-      
-      {/* <Carousel.Item>
-          <img
-            className="d-block "
-            src="https://media.istockphoto.com/photos/eiffel-tower-aerial-view-paris-picture-id1145422105?k=20&m=1145422105&s=612x612&w=0&h=IVTtz9ao9ywd5AltRNbr_K64LeuHeJ68J9ivjpztbEs="
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block"
-            src="https://kkhotels-ce53.kxcdn.com/wp-content/uploads/2020/01/Paris-City-Eiffeltower-View.jpg"
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
-        </Carousel.Item> */}
-      {/* </Carousel> */}
+
+    <Container className="mt-4">
+      <Row>
+
+        <>
+          <Col>
+            <h2>{cities.name}</h2>
+          </Col>
+          <hr />
+          <Col md="6">
+            <Image rounded="false" fluid="true" className="mb-5" src={cities.image} alt={''} />
+          </Col>
+          <Col md="6" className="shadow-sm p-3 border">
+
+            <Link to="/" className="btn btn-secondary">Back to Cities</Link>
+          </Col>
+        </>
+
+
+      </Row>
+      <hr />
+      <Row>
+        {citiesHotels.map(hotels => {
+          const { _id, name, description, image } = hotels
+          return (
+            <Col key={_id} md='6' lg='4' className='hotel mb-4'>
+              <Link to={`api/cities/${_id}`}>
+                <Card>
+                  <Card.Img varian='top' src={image} />
+                  <Card.Body className='bd-light'>
+                    <Card.Title className='text-center mb-0'>
+                      {name}
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
+          )
+        })}
+      </Row>
+      <hr />
+      <Row>
+        {citiesFun.map(fun => {
+          const { _id, name, description, image } = fun
+          return (
+            <Col key={_id} md='6' lg='4' className='hotel mb-4'>
+              <Link to={`/${cities.id}/fun/`}>
+                <Card>
+                  <Card.Img varian='top' src={image} />
+                  <Card.Body className='bd-light'>
+                    <Card.Title className='text-center mb-0'>
+                      {name}
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
+          )
+        })}
+      </Row>
+      <hr />
+      <Row>
+        {citiesRestaurants.map(restaurants => {
+          const { _id, name, description, image } = restaurants
+          return (
+            <Col key={_id} md='6' lg='4' className='hotel mb-4'>
+              <Link to={`api/cities/${_id}`}>
+                <Card>
+                  <Card.Img varian='top' src={image} />
+                  <Card.Body className='bd-light'>
+                    <Card.Title className='text-center mb-0'>
+                      {name}
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
+          )
+        })}
+      </Row>
     </Container>
   )
-
-  // return ( 
-  //   <Container className='city-list'>
-  //     <Row>
-  //       {cities.map(city => {
-  //         const { _id, name, image } = city
-  //         return (
-  //           <Col key={_id} md='6' lg='4' className='bread mb-4'>
-  //             <Link to={`/cities/${_id}`}>
-  //               <Card>
-  //                 <Card.Img varian='top' src={image} />
-  //                 <Card.Body className = 'bd-light'>
-  //                   <Card.Title className='text-center mb-0'>
-  //                     {name}
-  //                   </Card.Title>
-  //                 </Card.Body>
-  //               </Card>
-  //             </Link>
-  //           </Col>
-  //         )
-  //       })}
-  //     </Row>
-  //   </Container>
-  // )
-
-
 }
 
 

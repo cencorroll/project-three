@@ -5,7 +5,7 @@ import { hotelsoInBarcelona, hotelsoInLondon, hotelsoInParis, hotelsoInLisbon, h
 export default [
   {
     name: 'Paris',
-    image: 'sss',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873',
     thingsToDo: thingsToDoInParis,
     restaurants: restaurantDataParis,
     hotels: hotelsoInParis,
@@ -13,7 +13,7 @@ export default [
 
   {
     name: 'London',
-    image: 'sss',
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870',
     thingsToDo: thingsToDoInLondon,
     restaurants: restaurantDataLondon ,
     hotels: hotelsoInLondon,
@@ -22,7 +22,7 @@ export default [
   
   {
     name: 'Barcelona',
-    image: 'sss',
+    image: 'https://images.unsplash.com/photo-1587789202069-f57c846b85db?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871',
     thingsToDo: thingsToDoInBarcelona,
     restaurants: restaurantDataBarcelona ,
     hotels: hotelsoInBarcelona,
@@ -66,7 +66,7 @@ export default [
   //? scottish cities
   {
     name: 'Edinburgh',
-    image: 'edin',
+    image: 'https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870',
     thingsToDo: thingsToDoInEdinburgh,
     restaurants: restaurantDataEdinburgh,
     hotels: hotelsoInEdinburgh,
@@ -74,7 +74,7 @@ export default [
   },
   {
     name: 'Aberdeen',
-    image: 'aberdeen',
+    image: 'https://images.unsplash.com/photo-1566222390510-514b1bb349b0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=867',
     thingsToDo: thingsToDoInAberdeen,
     restaurants: restaurantDataAberdeen,
     hotels: hotelsoInAberdeen,
@@ -82,7 +82,7 @@ export default [
   },
   {
     name: 'Glasgow',
-    image: 'glasgow',
+    image: 'https://images.unsplash.com/photo-1628874669577-7dd97c06517e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870',
     thingsToDo: thingsToDoInGlasgow,
     restaurants: restaurantDataGlasgow,
     hotels: hotelsoInGlasgow,
