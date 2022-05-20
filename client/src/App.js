@@ -30,12 +30,12 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
-          <Route path="/api/cities/:id" element={<CitiesShow />} />
+          <Route path="/cities/:id" element={<CitiesShow />} />
           {/* <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} /> */}
-          <Route path="/api/cities/:id/fun/:funId" element={<OneThingsToDo />} />
-          <Route path='/api/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
-          <Route path='/api/cities/:id/hotels/:hotelId' element={<GetOneHotel />} />
-          <Route path='/api/cities/:id/fun/:funId' element={<GetFun />} />
+          <Route path="/cities/:id/fun/:funId" element={<OneThingsToDo />} />
+          <Route path='/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
+          <Route path='/cities/:id/hotels/:hotelId' element={<GetOneHotel />} />
+          <Route path='/cities/:id/fun/:funId' element={<GetFun />} />
           <Route path="*" element={<PageNotFound />} />
 
 
