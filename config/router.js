@@ -5,7 +5,7 @@ import { secureRoute } from './secureRoute.js'
 
 //import controllers
 import { userRegister, userLogin } from '../controllers/auth.js'
-import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities, getARestaurant } from '../controllers/subSchema.js'
+import { addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, addHotel, deleteHotel, addHistory, deleteHistory, addReviewCities, deleteReviewCities, getSingleRestaurant, getAllRestaurants } from '../controllers/subSchema.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 
 import { getProfile } from '../controllers/users.js'
@@ -47,10 +47,11 @@ router.route('/cities/:id/fun/:funId')
 
 //RESTAURANTS
 router.route('/cities/:id/restaurant')
+  .get(getAllRestaurants)
   .post(secureRoute, addRestaurant)
 
 router.route('/cities/:id/restaurants/:restaurantId')
-  .get(getARestaurant)
+  .get(getSingleRestaurant)
   .delete(secureRoute, deleteRestaurant)
 
 // router.route('/cities/:id/restaurant/review')
