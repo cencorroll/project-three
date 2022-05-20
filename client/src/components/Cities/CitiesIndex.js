@@ -12,6 +12,8 @@ const CitiesIndex = () => {
 
   const navigate = useNavigate()
   const [ cities, setCities ] = useState([])
+  const [randomCities, setRandomCities] = useState([])
+  const [errors, setErrors] = useState(false)
 
   useEffect(() => { 
     const getCities = async () => { 
@@ -23,30 +25,59 @@ const CitiesIndex = () => {
       }
     }
     getCities()
-  },[navigate])
+  },[])
+
+  useEffect(() => {
+    const getRandomCity = () => {
+      const randomCity = cities[Math.floor(Math.random() * cities.length)]
+      console.log(randomCity)
+      setRandomCities(randomCity)
+    }
+    getRandomCity()
+  }, [cities])
 
   return ( 
-    <Container className='city-list'>
-      <Row>
-        {cities.map(city => {
-          const { _id, name, origin, image } = city
-          return (
-            <Col key={_id} md='6' lg='4' className='city mb-4'>
-              <Link to={`api/cities/${_id}`}>
-                <Card>
-                  <Card.Img varian='top' src={image} />
-                  <Card.Body className = 'bd-light'>
-                    <Card.Title className='text-center mb-0'>
-                      {name} 
-                    </Card.Title>
-                  </Card.Body>
-                </Card>
+    <>
+      <Container>
+        {
+          randomCities ?
+            <>
+              <Link to={`/cities/${randomCities._id}`}>
+                <Card.Img src={randomCities.image} />
+                <Card.Body>
+                  <h1>{randomCities.name}</h1>
+                </Card.Body>
               </Link>
-            </Col>
-          )
-        })}
-      </Row>
-    </Container>
+            </>
+            :
+            <div className='text-center'>
+              {errors ? 'Something went wrong! Please try again later!' : <h2>Loading...</h2>}
+            </div>
+        }
+      </Container>
+    
+      <Container className='city-list'>
+        <Row>
+          {cities.map(city => {
+            const { _id, name, origin, image } = city
+            return (
+              <Col key={_id} md='6' lg='4' className='city mb-4'>
+                <Link to={`api/cities/${_id}`}>
+                  <Card>
+                    <Card.Img varian='top' src={image} />
+                    <Card.Body className = 'bd-light'>
+                      <Card.Title className='text-center mb-0'>
+                        {name} 
+                      </Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            )
+          })}
+        </Row>
+      </Container>
+    </>
   )
 }
 
