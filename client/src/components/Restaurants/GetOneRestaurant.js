@@ -13,15 +13,16 @@ const GetOneRestaurant = () => {
 
   const navigate = useNavigate()
 
-  const { id } = useParams()
+  const { id, restaurantId } = useParams()
 
+  const [ city, setCity ] = useState([])
   const [ restaurant, setRestaurant ] = useState(null)
   const [ errors, setErrors ] = useState(false)
 
   useEffect(() => { 
     const getRestaurant = async () => {
       try {
-        const { data } = await axios.get(`/api/cities/${id}/restaurants/${id}`)
+        const { data } = await axios.get(`/api/cities/${id}/restaurants/${restaurantId}`)
         console.log(data)
         setRestaurant(data)
       } catch (error) {
@@ -29,7 +30,7 @@ const GetOneRestaurant = () => {
       }
     }
     getRestaurant()
-  }, [id])
+  }, [restaurantId])
 
 
   return (
@@ -45,7 +46,7 @@ const GetOneRestaurant = () => {
               <h3><span>🤤</span> Description </h3>
               <p>{restaurant.description}</p>
               <hr />
-              <Link to='/api/cities' className='btn btn-dark'>Back to List</Link>
+              <Link to={`/api/cities/${id}`} className='btn btn-dark'>Back to List</Link>
             </Col>
           </>
           :
