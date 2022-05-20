@@ -8,11 +8,12 @@ import PageNavBar from './components/PageNavBar'
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
 // import components
-// import Home from './components/Home'
+import Home from './components/Home'
 import CitiesShow from './components/Cities/CitiesShow'
-// import FullPageCities from '../src/components/Cities/FullPageCities'
+
 import AllThingsToDo from './components/Fun/AllThingsToDo'
 import OneThingsToDo from './components/Fun/OneThingsToDo'
+import GetOneRestaurant from './components/Restaurants/GetOneRestaurant'
 import PageNotFound from './components/utilities/PageNotFound'
 
 
@@ -30,8 +31,9 @@ const App = () => {
           <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
           <Route path="/api/cities/:id" element={<CitiesShow />} />
-          <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
-          <Route path="/api/cities/:id:id/fun/:funId" element={<OneThingsToDo />} />
+          {/* <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} /> */}
+          <Route path="/api/cities/:id/fun/:funId" element={<OneThingsToDo />} />
+          <Route path='/api/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
           <Route path="*" element={<PageNotFound />} />
 
 

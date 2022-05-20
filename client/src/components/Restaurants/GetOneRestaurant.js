@@ -9,49 +9,49 @@ import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 
 
-const GetFun = () => { 
+const GetOneRestaurant = () => { 
 
   const navigate = useNavigate()
 
-  const { id, funId } = useParams()
+  const { id, restaurantId } = useParams()
 
   const [ city, setCity ] = useState([])
-  const [ fun, setFun ] = useState(null)
+  const [ restaurant, setRestaurant ] = useState(null)
   const [ errors, setErrors ] = useState(false)
 
   useEffect(() => { 
-    const getFun = async () => {
+    const getRestaurant = async () => {
       try {
-        const { data } = await axios.get(`/api/cities/${id}/fun/${funId}`)
+        const { data } = await axios.get(`/api/cities/${id}/restaurants/${restaurantId}`)
         console.log(data)
-        setFun(data)
+        setRestaurant(data)
       } catch (error) {
         setErrors(true)
       }
     }
-    getFun()
-  }, [funId])
+    getRestaurant()
+  }, [restaurantId])
 
 
   return (
     <Container className='mt-3'>
       <Row>
-        { fun ? 
+        { restaurant ? 
           <>
-            <Col xs='12'><h1>{fun.name}</h1><hr/></Col>
+            <Col xs='12'><h1>{restaurant.name}</h1><hr/></Col>
             <Col md='6'>
-              <img src={fun.image} alt={fun.name} />
+              <img src={restaurant.image} alt={restaurant.name} />
             </Col>
             <Col md='6'>
               <h3><span>🤤</span> Description </h3>
-              <p>{fun.description}</p>
+              <p>{restaurant.description}</p>
               <hr />
               <Link to={`/api/cities/${id}`} className='btn btn-secondary'>Back to List</Link>
             </Col>
           </>
           :
           <h2 className='text-center'>
-            {errors ? 'No Hotel In Here :(' : 'Looking 👀...'}
+            {errors ? 'No Restaurant In Here :(' : 'Looking 👀...'}
           </h2>
         }
       </Row>
@@ -59,4 +59,4 @@ const GetFun = () => {
   )
 }
 
-export default GetFun
+export default GetOneRestaurant
