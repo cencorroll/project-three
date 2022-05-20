@@ -5,9 +5,6 @@ import { thingsToDoSchema } from '../models/citiesSchema.js'
 export const addReviewCities = async (req, res) => { 
   const { id } = req.params
   try {
-    // const review = await City.findOne(City.forEach(city => { 
-    //   city.thingsToDo.forEach(fun => fun.reviews = req.body )
-    // }))
     const review = await City.findById(id)
     if (!review) throw new Error('City Not Found')
     const reviewOwner = { ...req.body, owner: req.verifiedUser._id }

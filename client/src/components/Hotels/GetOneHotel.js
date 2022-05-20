@@ -9,49 +9,49 @@ import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 
 
-const GetOneRestaurant = () => { 
+const GetOneHotel = () => { 
 
   const navigate = useNavigate()
 
-  const { id, restaurantId } = useParams()
+  const { id, hotelId } = useParams()
 
   const [ city, setCity ] = useState([])
-  const [ restaurant, setRestaurant ] = useState(null)
+  const [ hotel, setHotel ] = useState(null)
   const [ errors, setErrors ] = useState(false)
 
   useEffect(() => { 
-    const getRestaurant = async () => {
+    const getHotel = async () => {
       try {
-        const { data } = await axios.get(`/api/cities/${id}/restaurants/${restaurantId}`)
+        const { data } = await axios.get(`/api/cities/${id}/hotels/${hotelId}`)
         console.log(data)
-        setRestaurant(data)
+        setHotel(data)
       } catch (error) {
         setErrors(true)
       }
     }
-    getRestaurant()
-  }, [restaurantId])
+    getHotel()
+  }, [hotelId])
 
 
   return (
     <Container className='mt-3'>
       <Row>
-        { restaurant ? 
+        { hotel ? 
           <>
-            <Col xs='12'><h1>{restaurant.name}</h1><hr/></Col>
+            <Col xs='12'><h1>{hotel.name}</h1><hr/></Col>
             <Col md='6'>
-              <img src={restaurant.image} alt={restaurant.name} />
+              <img src={hotel.image} alt={hotel.name} />
             </Col>
             <Col md='6'>
               <h3><span>🤤</span> Description </h3>
-              <p>{restaurant.description}</p>
+              <p>{hotel.description}</p>
               <hr />
               <Link to={`/api/cities/${id}`} className='btn btn-secondary'>Back to List</Link>
             </Col>
           </>
           :
           <h2 className='text-center'>
-            {errors ? 'No Restaurant In Here :(' : 'Looking 👀...'}
+            {errors ? 'No Hotel In Here :(' : 'Looking 👀...'}
           </h2>
         }
       </Row>
@@ -59,4 +59,4 @@ const GetOneRestaurant = () => {
   )
 }
 
-export default GetOneRestaurant
+export default GetOneHotel

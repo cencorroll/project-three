@@ -1,11 +1,14 @@
-import { useEffect } from 'react'
 import axios from 'axios'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// import components
+//Components
 import Home from './components/Home'
+import PageNavBar from './components/PageNavBar'
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
+// import components
 import CitiesShow from './components/Cities/CitiesShow'
-
 import AllThingsToDo from './components/Fun/AllThingsToDo'
 import OneThingsToDo from './components/Fun/OneThingsToDo'
 import GetOneRestaurant from './components/Restaurants/GetOneRestaurant'
@@ -13,27 +16,26 @@ import PageNotFound from './components/utilities/PageNotFound'
 
 
 import CitiesIndex from './components/Cities/CitiesIndex'
+import GetOneHotel from './components/Hotels/GetOneHotel'
+import GetFun from './components/Fun/OneThingsToDo'
 // import FullPageCities from '../src/components/Cities/FullPageCities'
 const App = () => {
-
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('/api/cities/') // * <-- replace with your endpoint
-      // console.log(data)
-    }
-    getData()
-  })
 
   return (
     <main className='site-wrapper'>
       <BrowserRouter>
-        {/* <PageNav /> */}
+        <PageNavBar />
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
           <Route path="/api/cities/:id" element={<CitiesShow />} />
-          <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
+          {/* <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} /> */}
           <Route path="/api/cities/:id/fun/:funId" element={<OneThingsToDo />} />
           <Route path='/api/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
+          <Route path='/api/cities/:id/hotels/:hotelId' element={<GetOneHotel />} />
+          <Route path='/api/cities/:id/fun/:funId' element={<GetFun />} />
           <Route path="*" element={<PageNotFound />} />
 
 
