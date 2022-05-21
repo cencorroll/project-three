@@ -11,7 +11,7 @@ const PageNavBar = () => {
   const Navigate = useNavigate()
 
   const handleLogOut = () => {
-    window.localStorage.removeItem('sei-63-breadbored')
+    window.localStorage.removeItem('cities-app')
     Navigate('/login')
   }
 

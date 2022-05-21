@@ -42,7 +42,7 @@ const CitiesIndex = () => {
         {
           randomCities ?
             <>
-              <Link to={`api/cities/${randomCities._id}`}>
+              <Link to={`/cities/${randomCities._id}`}>
                 <Card.Img src={randomCities.image} />
                 <Card.Body>
                   <h1>{randomCities.name}</h1>
@@ -62,9 +62,9 @@ const CitiesIndex = () => {
             const { _id, name, origin, image } = city
             return (
               <Col key={_id} md='6' lg='4' className='city mb-4'>
-                <Link to={`api/cities/${_id}`}>
+                <Link to={`cities/${_id}`}>
                   <Card>
-                    <Card.Img varian='top' src={image} />
+                    <Card.Img variant='top' src={image} />
                     <Card.Body className = 'bd-light'>
                       <Card.Title className='text-center mb-0'>
                         {name} 

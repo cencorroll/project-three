@@ -5,7 +5,7 @@ import { secureRoute } from './secureRoute.js'
 
 //import controllers
 import { userRegister, userLogin } from '../controllers/auth.js'
-import { getAllThingsToDo, getSingleThingsTodo , addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, getAllHotels, getSingleHotels, addHotel, deleteHotel, getHistory, addHistory, deleteHistory, addReviewCities, deleteReviewCities, getSingleRestaurant, getAllRestaurants } from '../controllers/subSchema.js'
+import { getAllThingsToDo, getSingleThingsTodo , addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, getAllHotels, getSingleHotels, addHotel, deleteHotel, getHistory, addHistory, deleteHistory, addReviewCities, deleteReviewCities, getSingleRestaurant, getAllRestaurants, addRestaurantReview } from '../controllers/subSchema.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 
 import { getProfile } from '../controllers/users.js'
@@ -27,11 +27,11 @@ router.route('/cities/:id')
 
 // ?SubSchema ROUTES
 //REVIEWS
-router.route('/cities/:id/review')
+router.route('/cities/:id/reviews')
   // .get(getReviewCities)
   .post(secureRoute, addReviewCities)
 
-router.route('/cities/:id/review/:reviewId')
+router.route('/cities/:id/reviews/:reviewId')
   .delete(secureRoute, deleteReviewCities)
 
 //THINGS TO DO
@@ -49,7 +49,7 @@ router.route('/cities/:id/fun/:funId')
 //   .delete(secureRoute, deleteReviewFun)
 
 //RESTAURANTS
-router.route('/cities/:id/restaurant')
+router.route('/cities/:id/restaurants')
   .get(getAllRestaurants)
   .post(secureRoute, addRestaurant)
 
@@ -57,8 +57,12 @@ router.route('/cities/:id/restaurants/:restaurantId')
   .get(getSingleRestaurant)
   .delete(secureRoute, deleteRestaurant)
 
-// router.route('/cities/:id/restaurant/review')
-//   .post(secureRoute, addReview)
+router.route('/cities/:id/restaurants/:restaurantId/review')
+  .post(secureRoute, addRestaurantReview)
+
+router.route('/cities/:id/restaurants/:restaurantId/review/reviewId')
+  .get(addRestaurantReview)
+
 
 
 //HOTELS
