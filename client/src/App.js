@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './styles/main.css'
 
 //Components
 import Home from './components/Home'
@@ -31,11 +32,11 @@ const App = () => {
           <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
           <Route path="/api/cities/:id" element={<CitiesShow />} />
-          {/* <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} /> */}
+          <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
           <Route path="/api/cities/:id/fun/:funId" element={<OneThingsToDo />} />
           <Route path='/api/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
           <Route path='/api/cities/:id/hotels/:hotelId' element={<GetOneHotel />} />
-          <Route path='/api/cities/:id/fun/:funId' element={<GetFun />} />
+          {/* <Route path='/api/cities/:id/fun/:funId' element={<GetFun />} /> */}
           <Route path="*" element={<PageNotFound />} />
 
 
