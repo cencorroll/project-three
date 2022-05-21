@@ -3,6 +3,10 @@ import axios from 'axios'
 import { useNavigate, Link, useParams } from 'react-router-dom'
 
 import Carousel from 'react-bootstrap/Carousel'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+// import { Carousel } from 'react-responsive-carousel'
+// import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -43,103 +47,85 @@ const CitiesShow = () => {
 
   return (
     <Container className="mt-4">
-      <Row>
-        <>
-          <Col>
-            <h2>{cities.name}</h2>
-          </Col>
-          <hr />
-          <Col md="6">
-            <Image
-              rounded="false"
-              fluid="true"
-              className="mb-5"
-              src={cities.image}
-              alt={''}
-            />
-          </Col>
-          <Col md="6" className="shadow-sm p-3 border">
-            <Link to="/" className="btn btn-secondary">
+      {/* <Row> */}
+      {/* <>
+        <Col>
+          <h2>{cities.name}</h2>
+        </Col>
+        <hr />
+        <Col md="6">
+          <Image
+            rounded="false"
+            fluid="true"
+            className="d-block w-100% mb-5"
+            src={cities.image}
+            alt={cities.name}
+          />
+        </Col>
+      </> */}
+      <>
+        <Card.Img src={cities.image} />
+        <Card.Body>
+          <h1>{cities.name}</h1>
+        </Card.Body>
+      </>
+      {/* </Row> */}
+      {/* <Col md="6" className="shadow-sm p-3 border"> */}
+      <Link to="/" className="btn btn-secondary">
               Back to Cities
-            </Link>
-          </Col>
-        </>
-      </Row>
+      </Link>
+      {/* </Col> */}
+        
+      {/* <hr /> */}
       <hr />
-      <Row>
-        {citiesHotels.map((hotels) => {
-          const { _id, name, description, image } = hotels
-          return (
-            <Col key={_id} md="6" lg="4" className="hotel mb-4">
-              <Link to={`/api/cities/${cities._id}/hotels/${_id}`}>
-                <Card>
-                  <Card.Img varian="top" src={image} />
-                  <Card.Body className="bd-light">
-                    <Card.Title className="text-center mb-0">{name}</Card.Title>
-                  </Card.Body>
-                </Card>
-              </Link>
-            </Col>
-          )
-        })}
-      </Row>
-      <hr />
-      <Row>
+      <Carousel variant="dark" >
         {citiesFun.map((fun) => {
-          console.log(fun)
-          const { _id, name, description, image } = fun
           return (
-            <Col key={_id} md="6" lg="4" className="hotel mb-4">
-              <Link to={`/api/cities/${cities._id}/fun/${_id}`}>
-                <Card>
-                  <Card.Img varian="top" src={fun.image} />
-                  <Card.Body className="bd-light">
-                    <Card.Title className="text-center mb-0">
-                      {fun.name}
-                    </Card.Title>
-                  </Card.Body>
-                </Card>
+            <Carousel.Item interval={2000} key={fun._id}>
+              <Link to={`/api/cities/${cities._id}/funs/${fun._id}`}  key= {fun._id}>
+                <img key={fun._id} className="d-block w-100" src={fun.image} alt={fun.name} />
               </Link>
-            </Col>
+              <Carousel.Caption>
+                <h5 key={fun._id}>{fun.name}</h5>
+                <p key={fun._id}>{fun.description}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
           )
         })}
-        <Link to={`/api/cities/${cities._id}/fun/`} className="btn btn-secondary">View all</Link>
-      </Row>
+      </Carousel>
       <hr />
-      <Row>
-        {citiesRestaurants.map(restaurant => {
-          const { _id, name, description, image } = restaurant
+
+      <Carousel variant="dark" >
+        {citiesHotels.map((hotel) => {
           return (
-            <Col key={_id} md='6' lg='4' className='hotel mb-4'>
-              <Link to={`/api/cities/${cities._id}/restaurants/${_id}`}>
-                <Card>
-                  <Card.Img varian='top' src={image} />
-                  <Card.Body className='bd-light'>
-                    <Card.Title className='text-center mb-0'>
-                      {name}
-                    </Card.Title>
-                  </Card.Body>
-                </Card>
+            <Carousel.Item interval={2000} key={hotel._id}>
+              <Link to={`/api/cities/${cities._id}/hotels/${hotel._id}`}  key= {hotel._id}>
+                <img key={hotel._id} className="d-block w-100" src={hotel.image} alt={hotel.name} />
               </Link>
-            </Col>
+              <Carousel.Caption>
+                <h5 key={hotel._id}>{hotel.name}</h5>
+                <p key={hotel._id}>{hotel.description}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
           )
         })}
-      </Row>
-      {/* <Carousel variant="dark" >
+      </Carousel>
+      <hr />
+      <Carousel variant="dark" >
         {citiesRestaurants.map((restaurant) => {
           return (
-            <Col key={restaurant._id}>
-              <Carousel.Item interval={100}>
-                <Image className="d-block w-100" src={restaurant.image} alt={restaurant.name} />
-                <Carousel.Caption>
-                  <h5>{restaurant.name}</h5>
-                  <p>{restaurant.description}</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            </Col>
+            <Carousel.Item interval={2000} key={restaurant._id}>
+              <Link to={`/api/cities/${cities._id}/restaurants/${restaurant._id}`}  key= {restaurant._id}>
+                <img key={restaurant._id} className="d-block w-100" src={restaurant.image} alt={restaurant.name} />
+              </Link>
+              <Carousel.Caption>
+                <h5 key={restaurant._id}>{restaurant.name}</h5>
+                <p key={restaurant._id}>{restaurant.description}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
           )
         })}
-      </Carousel> */}
+      </Carousel>
     </Container>
   )
 }

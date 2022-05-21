@@ -76,7 +76,6 @@ export const getAllThingsToDo = async (req, res, next) => {
   try {
     const city = await City.findOne( { id: id }).populate('thingsToDo')
     const thingsToDoList = city.thingsToDo
-    // console.log('RESTAURANT ->', restaurantsList)
     res.status(200).json(thingsToDoList)
   } catch (error) {
     console.log(error)
@@ -153,12 +152,36 @@ export const getSingleRestaurant = async (req, res) => {
   }
 }
 
+export const addRestaurantReview = async (req, res) => { 
+  const { id, restaurantId } = req.params
+  try {
+    const city = await City.findById(id).populate('restaurants').populate('reviews')
+    if (!city) return res.status(404).json({ message: 'City Not Found' })
+    const restaurant = await city.restaurants.find(restaurant => restaurant._id.toString() === restaurantId)
+    if (!restaurant) {
+      return res.status(404).json({ message: 'Restaurant not found' })
+    }
+    console.log('RESTAURANT --->>>>', restaurant)
+    // const review = await city.restaurants.reviews.find( review => review._id.toStrong() === reviewId)
+    // const review = { ...restaurant, reviews: req.body }
+    const reviewWithOwner = { ...req.body, owner: req.verifiedUser._id }
+    console.log('RESTAURANT REVIEWS BEFORE PUSHING ->', restaurant.reviews)
+    restaurant.reviews.push(reviewWithOwner)
+    console.log('RESTAURANT REVIEWS ->', restaurant.reviews)
+    // save()
+    return res.status(200).json(restaurant)
+  } catch (error) {
+    console.log(error)
+    return res.status(422).json(error.name)
+  }
+}
+
+
 export const getAllRestaurants = async (req, res, next) => { 
   const { id } = req.params
   try {
     const city = await City.findOne( { id: id }).populate('restaurants')
     const restaurantsList = city.restaurants
-    console.log('RESTAURANT ->', restaurantsList)
     res.status(200).json(restaurantsList)
   } catch (error) {
     console.log(error)
