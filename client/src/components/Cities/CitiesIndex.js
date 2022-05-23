@@ -95,9 +95,8 @@ const CitiesIndex = () => {
 
       <CityList filteredCities={filteredCities} /> */}
       <Form>
-        <Form.Group className="mb-3 ">
-          <Form.Label >Search</Form.Label>
-          <FormControl type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go?" onChange={handleChange} />
+        <Form.Group className='search'>
+          <FormControl className='search-bar' type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go?" onChange={handleChange} />
         </Form.Group>
       </Form>
 
@@ -109,7 +108,7 @@ const CitiesIndex = () => {
               <Col key={_id} md='6' lg='4' className='city mb-4'>
                 <Link to={`cities/${_id}`}>
                   <Card>
-                    <Card.Img variant='top' src={image} />
+                    <Card.Img className='card-img' variant='top' src={image} />
                     <Card.Body className='bd-light'>
                       <Card.Title className='text-center mb-0'>
                         {name}
