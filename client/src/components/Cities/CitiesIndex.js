@@ -48,49 +48,13 @@ const CitiesIndex = () => {
   }
 
   return (
-<<<<<<< HEAD
-    <Container>
-      {randomCities ?
-        <>
-          <Link to={`cities/${randomCities._id}`}>
-            <img
-              className='w-full h-[440px] object-cover'
-              src={randomCities.image}
-              alt='' />
-            <Card.Body>
-              <h1>{randomCities.name}</h1>
-            </Card.Body>
-          </Link>
-        </>
-        :
-        <div className='text-center'>
-          {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
-        </div>}
-    {/* </Container> */}
-    {/* <div className='relative flex items-center'>
-      <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={40} />
-      <div
-        id='slider'
-        className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
-      >
-        {cities.map(city => {
-          <img className='w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300' src={city.image} alt={city.name} />
-        })}
-      </div>
-      <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={40} />
-    </div></> */
-=======
     <>
       <Container>
         {
           randomCities ?
             <>
-              <Link to={`cities/${randomCities._id}`}>
-                <img
-                  className='w-full h-[440px] object-cover'
-                  src={randomCities.image}
-                  alt=''
-                />
+              <Link to={`/cities/${randomCities._id}`}>
+                <Card.Img src={randomCities.image} />
                 <Card.Body>
                   <h1>{randomCities.name}</h1>
                 </Card.Body>
@@ -111,7 +75,7 @@ const CitiesIndex = () => {
                 <Link to={`cities/${_id}`}>
                   <Card>
                     <Card.Img variant='top' src={image} />
-                    <Card.Body className='bd-light'>
+                    <Card.Body className = 'bd-light'>
                       <Card.Title className='text-center mb-0'>
                         {name}
                       </Card.Title>
@@ -123,64 +87,7 @@ const CitiesIndex = () => {
           })}
         </Row>
       </Container>
-      {/* <div className='relative flex items-center'>
-        <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={40} />
-        <div
-          id='slider'
-          className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
-        >
-          {cities.map(city => {
-            const { image } = city
-            <img
-              className='w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'
-              src={image}
-              alt='/' />
-          })}
-        </div>
-        <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={40} />
-      </div> */}
     </>
->>>>>>> 7bbc99a5edbdad6b9a55a3daab2cf5d079ec17a2
-
-  //? old code below
-  
-    <>
-          //? old code below
-          <Container>
-            {randomCities ?
-              <>
-                <Link to={`api/cities/${randomCities._id}`}>
-                  <Card.Img src={randomCities.image} />
-                  <Card.Body>
-                    <h1>{randomCities.name}</h1>
-                  </Card.Body>
-                </Link>
-              </>
-              :
-              <div className='text-center'>
-                {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
-              </div>}
-          </Container><Container className='city-list'>
-            <Row>
-              {cities.map(city => {
-                const { _id, name, origin, image } = city
-                return (
-                  <Col key={_id} md='6' lg='4' className='city mb-4'>
-                    <Link to={`api/cities/${_id}`}>
-                      <Card>
-                        <Card.Img variant='top' src={image} />
-                        <Card.Body className='bd-light'>
-                          <Card.Title className='text-center mb-0'>
-                            {name}
-                          </Card.Title>
-                        </Card.Body>
-                      </Card>
-                    </Link>
-                  </Col>
-                )
-              })}
-            </Row>
-          </Container></>
   )
 }
 
