@@ -8,6 +8,10 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+
+import CityList from '../Filtered Cities/CityList'
 
 const CitiesIndex = () => {
 
@@ -15,6 +19,11 @@ const CitiesIndex = () => {
   const [cities, setCities] = useState([])
   const [randomCities, setRandomCities] = useState([])
   const [errors, setErrors] = useState(false)
+  const [filters, setFilters] = useState({
+    city: 'All',
+    searchTerm: '',
+  })
+  const [filteredCities, setFilteredCities] = useState([])
 
   useEffect(() => {
     const getCities = async () => {
@@ -37,6 +46,25 @@ const CitiesIndex = () => {
     getRandomCity()
   }, [cities])
 
+  //? searchbar filter
+  const handleChange = (e) => {
+    console.log(e.target.name, e.target.value)
+    setFilters({ ...filters, [e.target.name]: e.target.value })
+    console.log('filtered list ->', filters)
+  }
+
+  useEffect(() => {
+    if (cities.length) {
+      const regexSearch = new RegExp(filters.searchTerm, 'i')
+      console.log(regexSearch)
+      const filtered = cities.filter(city => {
+        return regexSearch.test(city.name) || (filters.name === 'All')
+      })
+      setFilteredCities(filtered)
+      console.log(filteredCities)
+    }
+  }, [filters, cities])
+
   return (
     <>
       <Container>
@@ -44,12 +72,10 @@ const CitiesIndex = () => {
           randomCities ?
             <>
               <Link to={`/cities/${randomCities._id}`}>
-                <Card>
-                  <Card.Img src={randomCities.image} />
-                  <Card.ImgOverlay>
-                    <Card.Header className='text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{randomCities.name}</Card.Header>
-                  </Card.ImgOverlay>
-                </Card>
+                {/* <Card.Img className='randomImg' src={randomCities.image} /> */}
+                <Card.Body className='randomImg' style={{ backgroundImage: `url(${randomCities.image})` }}>
+                  <h1 className='randomImgText'>Discover {randomCities.name}</h1>
+                </Card.Body>
               </Link>
             </>
             :
@@ -60,10 +86,24 @@ const CitiesIndex = () => {
 
 
       </Container>
+
+      {/* //? input for filter below  */}
+      {/* <Container>
+        <input type="text" name="searchTerm" placeholder='Where do you want to go?' value={filters.searchTerm} onChange={handleChange} />
+      </Container>
+
+      <CityList filteredCities={filteredCities} /> */}
+      <Form>
+        <Form.Group className="mb-3 ">
+          <Form.Label >Search</Form.Label>
+          <FormControl type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go?" onChange={handleChange} />
+        </Form.Group>
+      </Form>
+
       <Container className='city-list'>
         <Row>
-          {cities.map(city => {
-            const { _id, name, origin, image } = city
+          {filteredCities.map((city) => {
+            const { _id, name, image } = city
             return (
               <Col key={_id} md='6' lg='4' className='city mb-4'>
                 <Link to={`cities/${_id}`}>
@@ -84,6 +124,5 @@ const CitiesIndex = () => {
     </>
   )
 }
-
 
 export default CitiesIndex
