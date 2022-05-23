@@ -11,6 +11,10 @@
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
+<<<<<<< HEAD
+=======
+    "react-responsive-carousel": "^3.2.23",
+>>>>>>> 7bbc99a5edbdad6b9a55a3daab2cf5d079ec17a2
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "sass": "^1.51.0",
