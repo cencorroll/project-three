@@ -44,44 +44,26 @@ const CitiesIndex = () => {
     getRandomCity()
   }, [cities])
 
-  const handleChange = (e) => {
-    const newObj = {
-      ...filters,
-      [e.target.name]: e.target.value,
-    }
-    console.log(newObj)
-    setFilters(newObj)
-  }
+  //? searchbar filter
+  // const handleChange = (e) => {
+  //   const newObj = {
+  //     ...filters,
+  //     [e.target.name]: e.target.value,
+  //   }
+  //   console.log(newObj)
+  //   setFilters(newObj)
+  // }
 
   // useEffect(() => {
   //   if (cities.length) {
-  //     const cityList = []
-  //     cities.forEach(city => cityList.includes(city.name) ? '' : cityList.push(city.name))
-  //     console.log(cityList)
-  //     setCities(cityList)
+  //     const regexSearch = new RegExp(filters.searchTerm, 'i')
+  //     const filtered = cities.filter(city => {
+  //       return regexSearch.test(city.name) && (city.name === filters.name || filters.name === 'All')
+  //     })
+  //     setFilteredCities(filtered)
+  //     console.log(filteredCities)
   //   }
-  // }, [cities])
-
-  useEffect(() => {
-    if (cities.length) {
-      const regexSearch = new RegExp(filters.searchTerm, 'i')
-      const filtered = cities.filter(city => {
-        return regexSearch.test(city.name) && (city.name === filters.name || filters.name === 'All')
-      })
-      setFilteredCities(filtered)
-      console.log(filteredCities)
-    }
-  }, [filters, cities])
-
-  // const slideLeft = () => {
-  //   const slider = document.getElementById('slider')
-  //   slider.scrollLeft = slider.scrollLeft - 500
-  // }
-
-  // const slideRight = () => {
-  //   const slider = document.getElementById('slider')
-  //   slider.scrollLeft = slider.scrollLeft + 500
-  // }
+  // }, [filters, cities])
 
   return (
     <>
@@ -89,12 +71,8 @@ const CitiesIndex = () => {
         {
           randomCities ?
             <>
-              <Link to={`cities/${randomCities._id}`}>
-                <img
-                  className='w-full h-[440px] object-cover'
-                  src={randomCities.image}
-                  alt=''
-                />
+              <Link to={`/cities/${randomCities._id}`}>
+                <Card.Img src={randomCities.image} />
                 <Card.Body>
                   <h1>{randomCities.name}</h1>
                 </Card.Body>
@@ -108,13 +86,13 @@ const CitiesIndex = () => {
       </Container>
 
       {/* //? input for filter below  */}
-      <Container>
+      {/* <Container>
         <input type="text" name="searchTerm" placeholder='Where do you want to go?' value={filters.searchTerm} onChange={handleChange} />
       </Container>
       
-      <CityList filteredCities={filteredCities} />
+      <CityList filteredCities={filteredCities} /> */}
 
-      {/* <Container className='city-list'>
+      <Container className='city-list'>
         <Row>
           {cities.map(city => {
             const { _id, name, origin, image } = city
@@ -123,7 +101,7 @@ const CitiesIndex = () => {
                 <Link to={`cities/${_id}`}>
                   <Card>
                     <Card.Img variant='top' src={image} />
-                    <Card.Body className='bd-light'>
+                    <Card.Body className = 'bd-light'>
                       <Card.Title className='text-center mb-0'>
                         {name}
                       </Card.Title>
@@ -134,7 +112,7 @@ const CitiesIndex = () => {
             )
           })}
         </Row>
-      </Container> */}
+      </Container>
     </>
   )
 }
