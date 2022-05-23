@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate, Link, useParams } from 'react-router-dom'
+import { useNavigate, Link, useParams, useLocation } from 'react-router-dom'
+
+
 
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -16,6 +18,8 @@ import Image from 'react-bootstrap/Image'
 import PageNotFound from '../utilities/PageNotFound'
 
 const CitiesShow = () => {
+
+
   const navigate = useNavigate()
   const { id } = useParams()
 
@@ -50,27 +54,22 @@ const CitiesShow = () => {
             <Card.Img src={cities.image} />
             <Card.ImgOverlay>
               <Card.Header className='text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
-
             </Card.ImgOverlay>
-            <Card.Footer>
-              <div className="city-control">
-                <Link to="#todo" className="btn btn-secondary mr-1">
-                  Things to do
-                </Link>
-                <Link to="#stay" className="btn btn-secondary mr-1">
-                  Places to stay
-                </Link>
-                <Link to="#eat" className="btn btn-secondary">
-                  Place to eat
-                </Link>
-
-              </div>
-
-
-            </Card.Footer>
           </Card>
         </div>
       </>
+      {/* <div className="city-control">
+        <Link to="/" className="btn btn-secondary mr-1">
+          Things to do
+        </Link>
+        <Link to="/" className="btn btn-secondary mr-1">
+          Places to stay
+        </Link>
+        <Link to="/" className="btn btn-secondary">
+          Place to eat
+        </Link>
+      </div> */}
+      <Link to="/" className="btn btn-secondary">Back to Cities</Link>
       <hr />
       <h3 id='todo'>Things to do</h3>
       <Carousel variant="dark" style={{ cursor: 'pointer' }}>

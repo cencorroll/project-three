@@ -41,6 +41,11 @@ img{
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 20px;
+  
+  .city-control {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 //
@@ -70,4 +75,10 @@ img{
       margin: -5px 0 10px;
     }
   }
+}
+
+
+// restaurant
+.get-one-row {
+  border: 1px solid grey;
 }

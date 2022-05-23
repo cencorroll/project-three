@@ -4,7 +4,7 @@ import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 
 import { FaStar } from 'react-icons/fa'
-import { Rating } from 'react-simple-star-rating'
+// import { Rating } from 'react-simple-star-rating'
 import { userIsAuthenticated } from '../helpers/auth'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'

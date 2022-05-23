@@ -37,10 +37,10 @@ const GetOneRestaurant = () => {
 
   return (
     <Container className='mt-3'>
-      <Row>
+      <Row className='get-one-row'>
         { restaurant ? 
           <>
-            <Col xs='12'><h1>{restaurant.name}</h1><hr/></Col>
+            <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr/></Col>
             <Col md='6'>
               <img src={restaurant.image} alt={restaurant.name} />
             </Col>
