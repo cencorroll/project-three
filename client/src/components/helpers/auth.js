@@ -18,9 +18,9 @@ export const userIsAuthenticated = () => {
   return currentTime < payload.exp
 }
 
-// checking that user id from payload matches bread user id
-export const userIsOwner = (singlebread) => {
+// checking that user id from payload matches review user id
+export const userIsOwner = (singleReview) => {
   const payload = getPayload()
   if (!payload) return
-  return singlebread.addedBy._id === payload.sub
+  return singleReview.addedBy._id === payload.sub
 }
