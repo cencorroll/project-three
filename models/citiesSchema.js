@@ -2,9 +2,9 @@ import mongoose from 'mongoose'
 
 
 const reviewSchema = new mongoose.Schema({
-  text: { type: String, required: true, maxlength: 1000 },
-  description: { type: String, required: true },
-  rating: { type: String, required: true, 'default': 0, min: 0, max: 5 },
+  text: { type: String, maxlength: 1000 },
+  rating: { type: String,  'default': 0, min: 0, max: 5 },
+  image: { type: String },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
@@ -60,7 +60,11 @@ const hotelSchema = new mongoose.Schema({
 })
 
 const shortHistorySchema = new mongoose.Schema({
+<<<<<<< HEAD
   name: { type: String, required: true, maxlength: 50 },
+=======
+  // name: { type: String, required: true, unique: true, maxlength: 50 },
+>>>>>>> razvan
   description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },

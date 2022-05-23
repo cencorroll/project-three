@@ -54,9 +54,22 @@ const GetOneRestaurant = () => {
                 :
                 <Link className='btn btn-success mt-3' to={'/login'}>Add Review</Link>
               }
-              <div className='reviews'>
-
-              </div>
+              <ul>
+                {restaurant.reviews.map((review, n) => {
+                  return <li key={n}>
+                    {/* <Link to={`/user/${review.owner._id}`}> */}
+                    <div className="reviewHeader">
+                      <p><strong>By {review.owner.username}</strong></p>
+                    </div>
+                    {/* <Stars rating={review.rating} /> */}
+                    <p>{review.text}</p>
+                    {review.image &&
+                      <img src={review.image} className='reviewImage' alt="users attempt" />
+                    }
+                    {/* </Link> */}
+                  </li>
+                })}
+              </ul>
             </Col>
           </>
           :

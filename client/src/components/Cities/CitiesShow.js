@@ -19,6 +19,7 @@ const CitiesShow = () => {
   const navigate = useNavigate()
   const { id } = useParams()
 
+
   const [cities, setCities] = useState([])
   const [citiesHotels, setCitiesHotels] = useState([])
   const [citiesRestaurants, setCitiesRestaurants] = useState([])
@@ -29,10 +30,6 @@ const CitiesShow = () => {
     const getCities = async () => {
       try {
         const { data } = await axios.get(`/api/cities/${id}`)
-        console.log(data)
-        console.log(data.hotels)
-        console.log('FUN->', data.thingsToDo)
-        console.log('RESTAURANTS->', data.restaurants)
         setCities(data)
         setCitiesHotels(data.hotels)
         setCitiesRestaurants(data.restaurants)

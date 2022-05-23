@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   const [ formData, setFormData ] = useState({
-    email: '',
+    username: '',
     password: '',
   })
 
@@ -51,7 +51,7 @@ const Login = () => {
             <label htmlFor="password">Password</label>
             <input type="password" name="password" className='input' placeholder='Password' required value={formData.password} onChange={handleChange} />
             {errors && <p className='text-danger text-center'>Unauthorised</p>}
-            <button type="submit" className="btn btn-warning w-100">Login</button>
+            <button type="submit" className="btn w-100">Login</button>
           </form>
         </Row>
       </Container>

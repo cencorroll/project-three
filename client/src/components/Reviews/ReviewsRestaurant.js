@@ -1,66 +1,106 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 
+import { FaStar } from 'react-icons/fa'
+import { Rating } from 'react-simple-star-rating'
+import { userIsAuthenticated } from '../helpers/auth'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import { startSession } from 'mongoose'
+
+
 const NewReview = () => { 
   const { id, restaurantId } = useParams()
-  // const history = useHistory()
+  const navigate = useNavigate()
 
   const [ formData, setFormData ] = useState({
     text: '',
-    description: '',
-    rating: 5,
+    rating: Number,
+    image: '',
   })
 
-  const [ errors, setErrors ] = useState({ text: { message: '' } })
+  const [ rating, setRating ] = useState(null)
+  const [ hover, setHover ] = useState(null)
+
+  const [ errors, setErrors ] = useState({})
 
   const handleRating = (rating) => { 
     setFormData({ ...formData, rating })
   }
 
-  const handleChange = event => { 
-    const target = event.target
-    const value = target.type === 'checkbox' ? target.checked : target.value
-    setFormData({ ...formData, [event.target.name]: value })
-    setErrors({ ...errors, [event.target.name]: '' })
+  const handleChange = (e) => { 
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setErrors({ ...errors, [e.target.name]: '' })
   }
 
   const handleSubmit = async (e) => { 
     e.preventDefault()
+    !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`api/cities/${id}/restaurants/${restaurantId}/review`, formData, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } } )
-      // history.push(`api/cities/${id}/restaurants/${restaurantId}`)
+      await axios.post(`/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`, 
+        },
+      })
+      navigate(`api/cities/${id}/restaurants/${restaurantId}`)
+      // navigate(`api/cities/${id}/restaurants/${restaurantId}`, { replace: true })
+
     } catch (error) {
       if (error.response.data.errors) setErrors(error.response.data.errors)
     }
   }
 
+  // const handleImageUrl = (url) => {
+  //   try {
+  //     setFormData({ ...formData, image: url })
+  //   } catch (error) {
+  //     if (error.response.data.errors) setErrors(error.response.data.errors)
+  //   }
+  // }
+
   return (
-    <div className="signUpPage page">
+    <section className='form-page'>
+      <Container>
+        <Row>
+          <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5'  onSubmit={handleSubmit}>
+            <h1>Leave a Review!</h1>
+            <label htmlFor="text">Text</label>
+            <textarea className='input' name="text" placeholder='Text' value={formData.name} onChange={handleChange}/>
+            {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
+            {/* <label htmlFor='origin'>Origin</label>
+            <input type='text' name='origin' placeholder='Origin'className='input' value={formData.origin} onChange={handleChange}/>
+            {errors.origin ? <p className='text-danger'>{errors.origin}</p> : ''}
+            <label htmlFor='description'>Description</label>
+            <input type='text' name='description' placeholder='Description' className='input' value={formData.description} onChange={handleChange}/>
+            {errors.description && <p className='text-danger'>{errors.description}</p>} */}
+            <label htmlFor='image'>Picture</label>
+            <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
+            {errors.image && <p className='text-danger'>{errors.image}</p>}
 
-      <div className="form-header sign-up-form-header">
-        <h2>Add review</h2>
-
-      </div>
-
-      <div className="form-container sign-up-form-container">
-
-        <form onSubmit={handleSubmit}>
-
-          <div className="formfield">
-            <label htmlFor="review" >Review</label>
-            <textarea onInput={handleChange} name="text" id="review" type="text" placeholder="enter review here" maxLength='400' value={formData.text} />
-            {errors.text && <p className="error">{errors.text.message}</p>}
-          </div>
-
-
-          <button className="form-button">Submit</button>
-
-        </form>
-      </div>
-
-    </div>
+            <div>
+              {[ ...Array(5)].map((star, i)=>{
+                const ratingValue = i + 1
+                return (
+                  <label htmlFor='rating' key={i}>
+                    <input type='radio' name='rating' value={ratingValue} 
+                      onClick={() => setRating(ratingValue)} 
+                    />
+                    <FaStar className='star' color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9' } 
+                      onMouseEnter={() => setHover(ratingValue)}
+                      onMouseLeave={() => setHover(null)}
+                      size={ 30 }
+                    />
+                  </label>
+                )
+              })}
+            </div>
+        
+            <button type='submit' className='btn w-100'>Submit</button>
+          </form>
+        </Row>
+      </Container>
+    </section>
   )
 
 }
