@@ -16,6 +16,7 @@ import AllThingsToDo from './components/Fun/AllThingsToDo'
 import OneThingsToDo from './components/Fun/OneThingsToDo'
 import GetOneRestaurant from './components/Restaurants/GetOneRestaurant'
 import PageNotFound from './components/utilities/PageNotFound'
+import NewReview from './components/Reviews/ReviewsRestaurant'
 
 
 import CitiesIndex from './components/Cities/CitiesIndex'
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
           <Route path="/cities/:id/fun/:funId" element={<OneThingsToDo />} />
           <Route path='/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
+          <Route path='/cities/:id/restaurants/:restaurantId/review' element={<NewReview />} />
           <Route path='/cities/:id/hotels/:hotelId' element={<GetOneHotel />} />
           <Route path='/cities/:id/fun/:funId' element={<GetFun />} />
           <Route path="*" element={<PageNotFound />} />
