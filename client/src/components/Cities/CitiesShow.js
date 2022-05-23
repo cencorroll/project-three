@@ -4,8 +4,9 @@ import { useNavigate, Link, useParams } from 'react-router-dom'
 
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { MDBRipple } from 'mdb-react-ui-kit'
-import '~mdb-ui-kit/css/mdb.min.css'
+
+// import '~mdb-ui-kit/css/mdb.min.css'
+// import { MDBRipple } from 'mdb-react-ui-kit'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -47,13 +48,13 @@ const CitiesShow = () => {
   return (
     <Container className="mt-4">
       <>
-        {/* <div className='header-img'>
-      <Card.Img src={cities.image} />
-      <Card.Body>
-        <h1>{cities.name}</h1>
-      </Card.Body>
-    </div> */}
-        <MDBRipple className='bg-image' rippleTag='div' rippleColor='light' style={{ maxWidth: '24rem' }}>
+        <div className='header-img'>
+          <Card.Img src={cities.image} />
+          <Card.Body>
+            <h1>{cities.name}</h1>
+          </Card.Body>
+        </div>
+        {/* <MDBRipple className='bg-image' rippleTag='div' rippleColor='light' style={{ maxWidth: '24rem' }}>
           <img src='https://mdbootstrap.com/img/new/standard/city/053.webp' className='w-100' />
           <a href='#!'>
             <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
@@ -65,7 +66,7 @@ const CitiesShow = () => {
               <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}></div>
             </div>
           </a>
-        </MDBRipple>
+        </MDBRipple> */}
       </>
       <Link to="/" className="btn btn-secondary">
         Back to Cities
