@@ -105,7 +105,7 @@ export const addFunReview = async (req, res) => {
   try {
     const city = await City.findById(id).populate('thingsToDo').populate('reviews')
     if (!city) return res.status(404).json({ message: 'City Not Found' })
-    const fun = await city.funs.find(fun => fun._id.toString() === funId)
+    const fun = await city.thingsToDo.find(fun => fun._id.toString() === funId)
     if (!fun) {
       return res.status(404).json({ message: 'Fun not found' })
     }

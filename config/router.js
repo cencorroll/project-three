@@ -5,7 +5,7 @@ import { secureRoute } from './secureRoute.js'
 
 //import controllers
 import { userRegister, userLogin } from '../controllers/auth.js'
-import { getAllThingsToDo, getSingleThingsTodo , addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, getAllHotels, getSingleHotels, addHotel, deleteHotel, getHistory, addHistory, deleteHistory, addReviewCities, deleteReviewCities, getSingleRestaurant, getAllRestaurants, addRestaurantReview } from '../controllers/subSchema.js'
+import { getAllThingsToDo, getSingleThingsTodo , addThingsToDo, deleteThingsToDo, addRestaurant, deleteRestaurant, getAllHotels, getSingleHotels, addHotel, deleteHotel, getHistory, addHistory, deleteHistory, addReviewCities, deleteReviewCities, getSingleRestaurant, getAllRestaurants, addRestaurantReview, addHotelReview, addFunReview } from '../controllers/subSchema.js'
 import { addCity, deleteCity, getCities, getSingleCity, updateCity, welcomeMessage } from '../controllers/cities.js'
 
 import { getProfile } from '../controllers/users.js'
@@ -43,8 +43,8 @@ router.route('/cities/:id/fun/:funId')
   .get(getSingleThingsTodo)
   .delete(secureRoute, deleteThingsToDo)
 
-// router.route('/cities/:id/fun/:funId/review')
-//   .post(secureRoute, addReviewFun)
+router.route('/cities/:id/fun/:funId/review')
+  .post(secureRoute, addFunReview)
 // router.route('/cities/:id/fun/:funId/review/:reviewID')
 //   .delete(secureRoute, deleteReviewFun)
 
@@ -73,6 +73,9 @@ router.route('/cities/:id/hotels')
 router.route('/cities/:id/hotels/:hotelId')
   .get(getSingleHotels)
   .delete(secureRoute, deleteHotel)
+
+router.route('/cities/:id/hotels/:hotelId/review')
+  .post(secureRoute, addHotelReview)
 
 //SHORT HISTORY
 router.route('/cities/:id/history')

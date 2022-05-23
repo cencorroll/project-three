@@ -21,6 +21,8 @@ import CitiesIndex from './components/Cities/CitiesIndex'
 import GetOneHotel from './components/Hotels/GetOneHotel'
 import GetFun from './components/Fun/OneThingsToDo'
 import NewReview from './components/Reviews/ReviewsRestaurant'
+import NewReviewHotel from './components/Reviews/HotelReviews'
+import NewReviewFun from './components/Reviews/FunReview'
 
 
 const App = () => {
@@ -35,12 +37,13 @@ const App = () => {
           <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
           <Route path="/cities/:id" element={<CitiesShow />} />
-          {/* <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} /> */}
-          <Route path="/cities/:id/fun/:funId" element={<OneThingsToDo />} />
+          <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
+          <Route path='/cities/:id/fun/:funId' element={<GetFun />} />
+          <Route path='/cities/:id/fun/:funId/review' element={<NewReviewFun />} />
           <Route path='/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
           <Route path='/cities/:id/restaurants/:restaurantId/review' element={<NewReview />} />
           <Route path='/cities/:id/hotels/:hotelId' element={<GetOneHotel />} />
-          <Route path='/cities/:id/fun/:funId' element={<GetFun />} />
+          <Route path='/cities/:id/hotels/:hotelId/review' element={<NewReviewHotel />} />
           <Route path="*" element={<PageNotFound />} />
 
 
