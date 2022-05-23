@@ -75,6 +75,7 @@ const CitiesIndex = () => {
                 {/* <Card.Img className='randomImg' src={randomCities.image} /> */}
                 <Card.Body className='randomImg' style={{ backgroundImage: `url(${randomCities.image})` }}>
                   <h1 className='randomImgText'>Discover {randomCities.name}</h1>
+                  <div className='shade'></div>
                 </Card.Body>
               </Link>
             </>

@@ -8,6 +8,7 @@ import Home from './components/Home'
 import PageNavBar from './components/PageNavBar'
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
+import Profile from './components/Profile'
 // import components
 import CitiesShow from './components/Cities/CitiesShow'
 import AllThingsToDo from './components/Fun/AllThingsToDo'
@@ -30,6 +31,7 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
           <Route path="/cities/:id" element={<CitiesShow />} />
