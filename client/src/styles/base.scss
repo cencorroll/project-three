@@ -23,4 +23,19 @@ img{
   
 }
 
+.randomImg {
+  border-radius: 30px;
+  height: 400px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .randomImgText {
+    font-size: 2.5em;
+    color: white;
+  }
+  }
+
+
+
 
