@@ -70,7 +70,9 @@ const CitiesShow = () => {
       </>
       <Link to="/" className="btn btn-secondary">
         Back to Cities
-      </Link><hr /><Carousel variant="dark" style={{ cursor: 'pointer' }}>
+      </Link>
+      <hr />
+      <Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesFun.map((fun) => {
           return (
             <Carousel.Item interval={2000} key={fun._id}>
@@ -84,7 +86,9 @@ const CitiesShow = () => {
             </Carousel.Item>
           )
         })}
-      </Carousel><hr /><Carousel variant="dark" style={{ cursor: 'pointer' }}>
+      </Carousel>
+      <hr />
+      <Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesHotels.map((hotel) => {
           return (
             <Carousel.Item interval={2000} key={hotel._id}>
@@ -98,7 +102,9 @@ const CitiesShow = () => {
             </Carousel.Item>
           )
         })}
-      </Carousel><hr /><Carousel variant="dark" style={{ cursor: 'pointer' }}>
+      </Carousel>
+      <hr />
+      <Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesRestaurants.map((restaurant) => {
           return (
             <Carousel.Item interval={2000} key={restaurant._id}>
