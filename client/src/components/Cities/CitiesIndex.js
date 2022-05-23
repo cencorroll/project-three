@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 
 import { useNavigate, Link, useParams } from 'react-router-dom'
 
@@ -8,15 +9,15 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
-const CitiesIndex = () => { 
+const CitiesIndex = () => {
 
   const navigate = useNavigate()
-  const [ cities, setCities ] = useState([])
+  const [cities, setCities] = useState([])
   const [randomCities, setRandomCities] = useState([])
   const [errors, setErrors] = useState(false)
 
-  useEffect(() => { 
-    const getCities = async () => { 
+  useEffect(() => {
+    const getCities = async () => {
       try {
         const { data } = await axios.get('/api/cities')
         setCities(data)
@@ -25,7 +26,7 @@ const CitiesIndex = () => {
       }
     }
     getCities()
-  },[])
+  }, [])
 
   useEffect(() => {
     const getRandomCity = () => {
@@ -36,7 +37,7 @@ const CitiesIndex = () => {
     getRandomCity()
   }, [cities])
 
-  return ( 
+  return (
     <>
       <Container>
         {
@@ -55,7 +56,6 @@ const CitiesIndex = () => {
             </div>
         }
       </Container>
-    
       <Container className='city-list'>
         <Row>
           {cities.map(city => {
@@ -67,7 +67,7 @@ const CitiesIndex = () => {
                     <Card.Img variant='top' src={image} />
                     <Card.Body className = 'bd-light'>
                       <Card.Title className='text-center mb-0'>
-                        {name} 
+                        {name}
                       </Card.Title>
                     </Card.Body>
                   </Card>
@@ -80,5 +80,6 @@ const CitiesIndex = () => {
     </>
   )
 }
+
 
 export default CitiesIndex
