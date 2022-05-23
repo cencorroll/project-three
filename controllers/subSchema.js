@@ -168,7 +168,7 @@ export const addRestaurantReview = async (req, res) => {
     console.log('RESTAURANT REVIEWS BEFORE PUSHING ->', restaurant.reviews)
     restaurant.reviews.push(reviewWithOwner)
     console.log('RESTAURANT REVIEWS ->', restaurant.reviews)
-    // save()
+    await city.save()
     return res.status(200).json(restaurant)
   } catch (error) {
     console.log(error)
