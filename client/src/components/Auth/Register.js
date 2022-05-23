@@ -58,7 +58,7 @@ const Register = () => {
             <input type="password" name="passwordConfirmation" className='input' placeholder='Password Confirmation' value={formData.passwordConfirmation} onChange={handleChange} />
             {errors.passwordConfirmation && <p className='text-danger'>{errors.passwordConfirmation}</p>}
             {/* Submit */}
-            <button type="submit" className="btn btn-warning">Register</button>
+            <button type="submit" className="btn w-100">Register</button>
           </form>
         </Row>
       </Container>
