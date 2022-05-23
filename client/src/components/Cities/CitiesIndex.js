@@ -44,10 +44,12 @@ const CitiesIndex = () => {
           randomCities ?
             <>
               <Link to={`/cities/${randomCities._id}`}>
-                <Card.Img src={randomCities.image} />
-                <Card.Body>
-                  <h1>{randomCities.name}</h1>
-                </Card.Body>
+                <Card>
+                  <Card.Img src={randomCities.image} />
+                  <Card.ImgOverlay>
+                    <Card.Header className='text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{randomCities.name}</Card.Header>
+                  </Card.ImgOverlay>
+                </Card>
               </Link>
             </>
             :
@@ -55,6 +57,8 @@ const CitiesIndex = () => {
               {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
             </div>
         }
+
+
       </Container>
       <Container className='city-list'>
         <Row>
@@ -65,7 +69,7 @@ const CitiesIndex = () => {
                 <Link to={`cities/${_id}`}>
                   <Card>
                     <Card.Img variant='top' src={image} />
-                    <Card.Body className = 'bd-light'>
+                    <Card.Body className='bd-light'>
                       <Card.Title className='text-center mb-0'>
                         {name}
                       </Card.Title>

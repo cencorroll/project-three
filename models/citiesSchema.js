@@ -60,7 +60,7 @@ const hotelSchema = new mongoose.Schema({
 })
 
 const shortHistorySchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true, maxlength: 50 },
+  name: { type: String, required: true, maxlength: 50 },
   description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
