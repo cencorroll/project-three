@@ -28,6 +28,7 @@ const PageNavBar = () => {
             <>
               {/* <Nav.Link as={Link} to="/cities/add">Add a City</Nav.Link> */}
               <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
+              <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
             </>
             :
             <>

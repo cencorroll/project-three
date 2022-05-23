@@ -5,14 +5,13 @@ import { getTokenFromLocalStorage } from '../helpers/auth'
 import { userIsAuthenticated } from '../helpers/auth'
 
 import { FaStar } from 'react-icons/fa'
-// import { Rating } from 'react-simple-star-rating'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-// import { startSession } from 'mongoose'
 
 
-const NewReview = () => { 
-  const { id, restaurantId } = useParams()
+
+const NewReviewFun = () => { 
+  const { id, funId } = useParams()
   const navigate = useNavigate()
 
   const [ formData, setFormData ] = useState({
@@ -40,11 +39,11 @@ const NewReview = () => {
     e.preventDefault()
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`/api/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
+      await axios.post(`/api/cities/${id}/fun/${funId}/review`, formData, { 
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`, 
         },
       })
-      navigate(`/cities/${id}/restaurants/${restaurantId}`)
+      navigate(`/cities/${id}/fun/${funId}`)
 
     } catch (error) {
       if (error.response.data.errors) setErrors(error.response.data.errors)
@@ -104,4 +103,4 @@ const NewReview = () => {
 
 }
 
-export default NewReview
+export default NewReviewFun

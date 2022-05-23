@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
+import { FaStar } from 'react-icons/fa'
 
 
 const GetOneRestaurant = () => { 
@@ -61,7 +62,7 @@ const GetOneRestaurant = () => {
                     <div className="reviewHeader">
                       <p><strong>By {review.owner.username}</strong></p>
                     </div>
-                    {/* <Stars rating={review.rating} /> */}
+                    {/* <FaStar rating={review.rating} /> */}
                     <p>{review.text}</p>
                     {review.image &&
                       <img src={review.image} className='reviewImage' alt="users attempt" />
