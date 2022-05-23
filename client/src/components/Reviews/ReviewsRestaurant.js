@@ -4,9 +4,11 @@ import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 
 import { FaStar } from 'react-icons/fa'
+import { Rating } from 'react-simple-star-rating'
 import { userIsAuthenticated } from '../helpers/auth'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import { startSession } from 'mongoose'
 
 
 const NewReview = () => { 
@@ -15,11 +17,14 @@ const NewReview = () => {
 
   const [ formData, setFormData ] = useState({
     text: '',
-    rating: 5,
+    rating: Number,
     image: '',
   })
 
-  const [ errors, setErrors ] = useState({ text: { message: '' } })
+  const [ rating, setRating ] = useState(null)
+  const [ hover, setHover ] = useState(null)
+
+  const [ errors, setErrors ] = useState({})
 
   const handleRating = (rating) => { 
     setFormData({ ...formData, rating })
@@ -34,7 +39,7 @@ const NewReview = () => {
     e.preventDefault()
     !userIsAuthenticated() && navigate('/login')
     try {
-      const { data } = await axios.post(`api/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
+      await axios.post(`/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`, 
         },
       })
@@ -72,7 +77,26 @@ const NewReview = () => {
             <label htmlFor='image'>Picture</label>
             <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
             {errors.image && <p className='text-danger'>{errors.image}</p>}
-            <button type='submit' className='btn'>Submit</button>
+
+            <div>
+              {[ ...Array(5)].map((star, i)=>{
+                const ratingValue = i + 1
+                return (
+                  <label htmlFor='rating' key={i}>
+                    <input type='radio' name='rating' value={ratingValue} 
+                      onClick={() => setRating(ratingValue)} 
+                    />
+                    <FaStar className='star' color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9' } 
+                      onMouseEnter={() => setHover(ratingValue)}
+                      onMouseLeave={() => setHover(null)}
+                      size={ 30 }
+                    />
+                  </label>
+                )
+              })}
+            </div>
+        
+            <button type='submit' className='btn w-100'>Submit</button>
           </form>
         </Row>
       </Container>
