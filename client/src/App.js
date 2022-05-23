@@ -20,7 +20,9 @@ import PageNotFound from './components/utilities/PageNotFound'
 import CitiesIndex from './components/Cities/CitiesIndex'
 import GetOneHotel from './components/Hotels/GetOneHotel'
 import GetFun from './components/Fun/OneThingsToDo'
-// import FullPageCities from '../src/components/Cities/FullPageCities'
+import NewReview from './components/Reviews/ReviewsRestaurant'
+
+
 const App = () => {
 
   return (
@@ -33,9 +35,10 @@ const App = () => {
           <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
           <Route path="/cities/:id" element={<CitiesShow />} />
-          <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
+          {/* <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} /> */}
           <Route path="/cities/:id/fun/:funId" element={<OneThingsToDo />} />
           <Route path='/cities/:id/restaurants/:restaurantId' element={<GetOneRestaurant />} />
+          <Route path='/cities/:id/restaurants/:restaurantId/review' element={<NewReview />} />
           <Route path='/cities/:id/hotels/:hotelId' element={<GetOneHotel />} />
           <Route path='/cities/:id/fun/:funId' element={<GetFun />} />
           <Route path="*" element={<PageNotFound />} />

@@ -4,11 +4,11 @@ import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 
 import { FaStar } from 'react-icons/fa'
-import { Rating } from 'react-simple-star-rating'
+// import { Rating } from 'react-simple-star-rating'
 import { userIsAuthenticated } from '../helpers/auth'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import { startSession } from 'mongoose'
+// import { startSession } from 'mongoose'
 
 
 const NewReview = () => { 
@@ -32,6 +32,7 @@ const NewReview = () => {
 
   const handleChange = (e) => { 
     setFormData({ ...formData, [e.target.name]: e.target.value })
+    console.log(formData)
     setErrors({ ...errors, [e.target.name]: '' })
   }
 
@@ -39,11 +40,11 @@ const NewReview = () => {
     e.preventDefault()
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`api/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
+      await axios.post(`/api/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`, 
         },
       })
-      navigate(`api/cities/${id}/restaurants/${restaurantId}`)
+      navigate(`/cities/${id}/restaurants/${restaurantId}`)
 
     } catch (error) {
       if (error.response.data.errors) setErrors(error.response.data.errors)
@@ -76,7 +77,6 @@ const NewReview = () => {
             <label htmlFor='image'>Picture</label>
             <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
             {errors.image && <p className='text-danger'>{errors.image}</p>}
-
             <div>
               {[ ...Array(5)].map((star, i)=>{
                 const ratingValue = i + 1

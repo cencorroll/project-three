@@ -100,6 +100,25 @@ export const getSingleThingsTodo = async (req, res) => {
   }
 }
 
+export const addFunReview = async (req, res) => { 
+  const { id, funId } = req.params
+  try {
+    const city = await City.findById(id).populate('thingsToDo').populate('reviews')
+    if (!city) return res.status(404).json({ message: 'City Not Found' })
+    const fun = await city.funs.find(fun => fun._id.toString() === funId)
+    if (!fun) {
+      return res.status(404).json({ message: 'Fun not found' })
+    }
+    const reviewWithOwner = { ...req.body, owner: req.verifiedUser._id }
+    fun.reviews.push(reviewWithOwner)
+    await city.save()
+    return res.status(200).json(fun)
+  } catch (error) {
+    console.log(error)
+    return res.status(422).json(error.name)
+  }
+}
+
 export const addThingsToDo = async (req, res) => { 
   const { id } = req.params
   try {
@@ -252,6 +271,27 @@ export const getSingleHotels = async (req, res) => {
   } catch (error) {
     console.log(error)
     return res.status(404).json({ message: 'Something went wrong.' })
+  }
+}
+
+export const addHotelReview = async (req, res) => { 
+  const { id, hotelId } = req.params
+  try {
+    const city = await City.findById(id).populate('hotels').populate('reviews')
+    if (!city) return res.status(404).json({ message: 'City Not Found' })
+    const hotel = await city.hotels.find(hotel => hotel._id.toString() === hotelId)
+    if (!hotel) {
+      return res.status(404).json({ message: 'Hotel not found' })
+    }
+    const reviewWithOwner = { ...req.body, owner: req.verifiedUser._id }
+    console.log('RESTAURANT REVIEWS BEFORE PUSHING ->', hotel.reviews)
+    hotel.reviews.push(reviewWithOwner)
+    console.log('RESTAURANT REVIEWS ->', hotel.reviews)
+    await city.save()
+    return res.status(200).json(hotel)
+  } catch (error) {
+    console.log(error)
+    return res.status(422).json(error.name)
   }
 }
 
