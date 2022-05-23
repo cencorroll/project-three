@@ -49,71 +49,73 @@ const CitiesShow = () => {
     <Container className="mt-4">
       <>
         <div className='header-img'>
-          <Card.Img src={cities.image} />
-          <Card.Body>
-            <h1>{cities.name}</h1>
-          </Card.Body>
+          <Card>
+            <Card.Img src={cities.image} />
+            <Card.ImgOverlay>
+              <Card.Header className='text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
+
+            </Card.ImgOverlay>
+            <Card.Footer>
+              <Link to="#todo" className="btn btn-secondary mr-1">
+                Things to do
+              </Link>
+              <Link to="#stay" className="btn btn-secondary mr-1">
+                Places to stay
+              </Link>
+              <Link to="#eat" className="btn btn-secondary">
+                Place to eat
+              </Link>
+
+            </Card.Footer>
+          </Card>
         </div>
-        {/* <MDBRipple className='bg-image' rippleTag='div' rippleColor='light' style={{ maxWidth: '24rem' }}>
-          <img src='https://mdbootstrap.com/img/new/standard/city/053.webp' className='w-100' />
-          <a href='#!'>
-            <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
-              <div className='d-flex justify-content-center align-items-center h-100'>
-                <p className='text-white mb-0'>Can you see me?</p>
-              </div>
-            </div>
-            <div className='hover-overlay'>
-              <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}></div>
-            </div>
-          </a>
-        </MDBRipple> */}
       </>
-      <Link to="/" className="btn btn-secondary">
-        Back to Cities
-      </Link>
       <hr />
+      <h3 id='todo'>Things to do</h3>
       <Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesFun.map((fun) => {
           return (
             <Carousel.Item interval={2000} key={fun._id}>
-              <Link to={`/api/cities/${cities._id}/fun/${fun._id}`} key={fun._id}>
+              <Link to={`/cities/${cities._id}/fun/${fun._id}`}>
                 <img key={fun._id} className="d-block w-100" src={fun.image} alt={fun.name} />
               </Link>
               <Carousel.Caption>
-                <h5 key={fun._id}>{fun.name}</h5>
-                <p key={fun._id}>{fun.description}</p>
+                <h5>{fun.name}</h5>
+                <p>{fun.description}</p>
               </Carousel.Caption>
             </Carousel.Item>
           )
         })}
       </Carousel>
       <hr />
+      <h3 id='stay'>Places to Stay</h3>
       <Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesHotels.map((hotel) => {
           return (
             <Carousel.Item interval={2000} key={hotel._id}>
-              <Link to={`/api/cities/${cities._id}/hotels/${hotel._id}`} key={hotel._id}>
-                <img key={hotel._id} className="d-block w-100" src={hotel.image} alt={hotel.name} />
+              <Link to={`/cities/${cities._id}/hotels/${hotel._id}`} >
+                <img className="d-block w-100" src={hotel.image} alt={hotel.name} />
               </Link>
               <Carousel.Caption>
-                <h5 key={hotel._id}>{hotel.name}</h5>
-                <p key={hotel._id}>{hotel.description}</p>
+                <h5 >{hotel.name}</h5>
+                <p >{hotel.description}</p>
               </Carousel.Caption>
             </Carousel.Item>
           )
         })}
       </Carousel>
       <hr />
+      <h3 id='eat'>Places to Eat</h3>
       <Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesRestaurants.map((restaurant) => {
           return (
             <Carousel.Item interval={2000} key={restaurant._id}>
-              <Link to={`/api/cities/${cities._id}/restaurants/${restaurant._id}`} key={restaurant._id}>
-                <img key={restaurant._id} className="d-block w-100" src={restaurant.image} alt={restaurant.name} />
+              <Link to={`/cities/${cities._id}/restaurants/${restaurant._id}`} >
+                <img className="d-block w-100" src={restaurant.image} alt={restaurant.name} />
               </Link>
               <Carousel.Caption>
-                <h5 key={restaurant._id}>{restaurant.name}</h5>
-                <p key={restaurant._id}>{restaurant.description}</p>
+                <h5 >{restaurant.name}</h5>
+                <p >{restaurant.description}</p>
               </Carousel.Caption>
             </Carousel.Item>
           )

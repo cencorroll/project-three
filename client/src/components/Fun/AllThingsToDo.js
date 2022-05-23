@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
+
 import axios from 'axios'
 
 // import bootstrap components
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
+
 
 const AllThingsToDo = () => {
 
@@ -20,10 +18,10 @@ const AllThingsToDo = () => {
   useEffect(() => {
     const getFunList = async () => {
       try {
-        const { data } = await axios.get(`api/cities/${id}/fun`)
+        const { data } = await axios.get(`/api/cities/${id}/fun/`)
         console.log(data)
         setFunList(data)
-        console.log('loging',data)
+        console.log('loging', data)
       } catch (error) {
         console.log(error)
       }
@@ -33,28 +31,20 @@ const AllThingsToDo = () => {
 
 
   return (
-    <Container>
-      <h1>all fun</h1>
-      <Row>
-        {funList.map(fun => {
-          const { _id, name, image } = fun
-          return (
-            <Col key={_id} lg="3" md="6" className='fun container-fluid mb-4'>
-              <Link to={`/Cities/${id}/fun/${_id}`}>
-                <Card>
-                  <Card.Img className="img-fluid" variant="top" src={image} />
-                  <Card.Body >
-                    <Card.Title className="text-center mb-0">{name}</Card.Title>
-                  </Card.Body>
-                </Card>
-              </Link>
-            </Col>
-          )
-        }
-        )}
-      </Row>
-    </Container >
+    <>
+      {funList.map(fun => {
+        const { _id, name, description, image, price, reviews } = fun
+        return (
+          <div key={_id} className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+            <h1 className="header"> {name}</h1>
+            <p>{description}</p>
+            <p>{price}</p>
+            <p>{reviews}</p>
+          </div>
+        )
+      })}
 
+    </>
   )
 }
 

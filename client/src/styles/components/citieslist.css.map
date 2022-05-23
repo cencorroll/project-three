@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACR,aAAa,EAAE,IAAI;EACnB,UAAU,EAAE,IAAI;CAUjB;;AAZD,AAII,UAJM,CAGR,KAAK,GACF,CAAC,CAAA;EACA,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,IAAI;CACZ;;AAPL,AAQI,UARM,CAGR,KAAK,CAKH,KAAK,CAAA;EACH,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,kBAAe;CACxC",
+    "sources": [
+        "citieslist.scss"
+    ],
+    "names": [],
+    "file": "citieslist.css"
+}

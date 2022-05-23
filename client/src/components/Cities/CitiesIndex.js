@@ -8,6 +8,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
 
 import CityList from '../Filtered Cities/CityList'
 
@@ -45,25 +47,23 @@ const CitiesIndex = () => {
   }, [cities])
 
   //? searchbar filter
-  // const handleChange = (e) => {
-  //   const newObj = {
-  //     ...filters,
-  //     [e.target.name]: e.target.value,
-  //   }
-  //   console.log(newObj)
-  //   setFilters(newObj)
-  // }
+  const handleChange = (e) => {
+    console.log(e.target.name, e.target.value)
+    setFilters({ ...filters, [e.target.name]: e.target.value })
+    console.log('filtered list ->', filters)
+  }
 
-  // useEffect(() => {
-  //   if (cities.length) {
-  //     const regexSearch = new RegExp(filters.searchTerm, 'i')
-  //     const filtered = cities.filter(city => {
-  //       return regexSearch.test(city.name) && (city.name === filters.name || filters.name === 'All')
-  //     })
-  //     setFilteredCities(filtered)
-  //     console.log(filteredCities)
-  //   }
-  // }, [filters, cities])
+  useEffect(() => {
+    if (cities.length) {
+      const regexSearch = new RegExp(filters.searchTerm, 'i')
+      console.log(regexSearch)
+      const filtered = cities.filter(city => {
+        return regexSearch.test(city.name) || (filters.name === 'All')
+      })
+      setFilteredCities(filtered)
+      console.log(filteredCities)
+    }
+  }, [filters, cities])
 
   return (
     <>
@@ -84,25 +84,33 @@ const CitiesIndex = () => {
               {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
             </div>
         }
+
+
       </Container>
 
       {/* //? input for filter below  */}
       {/* <Container>
         <input type="text" name="searchTerm" placeholder='Where do you want to go?' value={filters.searchTerm} onChange={handleChange} />
       </Container>
-      
+
       <CityList filteredCities={filteredCities} /> */}
+      <Form>
+        <Form.Group className="mb-3 ">
+          <Form.Label >Search</Form.Label>
+          <FormControl type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go?" onChange={handleChange} />
+        </Form.Group>
+      </Form>
 
       <Container className='city-list'>
         <Row>
-          {cities.map(city => {
-            const { _id, name, origin, image } = city
+          {filteredCities.map((city) => {
+            const { _id, name, image } = city
             return (
               <Col key={_id} md='6' lg='4' className='city mb-4'>
                 <Link to={`cities/${_id}`}>
                   <Card>
                     <Card.Img variant='top' src={image} />
-                    <Card.Body className = 'bd-light'>
+                    <Card.Body className='bd-light'>
                       <Card.Title className='text-center mb-0'>
                         {name}
                       </Card.Title>
