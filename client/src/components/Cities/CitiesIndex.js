@@ -9,12 +9,19 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
+import CityList from '../Filtered Cities/CityList'
+
 const CitiesIndex = () => {
 
   const navigate = useNavigate()
   const [cities, setCities] = useState([])
   const [randomCities, setRandomCities] = useState([])
   const [errors, setErrors] = useState(false)
+  const [filters, setFilters] = useState({
+    city: 'All',
+    searchTerm: '',
+  })
+  const [filteredCities, setFilteredCities] = useState([])
 
   useEffect(() => {
     const getCities = async () => {
@@ -37,15 +44,44 @@ const CitiesIndex = () => {
     getRandomCity()
   }, [cities])
 
-  const slideLeft = () => {
-    const slider = document.getElementById('slider')
-    slider.scrollLeft = slider.scrollLeft - 500
+  const handleChange = (e) => {
+    const newObj = {
+      ...filters,
+      [e.target.name]: e.target.value,
+    }
+    console.log(newObj)
+    setFilters(newObj)
   }
 
-  const slideRight = () => {
-    const slider = document.getElementById('slider')
-    slider.scrollLeft = slider.scrollLeft + 500
-  }
+  // useEffect(() => {
+  //   if (cities.length) {
+  //     const cityList = []
+  //     cities.forEach(city => cityList.includes(city.name) ? '' : cityList.push(city.name))
+  //     console.log(cityList)
+  //     setCities(cityList)
+  //   }
+  // }, [cities])
+
+  useEffect(() => {
+    if (cities.length) {
+      const regexSearch = new RegExp(filters.searchTerm, 'i')
+      const filtered = cities.filter(city => {
+        return regexSearch.test(city.name) && (city.name === filters.name || filters.name === 'All')
+      })
+      setFilteredCities(filtered)
+      console.log(filteredCities)
+    }
+  }, [filters, cities])
+
+  // const slideLeft = () => {
+  //   const slider = document.getElementById('slider')
+  //   slider.scrollLeft = slider.scrollLeft - 500
+  // }
+
+  // const slideRight = () => {
+  //   const slider = document.getElementById('slider')
+  //   slider.scrollLeft = slider.scrollLeft + 500
+  // }
 
   return (
     <>
@@ -70,7 +106,15 @@ const CitiesIndex = () => {
             </div>
         }
       </Container>
-      <Container className='city-list'>
+
+      {/* //? input for filter below  */}
+      <Container>
+        <input type="text" name="searchTerm" placeholder='Where do you want to go?' value={filters.searchTerm} onChange={handleChange} />
+      </Container>
+      
+      <CityList filteredCities={filteredCities} />
+
+      {/* <Container className='city-list'>
         <Row>
           {cities.map(city => {
             const { _id, name, origin, image } = city
@@ -90,69 +134,9 @@ const CitiesIndex = () => {
             )
           })}
         </Row>
-      </Container>
-      {/* <div className='relative flex items-center'>
-        <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={40} />
-        <div
-          id='slider'
-          className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
-        >
-          {cities.map(city => {
-            const { image } = city
-            <img
-              className='w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'
-              src={image}
-              alt='/' />
-          })}
-        </div>
-        <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={40} />
-      </div> */}
+      </Container> */}
     </>
-
-  //? old code below
-  // <>
-  //   <Container>
-  //     {
-  //       randomCities ?
-  //         <>
-  //           <Link to={`api/cities/${randomCities._id}`}>
-  //             <Card.Img src={randomCities.image} />
-  //             <Card.Body>
-  //               <h1>{randomCities.name}</h1>
-  //             </Card.Body>
-  //           </Link>
-  //         </>
-  //         :
-  //         <div className='text-center'>
-  //           {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
-  //         </div>
-  //     }
-  //   </Container>
-
-  //   <Container className='city-list'>
-  //     <Row>
-  //       {cities.map(city => {
-  //         const { _id, name, origin, image } = city
-  //         return (
-  //           <Col key={_id} md='6' lg='4' className='city mb-4'>
-  //             <Link to={`api/cities/${_id}`}>
-  //               <Card>
-  //                 <Card.Img variant='top' src={image} />
-  //                 <Card.Body className = 'bd-light'>
-  //                   <Card.Title className='text-center mb-0'>
-  //                     {name} 
-  //                   </Card.Title>
-  //                 </Card.Body>
-  //               </Card>
-  //             </Link>
-  //           </Col>
-  //         )
-  //       })}
-  //     </Row>
-  //   </Container>
-  // </>
   )
 }
-
 
 export default CitiesIndex
