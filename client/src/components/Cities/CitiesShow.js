@@ -76,7 +76,7 @@ const CitiesShow = () => {
         {citiesFun.map((fun) => {
           return (
             <Carousel.Item interval={2000} key={fun._id}>
-              <Link to={`/api/cities/${cities._id}/funs/${fun._id}`} key={fun._id}>
+              <Link to={`/api/cities/${cities._id}/fun/${fun._id}`} key={fun._id}>
                 <img key={fun._id} className="d-block w-100" src={fun.image} alt={fun.name} />
               </Link>
               <Carousel.Caption>

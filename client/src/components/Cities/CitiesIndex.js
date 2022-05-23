@@ -37,16 +37,6 @@ const CitiesIndex = () => {
     getRandomCity()
   }, [cities])
 
-  const slideLeft = () => {
-    const slider = document.getElementById('slider')
-    slider.scrollLeft = slider.scrollLeft - 500
-  }
-
-  const slideRight = () => {
-    const slider = document.getElementById('slider')
-    slider.scrollLeft = slider.scrollLeft + 500
-  }
-
   return (
     <>
       <Container>

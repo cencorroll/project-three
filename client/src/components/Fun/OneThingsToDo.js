@@ -46,7 +46,7 @@ const GetFun = () => {
               <h3><span>🤤</span> Description </h3>
               <p>{fun.description}</p>
               <hr />
-              <Link to={`/cities/${id}`} className='btn btn-secondary'>Back to List</Link>
+              <Link to={`/cities/${id}`} className='btn btn-secondary mt-3'>Back to List</Link>
             </Col>
           </>
           :

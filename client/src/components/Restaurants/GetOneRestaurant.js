@@ -48,11 +48,11 @@ const GetOneRestaurant = () => {
               <h3><span>🤤</span> Description </h3>
               <p>{restaurant.description}</p>
               <hr />
-              <Link to={`/cities/${id}`} className='btn btn-secondary ' style={{ marginRight: '1.5rem' }}>Back to List</Link>
+              <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 ' style={{ marginRight: '1.5rem' }}>Back to List</Link>
               {userIsAuthenticated() ? 
-                <Link className='btn btn-success' to={`/api/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
+                <Link className='btn btn-success mt-3' to={`/api/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
                 :
-                <Link className='btn btn-success' to={'/login'}>Add Review</Link>
+                <Link className='btn btn-success mt-3' to={'/login'}>Add Review</Link>
               }
               <div className='reviews'>
 
