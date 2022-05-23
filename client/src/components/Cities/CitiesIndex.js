@@ -70,7 +70,28 @@ const CitiesIndex = () => {
             </div>
         }
       </Container>
-      <div className='relative flex items-center'>
+      <Container className='city-list'>
+        <Row>
+          {cities.map(city => {
+            const { _id, name, origin, image } = city
+            return (
+              <Col key={_id} md='6' lg='4' className='city mb-4'>
+                <Link to={`cities/${_id}`}>
+                  <Card>
+                    <Card.Img variant='top' src={image} />
+                    <Card.Body className='bd-light'>
+                      <Card.Title className='text-center mb-0'>
+                        {name}
+                      </Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            )
+          })}
+        </Row>
+      </Container>
+      {/* <div className='relative flex items-center'>
         <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={40} />
         <div
           id='slider'
@@ -85,7 +106,7 @@ const CitiesIndex = () => {
           })}
         </div>
         <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={40} />
-      </div>
+      </div> */}
     </>
 
   //? old code below
