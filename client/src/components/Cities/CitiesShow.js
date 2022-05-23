@@ -49,22 +49,26 @@ const CitiesShow = () => {
     <Container className="mt-4">
       <>
         <div className='header-img'>
-          <Card>
+          <Card className='city-hero'>
             <Card.Img src={cities.image} />
             <Card.ImgOverlay>
               <Card.Header className='text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
 
             </Card.ImgOverlay>
             <Card.Footer>
-              <Link to="#todo" className="btn btn-secondary mr-1">
-                Things to do
-              </Link>
-              <Link to="#stay" className="btn btn-secondary mr-1">
-                Places to stay
-              </Link>
-              <Link to="#eat" className="btn btn-secondary">
-                Place to eat
-              </Link>
+              <div className="city-control">
+                <Link to="#todo" className="btn btn-secondary mr-1">
+                  Things to do
+                </Link>
+                <Link to="#stay" className="btn btn-secondary mr-1">
+                  Places to stay
+                </Link>
+                <Link to="#eat" className="btn btn-secondary">
+                  Place to eat
+                </Link>
+
+              </div>
+
 
             </Card.Footer>
           </Card>
