@@ -39,12 +39,11 @@ const NewReview = () => {
     e.preventDefault()
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
+      await axios.post(`api/cities/${id}/restaurants/${restaurantId}/review`, formData, { 
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`, 
         },
       })
       navigate(`api/cities/${id}/restaurants/${restaurantId}`)
-      // navigate(`api/cities/${id}/restaurants/${restaurantId}`, { replace: true })
 
     } catch (error) {
       if (error.response.data.errors) setErrors(error.response.data.errors)

@@ -50,7 +50,7 @@ const GetOneRestaurant = () => {
               <hr />
               <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 ' style={{ marginRight: '1.5rem' }}>Back to List</Link>
               {userIsAuthenticated() ? 
-                <Link className='btn btn-success mt-3' to={`/api/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
+                <Link className='btn btn-success mt-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
                 :
                 <Link className='btn btn-success mt-3' to={'/login'}>Add Review</Link>
               }
