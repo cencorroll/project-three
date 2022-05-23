@@ -4,9 +4,8 @@ import { useNavigate, Link, useParams } from 'react-router-dom'
 
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-// import { Carousel } from 'react-responsive-carousel'
-// import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { MDBRipple } from 'mdb-react-ui-kit'
+import '~mdb-ui-kit/css/mdb.min.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -47,42 +46,34 @@ const CitiesShow = () => {
 
   return (
     <Container className="mt-4">
-      {/* <Row> */}
-      {/* <>
-        <Col>
-          <h2>{cities.name}</h2>
-        </Col>
-        <hr />
-        <Col md="6">
-          <Image
-            rounded="false"
-            fluid="true"
-            className="d-block w-100% mb-5"
-            src={cities.image}
-            alt={cities.name}
-          />
-        </Col>
-      </> */}
       <>
-        <Card.Img src={cities.image} />
-        <Card.Body>
-          <h1>{cities.name}</h1>
-        </Card.Body>
+        {/* <div className='header-img'>
+      <Card.Img src={cities.image} />
+      <Card.Body>
+        <h1>{cities.name}</h1>
+      </Card.Body>
+    </div> */}
+        <MDBRipple className='bg-image' rippleTag='div' rippleColor='light' style={{ maxWidth: '24rem' }}>
+          <img src='https://mdbootstrap.com/img/new/standard/city/053.webp' className='w-100' />
+          <a href='#!'>
+            <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
+              <div className='d-flex justify-content-center align-items-center h-100'>
+                <p className='text-white mb-0'>Can you see me?</p>
+              </div>
+            </div>
+            <div className='hover-overlay'>
+              <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}></div>
+            </div>
+          </a>
+        </MDBRipple>
       </>
-      {/* </Row> */}
-      {/* <Col md="6" className="shadow-sm p-3 border"> */}
       <Link to="/" className="btn btn-secondary">
-              Back to Cities
-      </Link>
-      {/* </Col> */}
-        
-      {/* <hr /> */}
-      <hr />
-      <Carousel variant="dark" >
+        Back to Cities
+      </Link><hr /><Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesFun.map((fun) => {
           return (
             <Carousel.Item interval={2000} key={fun._id}>
-              <Link to={`/api/cities/${cities._id}/funs/${fun._id}`}  key= {fun._id}>
+              <Link to={`/api/cities/${cities._id}/funs/${fun._id}`} key={fun._id}>
                 <img key={fun._id} className="d-block w-100" src={fun.image} alt={fun.name} />
               </Link>
               <Carousel.Caption>
@@ -92,14 +83,11 @@ const CitiesShow = () => {
             </Carousel.Item>
           )
         })}
-      </Carousel>
-      <hr />
-
-      <Carousel variant="dark" >
+      </Carousel><hr /><Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesHotels.map((hotel) => {
           return (
             <Carousel.Item interval={2000} key={hotel._id}>
-              <Link to={`/api/cities/${cities._id}/hotels/${hotel._id}`}  key= {hotel._id}>
+              <Link to={`/api/cities/${cities._id}/hotels/${hotel._id}`} key={hotel._id}>
                 <img key={hotel._id} className="d-block w-100" src={hotel.image} alt={hotel.name} />
               </Link>
               <Carousel.Caption>
@@ -109,13 +97,11 @@ const CitiesShow = () => {
             </Carousel.Item>
           )
         })}
-      </Carousel>
-      <hr />
-      <Carousel variant="dark" >
+      </Carousel><hr /><Carousel variant="dark" style={{ cursor: 'pointer' }}>
         {citiesRestaurants.map((restaurant) => {
           return (
             <Carousel.Item interval={2000} key={restaurant._id}>
-              <Link to={`/api/cities/${cities._id}/restaurants/${restaurant._id}`}  key= {restaurant._id}>
+              <Link to={`/api/cities/${cities._id}/restaurants/${restaurant._id}`} key={restaurant._id}>
                 <img key={restaurant._id} className="d-block w-100" src={restaurant.image} alt={restaurant.name} />
               </Link>
               <Carousel.Caption>
