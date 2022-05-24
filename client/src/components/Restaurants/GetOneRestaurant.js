@@ -10,6 +10,8 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 import { FaStar } from 'react-icons/fa'
+import Stars from '../Reviews/StarRating'
+
 
 
 const GetOneRestaurant = () => {
@@ -60,21 +62,22 @@ const GetOneRestaurant = () => {
               {userIsAuthenticated() ?
                 <Link className='btn btn-success mtb-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
                 :
-                <Link className='btn btn-success mtb-3' to={'/login'}>Add Review</Link>
+                <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
               }
               <ul>
                 {restaurant.reviews.map((review, n) => {
                   return <li key={n}>
-                    {/* <Link to={`/user/${review.owner._id}`}> */}
-                    <div className="reviewHeader">
-                      <p><strong>By {review.owner.username}</strong></p>
-                    </div>
-                    {/* <FaStar rating={review.rating} /> */}
-                    <p>{review.text}</p>
-                    {review.image &&
-                      <img src={review.image} className='reviewImage' alt="users attempt" />
-                    }
-                    {/* </Link> */}
+                    <Link to={`/user/${review.owner._id}`}>
+                      <div className="reviewHeader">
+                        <p><strong>By {review.name}</strong></p>
+                      </div>
+                      {/* <FaStar value={review.rating} color={'#ffc107'} size={20}/> */}
+                      <Stars rating={review.rating} />
+                      <p>{review.text}</p>
+                      {review.image &&
+                      <img src={review.image} className='reviewImage' alt="User Review Picture" />
+                      }
+                    </Link>
                   </li>
                 })}
               </ul>

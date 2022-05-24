@@ -96,7 +96,7 @@ const CitiesIndex = () => {
             const { _id, name, image } = city
             return (
               <Col key={_id} md='6' lg='4' className='city mb-4'>
-                <Link to={`cities/${_id}`}>
+                <Link to={`/cities/${_id}`}>
                   <Card>
                     <Card.Img className='card-img' variant='top' src={image} />
                     <Card.Body className='bd-light'>
