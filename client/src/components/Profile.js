@@ -22,7 +22,7 @@ const Profile = () => {
 
 
   return (
-    <h1>Profile coming soon!</h1>
+    <h1>welcome</h1>
   )
 }
 

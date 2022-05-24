@@ -35,7 +35,7 @@ export const thingsToDoSchema = new mongoose.Schema({
 })
 
 const restaurantSchema = new mongoose.Schema({
-  name: { type: String, required: true, },
+  name: { type: String, required: true },
   description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true },
   price: { type: String, required: true },
@@ -48,7 +48,7 @@ const restaurantSchema = new mongoose.Schema({
 })
 
 const hotelSchema = new mongoose.Schema({
-  name: { type: String, required: true, },
+  name: { type: String, required: true },
   description: { type: String, required: true, maxlength: 1500 },
   image: { type: String, required: true },
   price: { type: String, required: true },

@@ -67,7 +67,8 @@ const GetOneRestaurant = () => {
               <ul>
                 {restaurant.reviews.map((review, n) => {
                   return <li key={n}>
-                    <Link to={`/user/${review.owner._id}`}>
+                    {/* <Link to={`/user/${review.owner._id}`}> */}
+                    <Link to={'/profile'}>
                       <div className="reviewHeader">
                         <p><strong>By {review.name}</strong></p>
                       </div>
