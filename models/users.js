@@ -9,8 +9,8 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
 }, { id: false })
-// created virutal fields
-userSchema.virtual('createdCities',{
+// created virtual fields
+userSchema.virtual('createdReviews',{
   ref: 'City',
   localField: '_id',
   foreignField: 'owner',

@@ -8,7 +8,7 @@ import { FaStar } from 'react-icons/fa'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
+import Stars from '../Reviews/StarRating'
 import Image from 'react-bootstrap/Image'
 
 
@@ -62,7 +62,7 @@ const GetFun = () => {
                     <div className="reviewHeader">
                       <p><strong>By {review.owner.username}</strong></p>
                     </div>
-                    {/* <FaStar rating={review.rating} /> */}
+                    <Stars rating={review.rating} />
                     <p>{review.text}</p>
                     {review.image &&
                       <img src={review.image} className='reviewImage' alt="users attempt" />

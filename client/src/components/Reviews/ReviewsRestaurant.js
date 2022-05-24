@@ -3,8 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 import { userIsAuthenticated } from '../helpers/auth'
+
 import { Rating } from 'react-simple-star-rating'
-import { FaStar } from 'react-icons/fa'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import ImageUpload from '../helpers/ImageUpload'
@@ -21,23 +21,20 @@ const NewReview = () => {
     image: '',
   })
 
-  const [ rating, setRating ] = useState(null)
-  const [ hover, setHover ] = useState(null)
-
   const [ errors, setErrors ] = useState({})
 
   const handleRating = (rating) => { 
     setFormData({ ...formData, rating })
   }
 
-  const handleChange = (event) => { 
-    // setFormData({ ...formData, [e.target.name]: e.target.value })
-    // console.log(formData)
-    // setErrors({ ...errors, [e.target.name]: '' })
-    const target = event.target
-    const value = target.type === 'checkbox' ? target.checked : target.value
-    setFormData({ ...formData, [event.target.name]: value })
-    setErrors({ ...errors, [event.target.name]: '' })
+  const handleChange = (e) => { 
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    console.log(formData)
+    setErrors({ ...errors, [e.target.name]: '' })
+    // const target = event.target
+    // const value = target.type === 'checkbox' ? target.checked : target.value
+    // setFormData({ ...formData, [event.target.name]: value })
+    // setErrors({ ...errors, [event.target.name]: '' })
   }
 
   const handleSubmit = async (e) => { 
@@ -63,8 +60,6 @@ const NewReview = () => {
     }
   }
 
-  // const review = formData.rating
-
   return (
     <section className='form-page'>
       <Container>
@@ -77,43 +72,16 @@ const NewReview = () => {
             <label htmlFor="text">Comments</label>
             <textarea className='input' name="text" placeholder='Comments' value={formData.text} onChange={handleChange}/>
             {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
-            <label htmlFor='image'>Picture</label>
+            {/* <label htmlFor='image'>Picture</label>
             <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
-            {errors.image && <p className='text-danger'>{errors.image}</p>}
-          
-            {/* <div className="field">
+            {errors.image && <p className='text-danger'>{errors.image}</p>} */}
+            <div className="field">
               <ImageUpload
-                formData={formData}
+                value= {formData.image} onChange={handleChange}
                 setFormData={setFormData}
               />
-            </div> */}
-          
-            {/* <div className="formfield">
-              <ImageUpload name="image" handleImageUrl={handleImageUrl} />
-            </div> */}
-            {/* <div>
-          
-          {[ ...Array(5)].map((star, i)=>{
-                const ratingValue = i + 1
-                const review = formData.rating
-                return (
-                  <label key={i}>
-                    <input type='radio' name='rating' value={ratingValue} 
-                      onClick={() => setRating(ratingValue)} 
-                      // onChange={handleChange}
-                    />
-                    <FaStar className='star' color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9' } value={review}
-                      onMouseEnter={() => setHover(ratingValue)}
-                      onMouseLeave={() => setHover(null)}
-                      onChange={handleChange}
-                      size={ 40 }
-                    />
-                  </label>
-                )
-              })}
-            </div> */}
-
-            <div className="input">
+            </div>
+            <div className="form">
               <label htmlFor="rating" >Rating</label>
               <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />
             </div>
