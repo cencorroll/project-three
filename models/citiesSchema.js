@@ -2,8 +2,9 @@ import mongoose from 'mongoose'
 
 
 const reviewSchema = new mongoose.Schema({
-  text: { type: String, maxlength: 1000 },
-  rating: { type: String,  'default': 0, min: 0, max: 5 },
+  text: { type: String, maxlength: 1000, required: true },
+  name: { type: String },
+  rating: { type: String,  'default': 3, min: 0, max: 5, required: true },
   image: { type: String },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
