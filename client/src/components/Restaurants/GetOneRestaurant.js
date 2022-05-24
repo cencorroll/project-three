@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate, Link, useParams } from 'react-router-dom'
+import { useNavigate, Link, useParams, Pathname } from 'react-router-dom'
 
 import { userIsAuthenticated } from '../helpers/auth.js'
 
@@ -12,17 +12,17 @@ import Image from 'react-bootstrap/Image'
 import { FaStar } from 'react-icons/fa'
 
 
-const GetOneRestaurant = () => { 
+const GetOneRestaurant = () => {
 
   const navigate = useNavigate()
 
   const { id, restaurantId } = useParams()
 
-  const [ city, setCity ] = useState([])
-  const [ restaurant, setRestaurant ] = useState(null)
-  const [ errors, setErrors ] = useState(false)
+  const [city, setCity] = useState([])
+  const [restaurant, setRestaurant] = useState(null)
+  const [errors, setErrors] = useState(false)
 
-  useEffect(() => { 
+  useEffect(() => {
     const getRestaurant = async () => {
       try {
         const { data } = await axios.get(`/api/cities/${id}/restaurants/${restaurantId}`)
@@ -38,22 +38,29 @@ const GetOneRestaurant = () => {
 
   return (
     <Container className='mt-3'>
-      <Row>
-        { restaurant ? 
+      <Row className='get-one-row'>
+        {restaurant ?
           <>
-            <Col xs='12'><h1>{restaurant.name}</h1><hr/></Col>
+            <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr /></Col>
             <Col md='6'>
               <img src={restaurant.image} alt={restaurant.name} />
             </Col>
             <Col md='6'>
-              <h3><span>🤤</span> Description </h3>
-              <p>{restaurant.description}</p>
-              <hr />
-              <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 ' style={{ marginRight: '1.5rem' }}>Back to List</Link>
-              {userIsAuthenticated() ? 
-                <Link className='btn btn-success mt-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
+              <div className="info-box">
+                <h3><span>🤤</span> Description </h3>
+                <p>{restaurant.description}</p>
+                <hr />
+                <p>{restaurant.location}</p>
+                <p>{restaurant.price}</p>
+                <Link to={restaurant.link} className='btn btn-primary mt-5'>Website</Link>
+              </div>
+
+              
+              <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 mb-3' style={{ marginRight: '1.5rem' }}>Back to List</Link>
+              {userIsAuthenticated() ?
+                <Link className='btn btn-success mtb-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
                 :
-                <Link className='btn btn-success mt-3' to={'/login'}>Add Review</Link>
+                <Link className='btn btn-success mtb-3' to={'/login'}>Add Review</Link>
               }
               <ul>
                 {restaurant.reviews.map((review, n) => {

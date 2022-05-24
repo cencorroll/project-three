@@ -52,13 +52,33 @@ img{
       text-align: center;
     }
   }
-
+  
   .card-img {
     height: 220px;
+    
   }
 
-
-
+//single city
+.city-hero {
+  
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  .card-header{
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.1);
+    width: fit-content;
+    backdrop-filter:blur(1px);
+  }
+  .card-img{
+    height: 100%;
+  }
+  
+  .city-control {
+    display: flex;
+    justify-content: center;
+  }
+}
 
 //
 .form-page{
@@ -86,5 +106,29 @@ img{
       font-size: 0.8rem;
       margin: -5px 0 10px;
     }
+  }
+}
+
+
+// restaurant
+.get-one-row {
+  border: 1px solid grey;
+  border-radius: 30px;
+  h1{
+    text-align: center;
+    margin: 10px 0;
+  }
+  img{
+    width: 100%;
+  }
+  .info-box{
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid grey;
+    // height:100px;
+    p{
+      margin-top: 5px;
+    }
+
   }
 }

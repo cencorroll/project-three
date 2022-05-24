@@ -34,7 +34,7 @@ export const thingsToDoSchema = new mongoose.Schema({
 })
 
 const restaurantSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
+  name: { type: String, required: true, },
   description: { type: String, required: true, maxlength: 1000 },
   image: { type: String, required: true },
   price: { type: String, required: true },
@@ -47,8 +47,8 @@ const restaurantSchema = new mongoose.Schema({
 })
 
 const hotelSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
-  description: { type: String, required: true, maxlength: 1000 },
+  name: { type: String, required: true, },
+  description: { type: String, required: true, maxlength: 1500 },
   image: { type: String, required: true },
   price: { type: String, required: true },
   location: { type: String },
@@ -70,6 +70,7 @@ const shortHistorySchema = new mongoose.Schema({
 const citiesSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   image: { type: String, required: true },
+  country: { type: String, required: true },
   thingsToDo: [thingsToDoSchema],
   restaurants: [restaurantSchema],
   hotels: [hotelSchema],

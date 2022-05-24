@@ -247,3 +247,15 @@ export const hotelsoInAberdeen = [
 
   }
 ]
+
+export const hotelsData = [
+  {
+    name: 'place holder',
+    description: 'placeholder description.',
+    image: 'sssss',
+    price: '$free',
+    location: 'somewhere',
+    link: 'https:www.google.com',
+  }
+
+]

@@ -249,3 +249,14 @@ export const restaurantDataAberdeen = [
   }
 
 ] 
+export const restaurantData = [
+  {
+    name: 'place holder',
+    description: 'placeholder description.',
+    image: 'sssss',
+    price: '$free',
+    location: 'somewhere',
+    link: 'https:www.google.com',
+  }
+
+]
