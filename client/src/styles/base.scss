@@ -16,7 +16,6 @@ img{
   min-height: 100vh;
 }
 
-
 .d-block {
   width: 100%;
   height: 500px;  
@@ -151,5 +150,31 @@ input[type="radio"]{
     p{
       margin-top: 5px;
     }
+  }
+}
 
-  }}
+.carousel {
+  margin-bottom: 30px;
+  .carousel-img {
+  height: 250px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
+  border-radius: 20px;
+  filter: brightness(70%);
+  }
+  .caption {
+    color: white;
+    
+  }
+}
+
+.carousel-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}

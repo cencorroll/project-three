@@ -60,51 +60,48 @@ const CitiesShow = () => {
       </>
       <Link to="/" className="btn btn-secondary">Back to Cities</Link>
       <hr />
-      <h3 id='todo'>Things to do</h3>
-      <Carousel variant="dark" style={{ cursor: 'pointer' }}>
+      <h3 className='carousel-title' id='todo'>Things to do</h3>
+      <Carousel className='carousel' variant="dark" style={{ cursor: 'pointer' }}>
         {citiesFun.map((fun) => {
           return (
-            <Carousel.Item interval={2000} key={fun._id}>
+            <Carousel.Item interval={4000} key={fun._id}>
               <Link to={`/cities/${cities._id}/fun/${fun._id}`}>
-                <img key={fun._id} className="d-block w-100" src={fun.image} alt={fun.name} />
+                <img key={fun._id} className="d-block w-100 carousel-img" src={fun.image} alt={fun.name} />
               </Link>
               <Carousel.Caption>
-                <h5>{fun.name}</h5>
-                <p>{fun.description}</p>
+                <h5 className='caption'>{fun.name}</h5>
               </Carousel.Caption>
             </Carousel.Item>
           )
         })}
       </Carousel>
       <hr />
-      <h3 id='stay'>Places to Stay</h3>
-      <Carousel variant="dark" style={{ cursor: 'pointer' }}>
+      <h3 className='carousel-title' id='stay'>Places to Stay</h3>
+      <Carousel  className='carousel' variant="dark" style={{ cursor: 'pointer' }}>
         {citiesHotels.map((hotel) => {
           return (
-            <Carousel.Item interval={2000} key={hotel._id}>
+            <Carousel.Item interval={4000} key={hotel._id}>
               <Link to={`/cities/${cities._id}/hotels/${hotel._id}`} >
-                <img className="d-block w-100" src={hotel.image} alt={hotel.name} />
+                <img className="d-block w-100 carousel-img" src={hotel.image} alt={hotel.name} />
               </Link>
               <Carousel.Caption>
-                <h5 >{hotel.name}</h5>
-                <p >{hotel.description}</p>
+                <h5 className='caption'>{hotel.name}</h5>
               </Carousel.Caption>
             </Carousel.Item>
           )
         })}
       </Carousel>
       <hr />
-      <h3 id='eat'>Places to Eat</h3>
-      <Carousel variant="dark" style={{ cursor: 'pointer' }}>
+      <h3 className='carousel-title' id='eat'>Places to Eat</h3>
+      <Carousel className='carousel' variant="dark" style={{ cursor: 'pointer' }}>
         {citiesRestaurants.map((restaurant) => {
           return (
-            <Carousel.Item interval={2000} key={restaurant._id}>
+            <Carousel.Item interval={4000} key={restaurant._id}>
               <Link to={`/cities/${cities._id}/restaurants/${restaurant._id}`} >
-                <img className="d-block w-100" src={restaurant.image} alt={restaurant.name} />
+                <img className="d-block w-100 carousel-img" src={restaurant.image} alt={restaurant.name} />
               </Link>
               <Carousel.Caption>
-                <h5 >{restaurant.name}</h5>
-                <p >{restaurant.description}</p>
+                <h5 className='caption'>{restaurant.name}</h5>
               </Carousel.Caption>
             </Carousel.Item>
           )

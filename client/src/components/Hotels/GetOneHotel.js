@@ -9,7 +9,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Stars from '../Reviews/StarRating'
-import Image from 'react-bootstrap/Image'
+
 
 
 const GetOneHotel = () => { 
@@ -60,13 +60,11 @@ const GetOneHotel = () => {
                   return <li key={n}>
                     {/* <Link to={`/user/${review.owner._id}`}> */}
                     <div className="reviewHeader">
-                      <p><strong>By {review.owner.username}</strong></p>
+                      <p><strong>By {review.name}</strong></p>
                     </div>
                     <Stars rating={review.rating} />
                     <p>{review.text}</p>
-                    {review.image &&
-                      <img src={review.image} className='reviewImage' alt="users attempt" />
-                    }
+                    <img src={review.image} className='reviewImage' alt="User Review Picture" />
                     {/* </Link> */}
                   </li>
                 })}
