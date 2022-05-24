@@ -5,8 +5,7 @@ import { useNavigate, Link, useParams, Pathname } from 'react-router-dom'
 import { userIsAuthenticated } from '../helpers/auth.js'
 
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import { Row, Col, Button } from 'react-bootstrap'
 import Stars from '../Reviews/StarRating'
 
 
@@ -51,7 +50,7 @@ const GetOneRestaurant = () => {
                 <hr />
                 <p>{restaurant.location}</p>
                 <p>{restaurant.price}</p>
-                <Link to={restaurant.link} className='btn btn-primary mt-5'>Website</Link>
+                <Button href={restaurant.link} target='_blank' rel="noreferrer">Website</Button>
               </div>
 
               
