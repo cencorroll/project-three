@@ -71,9 +71,10 @@ const GetOneRestaurant = () => {
                     </div>
                     <Stars rating={review.rating} />
                     <p>{review.text}</p>
-                    {review.image &&
+                    {/* {review.image &&
                       <img src={review.image} className='reviewImage' alt="User Review Picture" />
-                    }
+                    } */}
+                    <img src={review.image} className='reviewImage' alt="User Review Picture" />
                     {/* </Link> */}
                   </li>
                 })}

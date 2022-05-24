@@ -27,14 +27,14 @@ const NewReview = () => {
     setFormData({ ...formData, rating })
   }
 
-  const handleChange = (event) => { 
-    // setFormData({ ...formData, [e.target.name]: e.target.value })
-    // console.log(formData)
-    // setErrors({ ...errors, [e.target.name]: '' })
-    const target = event.target
-    const value = target.type === 'checkbox' ? target.checked : target.value
-    setFormData({ ...formData, [event.target.name]: value })
-    setErrors({ ...errors, [event.target.name]: '' })
+  const handleChange = (e) => { 
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    console.log(formData)
+    setErrors({ ...errors, [e.target.name]: '' })
+    // const target = event.target
+    // const value = target.type === 'checkbox' ? target.checked : target.value
+    // setFormData({ ...formData, [event.target.name]: value })
+    // setErrors({ ...errors, [event.target.name]: '' })
   }
 
   const handleSubmit = async (e) => { 
@@ -72,9 +72,15 @@ const NewReview = () => {
             <label htmlFor="text">Comments</label>
             <textarea className='input' name="text" placeholder='Comments' value={formData.text} onChange={handleChange}/>
             {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
-            <label htmlFor='image'>Picture</label>
+            {/* <label htmlFor='image'>Picture</label>
             <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
-            {errors.image && <p className='text-danger'>{errors.image}</p>}
+            {errors.image && <p className='text-danger'>{errors.image}</p>} */}
+            <div className="field">
+              <ImageUpload
+                value= {formData.image} onChange={handleChange}
+                setFormData={setFormData}
+              />
+            </div>
             <div className="form">
               <label htmlFor="rating" >Rating</label>
               <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />

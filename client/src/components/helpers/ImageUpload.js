@@ -1,40 +1,38 @@
-import React from 'react'
-// import 'dotenv/config'
+
 import axios from 'axios'
 
-// const ImageUpload = ({ value, name, handleImageUrl }) => { 
 const ImageUpload = ({ formData, setFormData }) => { 
+
   const uploadURL = process.env.REACT_APP_CLOUDINARY_URL
   const preset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
 
   console.log(uploadURL, preset)
 
-  // const handleChange = async e => { 
-  //   const formData = new FormData()
-  //   formData.append('file', e.target.files[0])
-  //   formData.append('upload_preset', preset)
-  //   const { data }  = await axios.post(uploadURL, formData)
-  //   handleImageUrl(data.url)
-  // }
   const handleImageUpload = async e => { 
+    // Create form data to send in the API request to cloudinary
+    // To do it we're going to use the FormData constructor from javascript
     const data = new FormData()
+    // Once created we're going to append the files that were uploaded to the FormData
     data.append('file', e.target.files[0])
     data.append('upload_preset', preset)
+    // Once we.ve done this, this data is ready to be sent, and we'll use the upload url to do it
     const res = await axios.post(uploadURL, data)
-    setFormData({ ...formData, profileImage: res.data.url })
+
+    // Set the profileImage (from the formData on App.js) url to state
+    setFormData({ ...formData, image: res.data.url })
   }
 
   return (
     <>
-      { FormData.reviewImage ? 
+      { FormData.profileImage ? 
         <div>
-          <img src={formData.reviewImage} alt='Image to upload' />
+          <img src={formData.image} alt='Image to upload' />
         </div>
         :
         <>
-          <label htmlFor ='reviewImage' className="checkbox labl">Review Image Upload</label>
+          <label htmlFor ='image' className="checkbox labl">Profile Image Upload</label>
           <input
-            name='reviewImage'
+            name='image'
             className="input"
             type="file"
             onChange={handleImageUpload}
@@ -42,11 +40,7 @@ const ImageUpload = ({ formData, setFormData }) => {
         </>
       }
     </>
-    // <>
-    //   <label htmlFor="image">Upload Image</label>
-    //   <input type="file" name={name} id="image" className="input" onChange={handleChange}/>
-    // </>
   )
 }
-export default ImageUpload
 
+export default ImageUpload
