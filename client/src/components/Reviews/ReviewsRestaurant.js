@@ -5,10 +5,11 @@ import { getTokenFromLocalStorage } from '../helpers/auth'
 import { userIsAuthenticated } from '../helpers/auth'
 
 import { FaStar } from 'react-icons/fa'
-// import { Rating } from 'react-simple-star-rating'
+import { Rating } from 'react-simple-star-rating'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-// import { startSession } from 'mongoose'
+import ImageUpload from '../helpers/ImageUpload'
+import { Rating } from 'react-simple-star-rating'
 
 
 const NewReview = () => { 
@@ -17,7 +18,8 @@ const NewReview = () => {
 
   const [ formData, setFormData ] = useState({
     text: '',
-    rating: Number,
+    name: '',
+    rating: 0,
     image: '',
   })
 
@@ -30,10 +32,14 @@ const NewReview = () => {
     setFormData({ ...formData, rating })
   }
 
-  const handleChange = (e) => { 
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(formData)
-    setErrors({ ...errors, [e.target.name]: '' })
+  const handleChange = (event) => { 
+    // setFormData({ ...formData, [e.target.name]: e.target.value })
+    // console.log(formData)
+    // setErrors({ ...errors, [e.target.name]: '' })
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    setFormData({ ...formData, [event.target.name]: value })
+    setErrors({ ...errors, [event.target.name]: '' })
   }
 
   const handleSubmit = async (e) => { 
@@ -51,13 +57,15 @@ const NewReview = () => {
     }
   }
 
-  // const handleImageUrl = (url) => {
-  //   try {
-  //     setFormData({ ...formData, image: url })
-  //   } catch (error) {
-  //     if (error.response.data.errors) setErrors(error.response.data.errors)
-  //   }
-  // }
+  const handleImageUrl = (url) => {
+    try {
+      setFormData({ ...formData, image: url })
+    } catch (error) {
+      if (error.response.data.errors) setErrors(error.response.data.errors)
+    }
+  }
+
+  // const review = formData.rating
 
   return (
     <section className='form-page'>
@@ -65,34 +73,51 @@ const NewReview = () => {
         <Row>
           <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5'  onSubmit={handleSubmit}>
             <h1>Leave a Review!</h1>
-            <label htmlFor="text">Text</label>
-            <textarea className='input' name="text" placeholder='Text' value={formData.name} onChange={handleChange}/>
+            <label htmlFor="name">Username</label>
+            <input type='text' className='input' name="name" placeholder='Username' value={formData.name} onChange={handleChange}/>
+            {errors.name ? <p className='text-danger'>{errors.name}</p> : '' }
+            <label htmlFor="text">Comments</label>
+            <textarea className='input' name="text" placeholder='Comments' value={formData.text} onChange={handleChange}/>
             {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
-            {/* <label htmlFor='origin'>Origin</label>
-            <input type='text' name='origin' placeholder='Origin'className='input' value={formData.origin} onChange={handleChange}/>
-            {errors.origin ? <p className='text-danger'>{errors.origin}</p> : ''}
-            <label htmlFor='description'>Description</label>
-            <input type='text' name='description' placeholder='Description' className='input' value={formData.description} onChange={handleChange}/>
-            {errors.description && <p className='text-danger'>{errors.description}</p>} */}
             <label htmlFor='image'>Picture</label>
             <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
             {errors.image && <p className='text-danger'>{errors.image}</p>}
-            <div>
-              {[ ...Array(5)].map((star, i)=>{
+          
+            {/* <div className="field">
+              <ImageUpload
+                formData={formData}
+                setFormData={setFormData}
+              />
+            </div> */}
+          
+            {/* <div className="formfield">
+              <ImageUpload name="image" handleImageUrl={handleImageUrl} />
+            </div> */}
+            {/* <div>
+          
+          {[ ...Array(5)].map((star, i)=>{
                 const ratingValue = i + 1
+                const review = formData.rating
                 return (
-                  <label htmlFor='rating' key={i}>
+                  <label key={i}>
                     <input type='radio' name='rating' value={ratingValue} 
                       onClick={() => setRating(ratingValue)} 
+                      // onChange={handleChange}
                     />
-                    <FaStar className='star' color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9' } 
+                    <FaStar className='star' color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9' } value={review}
                       onMouseEnter={() => setHover(ratingValue)}
                       onMouseLeave={() => setHover(null)}
-                      size={ 30 }
+                      onChange={handleChange}
+                      size={ 40 }
                     />
                   </label>
                 )
               })}
+            </div> */}
+
+            <div className="input">
+              <label htmlFor="rating" >Rating</label>
+              <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />
             </div>
         
             <button type='submit' className='btn w-100'>Submit</button>

@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 import { FaStar } from 'react-icons/fa'
+// import Stars from '../Reviews/StarDisplay'
 
 
 const GetOneRestaurant = () => {
@@ -67,12 +68,13 @@ const GetOneRestaurant = () => {
                   return <li key={n}>
                     {/* <Link to={`/user/${review.owner._id}`}> */}
                     <div className="reviewHeader">
-                      <p><strong>By {review.owner.username}</strong></p>
+                      <p><strong>By {review.name}</strong></p>
                     </div>
-                    {/* <FaStar rating={review.rating} /> */}
+                    <FaStar value={review.rating} color={'#ffc107'} size={20}/>
+                    {/* <Stars rating={review.rating} /> */}
                     <p>{review.text}</p>
                     {review.image &&
-                      <img src={review.image} className='reviewImage' alt="users attempt" />
+                      <img src={review.image} className='reviewImage' alt="User Review Picture" />
                     }
                     {/* </Link> */}
                   </li>

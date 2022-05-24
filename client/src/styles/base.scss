@@ -108,6 +108,22 @@ img{
   }
 }
 
+input[type="radio"]{
+  display: none;
+}
+
+.star{
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+//
+.formfield {
+  margin: 30px 30px 0;
+  label{
+    display: block;
+    margin-bottom: 5px;
+  }
 
 // restaurant
 .get-one-row {
