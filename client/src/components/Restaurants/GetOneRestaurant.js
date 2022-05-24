@@ -7,7 +7,6 @@ import { userIsAuthenticated } from '../helpers/auth.js'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
 import Stars from '../Reviews/StarRating'
 
 
@@ -71,9 +70,6 @@ const GetOneRestaurant = () => {
                     </div>
                     <Stars rating={review.rating} />
                     <p>{review.text}</p>
-                    {/* {review.image &&
-                      <img src={review.image} className='reviewImage' alt="User Review Picture" />
-                    } */}
                     <img src={review.image} className='reviewImage' alt="User Review Picture" />
                     {/* </Link> */}
                   </li>
