@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Stars from '../Reviews/StarRating'
+import { Button } from 'bootstrap'
 
 
 
@@ -51,7 +52,7 @@ const GetOneRestaurant = () => {
                 <hr />
                 <p>{restaurant.location}</p>
                 <p>{restaurant.price}</p>
-                <Link to={restaurant.link} className='btn btn-primary mt-5'>Website</Link>
+                <Button href ={restaurant.link} className='btn btn-primary mt-5'>Book</Button>
               </div>
 
               
