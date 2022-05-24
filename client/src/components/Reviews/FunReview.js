@@ -4,10 +4,11 @@ import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 import { userIsAuthenticated } from '../helpers/auth'
 
-import { FaStar } from 'react-icons/fa'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { Rating } from 'react-simple-star-rating'
+import ImageUpload from '../helpers/ImageUpload'
+
 
 
 
@@ -21,9 +22,6 @@ const NewReviewFun = () => {
     rating: 0,
     image: '',
   })
-
-  const [ rating, setRating ] = useState(null)
-  const [ hover, setHover ] = useState(null)
 
   const [ errors, setErrors ] = useState({})
 
@@ -52,14 +50,6 @@ const NewReviewFun = () => {
     }
   }
 
-  // const handleImageUrl = (url) => {
-  //   try {
-  //     setFormData({ ...formData, image: url })
-  //   } catch (error) {
-  //     if (error.response.data.errors) setErrors(error.response.data.errors)
-  //   }
-  // }
-
   return (
     <section className='form-page'>
       <Container>
@@ -72,9 +62,12 @@ const NewReviewFun = () => {
             <label htmlFor="text">Comments</label>
             <textarea className='input' name="text" placeholder='Comments' value={formData.text} onChange={handleChange}/>
             {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
-            <label htmlFor='image'>Picture</label>
-            <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
-            {errors.image && <p className='text-danger'>{errors.image}</p>}
+            <div className="field">
+              <ImageUpload
+                value= {formData.image} onChange={handleChange}
+                setFormData={setFormData}
+              />
+            </div>
             <div className="form">
               <label htmlFor="rating" >Rating</label>
               <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />
