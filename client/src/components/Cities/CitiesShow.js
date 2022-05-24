@@ -58,17 +58,6 @@ const CitiesShow = () => {
           </Card>
         </div>
       </>
-      {/* <div className="city-control">
-        <Link to="/" className="btn btn-secondary mr-1">
-          Things to do
-        </Link>
-        <Link to="/" className="btn btn-secondary mr-1">
-          Places to stay
-        </Link>
-        <Link to="/" className="btn btn-secondary">
-          Place to eat
-        </Link>
-      </div> */}
       <Link to="/" className="btn btn-secondary">Back to Cities</Link>
       <hr />
       <h3 id='todo'>Things to do</h3>

@@ -220,7 +220,6 @@ export const hotelsoInEdinburgh = [
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
-
   }
 ]
 
