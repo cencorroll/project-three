@@ -9,7 +9,6 @@ import { Rating } from 'react-simple-star-rating'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import ImageUpload from '../helpers/ImageUpload'
-import { Rating } from 'react-simple-star-rating'
 
 
 const NewReview = () => { 

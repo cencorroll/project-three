@@ -124,19 +124,20 @@ input[type="radio"]{
     display: block;
     margin-bottom: 5px;
   }
+}
 
 // restaurant
 .get-one-row {
   border: 1px solid grey;
   border-radius: 30px;
-  h1{
+  h1 {
     text-align: center;
     margin: 10px 0;
   }
-  img{
+  img {
     width: 100%;
   }
-  .info-box{
+  .info-box {
     margin-top: 20px;
     padding: 10px;
     border: 1px solid grey;
@@ -144,6 +145,5 @@ input[type="radio"]{
     p{
       margin-top: 5px;
     }
-
   }
 }

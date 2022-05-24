@@ -7,6 +7,7 @@ import { userIsAuthenticated } from '../helpers/auth'
 import { FaStar } from 'react-icons/fa'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import { Rating } from 'react-simple-star-rating'
 
 
 
