@@ -39,7 +39,7 @@ const Register = () => {
     <section className="form-page">
       <Container>
         <Row>
-          <form onSubmit={handleSubmit}>
+          <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5' onSubmit={handleSubmit}>
             <h1>Register</h1>
             {/* Username */}
             <label htmlFor="username">Username</label>
