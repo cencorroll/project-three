@@ -13,8 +13,8 @@ const reviewSchema = new mongoose.Schema({
 })
 
 export const thingsToDoSchema = new mongoose.Schema({
-  name: { type: String, required: true, maxlength: 50 },
-  description: { type: String, required: true, maxlength: 1000 },
+  name: { type: String, required: true, maxlength: 100 },
+  description: { type: String, required: true, maxlength: 1500 },
   image: { type: String, required: true },
   price: { type: String, required: true },
   location: { type: String },
@@ -26,8 +26,8 @@ export const thingsToDoSchema = new mongoose.Schema({
 })
 
 const restaurantSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true, maxlength: 1000 },
+  name: { type: String, required: true, },
+  description: { type: String, required: true, maxlength: 1500 },
   image: { type: String, required: true },
   price: { type: String, required: true },
   location: { type: String },
@@ -53,7 +53,7 @@ const hotelSchema = new mongoose.Schema({
 
 const shortHistorySchema = new mongoose.Schema({
   // name: { type: String, required: true, unique: true, maxlength: 50 },
-  description: { type: String, required: true, maxlength: 1000 },
+  description: { type: String, required: true, maxlength: 1500 },
   image: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 })

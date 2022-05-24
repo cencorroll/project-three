@@ -1,51 +1,51 @@
 export const thingsToDoInParis = [
   {
-    name: 'Shopping',
-    description: 'Go shopping on some of the most famous streets in Europe!',
-    image: 'ssss',
+    name: 'Bateaux Parisiens Seine River Gourmet Dinner & Sightseeing Cruise',
+    description: 'Admire top Paris sights from the river on a relaxed Seine sightseeing cruise',
+    image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/7e/6d/4b.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.bateauxparisiens.com/en/the-company.html',
   },
   {
-    name: 'Discover all the parks',
-    description: 'Walk arround the city, you will discover a lot of cool parks that are worth seeing!',
-    image: 'ssss',
+    name: 'Eiffel Tower',
+    description: 'Come and discover the Eiffel Tower on the only trip to the top of its kind in Europe, and let pure emotions carry you from the esplanade to the top.',
+    image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/a5/fb/2f.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.toureiffel.paris/en',
   },
   {
-    name: 'Go to the beach',
-    description: 'Enjoy a full day at the beach!',
-    image: 'ssss',
+    name: 'Louvre Museum',
+    description: 'The Louvre, or the Louvre Museum, is the world\'s most-visited museum, and a historic landmark in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo.',
+    image: 'https://images.unsplash.com/photo-1587422023429-24edff4116a5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.louvre.fr/en',
   }
 
 ] 
 export const thingsToDoInBarcelona = [
   {
-    name: 'Shopping',
-    description: 'Go shopping on some of the most famous streets in Europe!',
-    image: 'ssss',
+    name: 'Sagrada Familia',
+    description: 'The Basílica i Temple Expiatori de la Sagrada Família, also known as the Sagrada Família, is a large unfinished minor basilica in the Eixample district of Barcelona, Catalonia, Spain, and is currently the largest unfinished Roman Catholic church.',
+    image: 'https://images.unsplash.com/photo-1583779457094-ab6f77f7bf57?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://sagradafamilia.org/en/',
   },
   {
-    name: 'Discover all the parks',
-    description: 'Walk arround the city, you will discover a lot of cool parks that are worth seeing!',
-    image: 'ssss',
+    name: 'FC Barcelona Camp Nou',
+    description: 'Camp Nou, officially branded as Spotify Camp Nou for sponsorship reasons, is a football stadium in Barcelona, Spain. It opened in 1957 and has been the home stadium of FC Barcelona since its completion.',
+    image: 'https://images.unsplash.com/photo-1595030044556-acfaa61edc0f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.fcbarcelona.com/en/tickets/camp-nou-experience',
   },
   {
     name: 'Go to the beach',
     description: 'Enjoy a full day at the beach!',
-    image: 'ssss',
+    image: 'https://images.unsplash.com/photo-1534001265532-393289eb8ed3?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674',
     price: '$$$',
     location: 'Downtown',
     link: 'wwww.google.com',
@@ -200,14 +200,14 @@ export const thingsToDoInEdinburgh = [
   {
     name: 'Edinburgh Castle',
     description: 'Iconic castle over looking Edinburgh city!',
-    image: 'edin_castle_picture',
+    image: 'https://i.guim.co.uk/img/media/c52f927220763260114d9a8e663f40c549b2b66e/0_240_5125_3075/master/5125.jpg?width=700&quality=85&auto=format&fit=max&s=3f579ed036acc918863af46e488a11a5',
     price: '££',
     link: 'wwww.google.com',
   },
   {
     name: 'The National Museum of Scotland',
     description: 'The National Museum of Scotland',
-    image: 'image of museum',
+    image: 'https://www.nms.ac.uk/media/1162612/2020_09_11_ra_030.jpg?anchor=center&mode=crop&width=1920&height=800&rnd=132953974580000000',
     price: 'free',
     link: 'https://www.nms.ac.uk/',
   }
@@ -218,7 +218,7 @@ export const thingsToDoInGlasgow = [
   {
     name: 'Hunterian Museum and Art Gallery',
     description: 'Check out one of the best Gallery',
-    image: 'ssss',
+    image: 'https://www.gla.ac.uk/media/Media_532359_smxx.jpg',
     price: 'free',
     link: 'https://www.gla.ac.uk/hunterian/',
   }
@@ -227,7 +227,7 @@ export const thingsToDoInAberdeen = [
   {
     name: 'Duthie Park',
     description: 'Duthie Park is Scotland\'s third most visited gardens for its wide range of exotic plants, family play areas, boating ponds, sports fields and recently restored Victorian design features.',
-    image: 'sssss',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Duthie_Park_-_Winter_Gardens.jpg',
     price: '$free',
     link: 'https://www.visitabdn.com/listing/duthie-park?',
   }

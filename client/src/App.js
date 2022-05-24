@@ -3,7 +3,6 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './styles/main.css'
 
-
 //Components
 import Home from './components/Home'
 import PageNavBar from './components/PageNavBar'
@@ -16,6 +15,7 @@ import AllThingsToDo from './components/Fun/AllThingsToDo'
 import OneThingsToDo from './components/Fun/OneThingsToDo'
 import GetOneRestaurant from './components/Restaurants/GetOneRestaurant'
 import PageNotFound from './components/utilities/PageNotFound'
+
 import CitiesIndex from './components/Cities/CitiesIndex'
 import GetOneHotel from './components/Hotels/GetOneHotel'
 import GetFun from './components/Fun/OneThingsToDo'
