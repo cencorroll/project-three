@@ -1,82 +1,82 @@
 export const restaurantDataParis = [
   {
-    name: 'La vie e belle',
-    description: 'One of the best restaurants in the city!',
-    image: 'ssss',
+    name: 'Epicure',
+    description: 'Upscale hotel restaurant overlooking a courtyard garden & specializing in French fine dining & wine.',
+    image: 'https://www.oetkercollection.com/media/42272/le_bristol_paris_-_epicure_-_c_claire_cocano_6607.jpg?anchor=center&mode=crop&quality=85&width=1000&height=500&rnd=132576132720000000',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.oetkercollection.com/fr/hotels/le-bristol-paris/restaurants-et-bar/epicure/',
   },
   {
-    name: 'Burger on the street',
-    description: 'Not going back there!',
-    image: 'ssss',
+    name: 'Il était un square',
+    description: 'Burgers & tartare from traditionally bred beef, plus homemade fries & mayo, in a convivial bistro.',
+    image: 'https://www.iletaitunsquare.com/images/galerie/img_0132.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'www.iletaitunsquare.com/',
   },
   {
-    name: 'Piazzetta',
-    description: 'Great for price!',
-    image: 'ssss',
+    name: 'Boutary',
+    description: 'Intimate contemporary dining room offering sophisticated tasting menus, caviar & champagne.',
+    image: 'https://www.boutary-restaurant.com/wp-content/uploads/2020/05/CF033176-705x529.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.boutary-restaurant.com/',
   }
 
 ] 
 
 export const restaurantDataBarcelona = [
   {
-    name: 'Vino',
-    description: 'One of the best wines in the city!',
-    image: 'ssss',
+    name: 'Disfrutar',
+    description: 'Experimental tasting menus emphasise Mediterranean seafood in an airy, upscale dining room.',
+    image: 'https://axwwgrkdco.cloudimg.io/v7/__gmpics__/3a0d94968d004b65bb738cc094fc3833?width=1000',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.disfrutarbarcelona.com/',
   },
   {
-    name: 'Quesadilla',
-    description: 'Worst quesadilla ever!!',
-    image: 'ssss',
+    name: 'Viana Barcelona',
+    description: 'Artisan cocktails, tapas & refined Mediterranean-style dishes with global twists in a stylish space.',
+    image: 'https://www.vianabcn.com/images/speasyimagegallery/albums/1/images/granviana1.jpg',
     price: '$$$',
     location: 'Downtown2',
-    link: 'wwww.google.com',
+    link: 'https://www.vianabcn.com/es/',
   },
   {
-    name: 'Gourmet1',
-    description: 'Best pizza for price!',
-    image: 'ssss',
+    name: 'Con Gracia',
+    description: 'Artfully presented Mediterranean dishes at a classy venue offering tasting menus with wine pairings.',
+    image: 'https://res.cloudinary.com/tf-lab/image/upload/w_600,h_337,c_fill,g_auto:subject,q_auto,f_auto/restaurant/8199bcd6-c53a-4b34-a1e5-ea7db4358037/12cc06d7-3cbc-4571-822d-60589421b531.jpg',
     price: '$$$',
     location: 'Downtown2',
-    link: 'wwww.google.com',
+    link: 'https://congraciarestaurant.com/',
   }
 ]
 
 export const restaurantDataLondon = [
   {
-    name: 'Manhattan',
-    description: 'One of the best subs in the city!',
-    image: 'ssss',
+    name: 'Twist Connubio',
+    description: 'Rustic-chic dining room serving international, ingredient-led small plates cooked on a Josper grill.',
+    image: 'https://images.squaremeal.co.uk/cloud/restaurants/21584/images/photo-18-01-2022--12-16-46_27012022093337.jpeg?w=928&h=522&fit=crop',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.twistconnubio.com/',
   },
   {
-    name: 'Picadilli',
-    description: 'Amaizing!!',
-    image: 'ssss',
+    name: 'Mildreds Soho',
+    description: 'International-themed vegetarian restaurant which favours organic, seasonal produce and wine.',
+    image: 'https://www.hot-dinners.com/images/stories/blog/2021/mallownew.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.mildreds.co.uk/',
   },
   {
-    name: 'Gourmeta',
-    description: 'Best pizza for price!',
-    image: 'ssss',
+    name: 'Padella',
+    description: 'Modern bistro with a short list of housemade pasta dishes accompanied by wine & Italianate drinks.',
+    image: 'https://images.squaremeal.co.uk/cloud/restaurants/10862/images/padella-borough-food_06032020043928.jpg?w=928&h=522&fit=crop',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.padella.co/',
   }
 ]
 
@@ -221,8 +221,8 @@ export const restaurantDataEdinburgh = [
     description: 'Unfussy restaurant specialising in mashed potatoes flavoured with meat or vegetarian toppings.',
     image: 'ssss',
     price: '$$',
-    location: 'Near Royal Mile',
-    link: 'wwww.google.com',
+    location: 'Near Scottish National Gallery',
+    link: 'https://makarsmash.com/',
   }
 
 ] 
@@ -231,7 +231,7 @@ export const restaurantDataGlasgow = [
   {
     name: 'Ox and Finch',
     description: 'Trendy, high-ceilinged venue with a casual vibe, offering creative, contemporary tapas-style dishes.',
-    image: 'ssss',
+    image: 'https://foodanddrink.scotsman.com/wp-content/uploads/2016/04/main-15.jpg',
     price: '$$',
     location: 'Sauchiehall St',
     link: 'oxandfinch.com',
@@ -242,7 +242,7 @@ export const restaurantDataAberdeen = [
   {
     name: 'Mi Amore',
     description: 'Traditionally decorated trattoria with checked tablecloths, Italian wall murals and a classic menu.',
-    image: 'ssss',
+    image: 'https://www.pressandjournal.co.uk/wp-content/uploads/sites/2/2018/06/Mi-Amore.jpg.jpg',
     price: '$$',
     location: 'Aberdeen',
     link: 'amoreitalianrestaurant.co.uk',
@@ -251,11 +251,11 @@ export const restaurantDataAberdeen = [
 ] 
 export const restaurantData = [
   {
-    name: 'place holder',
-    description: 'placeholder description.',
-    image: 'sssss',
-    price: '$free',
-    location: 'somewhere',
+    name: 'Restaurant',
+    description: 'Just another place to eat, but its good.',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770',
+    price: '$$$',
+    location: 'In town',
     link: 'https:www.google.com',
   }
 

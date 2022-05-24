@@ -1,84 +1,84 @@
 export const hotelsoInBarcelona = [
   {
-    name: 'Gallery1',
-    description: 'Very clean!',
-    image: 'ssss',
+    name: 'Acta Voraport',
+    description: 'Set in the Poblenou neighborhood, this stylish, contemporary hotel is a kilometer from Bogatell Beach, 3 km from Gaudi\'s La Sagrada Familia church, and 18 km from Josep Tarradellas Barcelona-El Prat Airport.',
+    image: 'https://www.hotelvoraport.com/wp-content/uploads/sites/1869/nggallery/home/hotel_voraport_Terraza_02.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.hotelvoraport.com/en/',
 
   },
   {
-    name: 'Wine1',
-    description: 'Drink lots of Sangria!',
-    image: 'ssss',
+    name: 'Expo Hotel Barcelona',
+    description: 'Set in a modern building surrounded by restaurants, this relaxed hotel is a 3-minute walk from Sants train station, 16 km from the Centre Convencions Internacional Barcelona, and 9 minutes\' walk from the shops and cafes around central Plaça d\'Espanya square.',
+    image: 'https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/40/18/40181_v40192.jpeg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://expohotelbarcelona.expohotels.com/en/',
   },
   {
-    name: 'Museum1',
-    description: 'Check out the art museum!',
-    image: 'ssss',
+    name: 'Catalonia Atenas',
+    description: 'This upmarket hotel is a 3-minute walk from Barcelona-Clot-Arago train station and 1 km from La Sagrada Familia.',
+    image: 'https://a.loveholidays.com/images/holidays/0cab4bf949a0278df1a70743057f92aac60fc09e/holidays/spain/costa-brava/barcelona/catalonia-atenas.jpg?auto=avif%2Cwebp&quality=45&dpr=2&optimize=high&fit=crop&width=840&height=577',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.cataloniahotels.com/es/hotel/catalonia-atenas?mb=1',
   }
 ]
 
 export const hotelsoInLondon = [
   {
-    name: 'Gallery',
-    description: 'Very clean!',
-    image: 'ssss',
+    name: 'The Tower Hotel, London',
+    description: 'On the River Thames next to Tower Bridge, this sprawling modern hotel is a 3-minute walk from the shops at St. Katharine Docks, and a 7-minute walk from both the Tower of London and Tower Hill tube station.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/88/The_Tower_Hotel_and_St._Katharine_Pier%2C_London_31_May_2011.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.guoman.com/the-tower?utm_source=google&utm_medium=organic&utm_campaign=gmb_website_click',
 
   },
   {
-    name: 'Wine',
-    description: 'Drink lots of Sangria!',
-    image: 'ssss',
+    name: 'The Resident Covent Garden',
+    description: 'Set in busy Covent Garden among restaurants and shops, this upscale hotel is 6 minutes\' walk from Trafalgar Square and a tube station, and a mile from Big Ben clock tower.',
+    image: 'https://hotelcms.imgix.net/residenthotels.com/wp-content/uploads/2019/06/The-Nadler-Covent-Garden-Exterior-dusk-2-LR.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.residenthotels.com/the-resident-covent-garden/?utm_campaign=Local%20Pack&utm_source=Google%20Local&utm_medium=organic',
   },
   {
-    name: 'Museum',
-    description: 'Check out the art museum!',
-    image: 'ssss',
+    name: 'The Z Hotel Holborn',
+    description: 'On a bustling tree-lined street, this polished hotel among shops and eateries is a 9-minute walk from antiquities exhibits at the British Museum and 2 miles from Buckingham Palace. Holborn tube station is 3 minutes walk away.',
+    image: 'https://pix10.agoda.net/hotelImages/299/299939/299939_16101418130047771093.jpg?ca=6&ce=1&s=1024x768',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.thezhotels.com/hotels/holborn',
   }
 ]
 
 export const hotelsoInParis = [
   {
-    name: 'Gallery2',
-    description: 'Very clean!',
-    image: 'ssss',
+    name: 'Hôtel Georgette',
+    description: 'In the Beaubourg district of Paris, this contemporary hotel in a classic mid-rise building is a 5-minute walk from both le Centre Georges Pompidou cultural center and the Étienne Marcel metro station.',
+    image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/13030433.jpg?k=56b14eb0ddb27a8049a1dde7e2a34572797068e3180f589e2fd8bc2936b8fd17&o=&hp=1',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'http://www.hotelgeorgette.com/',
 
   },
   {
-    name: 'Wine2',
-    description: 'Drink lots of Sangria!',
-    image: 'ssss',
+    name: 'Hôtel Europe Saint-Séverin',
+    description: 'A 2-minute walk from the Saint-Michel Metro station, this straightforward, classic hotel is a 5-minute walk from Cathédrale Notre-Dame de Paris and a 9-minute walk from Le Jardin du Luxembourg.',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/a7/4c/15/exterior.jpg?w=900&h=-1&s=1',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'http://www.hoteleurope.net/',
   },
   {
-    name: 'Museum2',
-    description: 'Check out the art museum!',
-    image: 'ssss',
+    name: 'Hôtel Lenox Montparnasse',
+    description: 'A 2-minute walk from the Vavin metro station, this traditional hotel is a 7-minute walk from Le Jardin du Luxembourg and a 6-minute walk from the viewing platform at Montparnasse Tower',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/cd/f8/71/lenox-montparnasse.jpg?w=900&h=-1&s=1',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'http://www.paris-hotel-lenox.com/',
   }
 ]
 
@@ -215,23 +215,23 @@ export const hotelsoInAmsterdam = [
 export const hotelsoInEdinburgh = [
   {
     name: 'The Balmoral',
-    description: 'Very clean!',
-    image: 'ssss',
+    description: 'The Balmoral Hotel Edinburgh, 1 Princes Street, where Old Town meets New, a legendary hotel and landmark clock tower: a symbol of its city',
+    image: 'https://www.roccofortehotels.com/media/d54dutp2/2-rfh-the-balmoral-facade-0474-jg-sep-18.jpg',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://balmoraledinburgh.com/',
 
   }
 ]
 
 export const hotelsoInGlasgow = [
   {
-    name: 'Radisson RED ',
-    description: 'Very clean!',
-    image: 'ssss',
+    name: 'Kimpton Blythswood Square Hotel ',
+    description: 'In a garden-filled square in Glasgow’s city centre, Kimpton Blythswood Square Hotel combines the elegance of a stately 19th-century Georgian townhouse with the luxe modern amenities of a five-star property.',
+    image: 'https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F5b3731c2-0334-11eb-910e-49261a8ea333.jpg?crop=2250%2C1500%2C0%2C0',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.kimptonblythswoodsquare.com/',
 
   }
 ]
@@ -239,20 +239,20 @@ export const hotelsoInGlasgow = [
 export const hotelsoInAberdeen = [
   {
     name: 'Malmaison Aberdeen',
-    description: 'Very clean!',
-    image: 'ssss',
+    description: 'Housed in a granite building, this polished hotel is 1.4 miles from Belmont Filmhouse arts cinema and 1.6 miles from Aberdeen train station.',
+    image: 'https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/http://www.cfmedia.vfmleonardo.com/imageRepo/6/0/100/227/194/Emulsion_Mal_Aberdeen_Exterior_Mar18_02_O/Malmaison-Aberdeen-Exterior.jpg?tr=w-780%2Ch-437%2Cfo-auto',
     price: '$$$',
     location: 'Downtown',
-    link: 'wwww.google.com',
+    link: 'https://www.malmaison.com/locations/aberdeen/',
 
   }
 ]
 
 export const hotelsData = [
   {
-    name: 'place holder',
-    description: 'placeholder description.',
-    image: 'sssss',
+    name: 'Hotel',
+    description: 'Stay another day',
+    image: 'https://images.unsplash.com/photo-1517840901100-8179e982acb7?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770',
     price: '$free',
     location: 'somewhere',
     link: 'https:www.google.com',
