@@ -7,6 +7,7 @@ const reviewSchema = new mongoose.Schema({
   rating: { type: Number, min: 1, max: 100, required: true },
   image: { type: String },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  username: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
 })
