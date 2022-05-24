@@ -48,7 +48,7 @@ const restaurantSchema = new mongoose.Schema({
 
 const hotelSchema = new mongoose.Schema({
   name: { type: String, required: true, },
-  description: { type: String, required: true, maxlength: 1000 },
+  description: { type: String, required: true, maxlength: 1500 },
   image: { type: String, required: true },
   price: { type: String, required: true },
   location: { type: String },

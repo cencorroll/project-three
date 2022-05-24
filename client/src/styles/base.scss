@@ -33,15 +33,10 @@ img{
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   .randomImgText {
     font-size: 2.5em;
     color: white;
-  }
-  .shade {
-  background: rgba(0,0,0,0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
   }
 }
 
