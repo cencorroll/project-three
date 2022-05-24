@@ -4,7 +4,6 @@ import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 import { userIsAuthenticated } from '../helpers/auth'
 
-import { FaStar } from 'react-icons/fa'
 import { Rating } from 'react-simple-star-rating'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -21,9 +20,6 @@ const NewReview = () => {
     rating: 0,
     image: '',
   })
-
-  const [ rating, setRating ] = useState(null)
-  const [ hover, setHover ] = useState(null)
 
   const [ errors, setErrors ] = useState({})
 
@@ -64,8 +60,6 @@ const NewReview = () => {
     }
   }
 
-  // const review = formData.rating
-
   return (
     <section className='form-page'>
       <Container>
@@ -81,40 +75,7 @@ const NewReview = () => {
             <label htmlFor='image'>Picture</label>
             <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
             {errors.image && <p className='text-danger'>{errors.image}</p>}
-          
-            {/* <div className="field">
-              <ImageUpload
-                formData={formData}
-                setFormData={setFormData}
-              />
-            </div> */}
-          
-            {/* <div className="formfield">
-              <ImageUpload name="image" handleImageUrl={handleImageUrl} />
-            </div> */}
-            {/* <div>
-          
-          {[ ...Array(5)].map((star, i)=>{
-                const ratingValue = i + 1
-                const review = formData.rating
-                return (
-                  <label key={i}>
-                    <input type='radio' name='rating' value={ratingValue} 
-                      onClick={() => setRating(ratingValue)} 
-                      // onChange={handleChange}
-                    />
-                    <FaStar className='star' color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9' } value={review}
-                      onMouseEnter={() => setHover(ratingValue)}
-                      onMouseLeave={() => setHover(null)}
-                      onChange={handleChange}
-                      size={ 40 }
-                    />
-                  </label>
-                )
-              })}
-            </div> */}
-
-            <div className="input">
+            <div className="form">
               <label htmlFor="rating" >Rating</label>
               <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />
             </div>
