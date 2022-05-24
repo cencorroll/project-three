@@ -117,6 +117,15 @@ input[type="radio"]{
   transition: color 200ms;
 }
 
+//
+.formfield {
+  margin: 30px 30px 0;
+  label{
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
 // restaurant
 .get-one-row {
   border: 1px solid grey;
@@ -136,5 +145,5 @@ input[type="radio"]{
     p{
       margin-top: 5px;
     }
-  
-  }}
+  }
+}
