@@ -36,7 +36,7 @@ const GetOneRestaurant = () => {
 
 
   return (
-    <Container className='mt-3'>
+    <Container className='mt-3 one-restaurant'>
       <Row className='get-one-row'>
         {restaurant ?
           <>
