@@ -22,6 +22,7 @@ const CitiesIndex = () => {
   const [filters, setFilters] = useState({
     city: 'All',
     searchTerm: '',
+    country: 'All',
   })
   const [filteredCities, setFilteredCities] = useState([])
 
@@ -40,7 +41,7 @@ const CitiesIndex = () => {
   useEffect(() => {
     const getRandomCity = () => {
       const randomCity = cities[Math.floor(Math.random() * cities.length)]
-      console.log(randomCity)
+      // console.log(randomCity)
       setRandomCities(randomCity)
     }
     getRandomCity()
@@ -58,13 +59,14 @@ const CitiesIndex = () => {
       const regexSearch = new RegExp(filters.searchTerm, 'i')
       console.log(regexSearch)
       const filtered = cities.filter(city => {
-        return regexSearch.test(city.name) || (filters.name === 'All')
+        return regexSearch.test(city.name) || regexSearch.test(city.country) || (filters.name === 'All')
       })
       setFilteredCities(filtered)
       console.log(filteredCities)
     }
   }, [filters, cities])
 
+  filteredCities.sort()
   return (
     <>
       <Container>

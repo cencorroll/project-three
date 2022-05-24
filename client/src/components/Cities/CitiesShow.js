@@ -53,7 +53,7 @@ const CitiesShow = () => {
           <Card className='city-hero'>
             <Card.Img src={cities.image} />
             <Card.ImgOverlay>
-              <Card.Header className='text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
+              <Card.Header className='card-header text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
             </Card.ImgOverlay>
           </Card>
         </div>
