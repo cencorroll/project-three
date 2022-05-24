@@ -3,7 +3,6 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './styles/main.css'
 
-
 //Components
 import Home from './components/Home'
 import PageNavBar from './components/PageNavBar'
