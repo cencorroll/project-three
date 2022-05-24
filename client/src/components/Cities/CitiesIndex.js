@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 
 import { useNavigate, Link, useParams } from 'react-router-dom'
 
@@ -11,8 +10,6 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 
-import CityList from '../Filtered Cities/CityList'
-
 const CitiesIndex = () => {
 
   const navigate = useNavigate()
@@ -22,6 +19,7 @@ const CitiesIndex = () => {
   const [filters, setFilters] = useState({
     city: 'All',
     searchTerm: '',
+    country: 'All',
   })
   const [filteredCities, setFilteredCities] = useState([])
 
@@ -40,7 +38,7 @@ const CitiesIndex = () => {
   useEffect(() => {
     const getRandomCity = () => {
       const randomCity = cities[Math.floor(Math.random() * cities.length)]
-      console.log(randomCity)
+      // console.log(randomCity)
       setRandomCities(randomCity)
     }
     getRandomCity()
@@ -58,13 +56,14 @@ const CitiesIndex = () => {
       const regexSearch = new RegExp(filters.searchTerm, 'i')
       console.log(regexSearch)
       const filtered = cities.filter(city => {
-        return regexSearch.test(city.name) || (filters.name === 'All')
+        return regexSearch.test(city.name) || regexSearch.test(city.country) || (filters.name === 'All')
       })
       setFilteredCities(filtered)
       console.log(filteredCities)
     }
   }, [filters, cities])
 
+  filteredCities.sort()
   return (
     <>
       <Container>
@@ -72,10 +71,9 @@ const CitiesIndex = () => {
           randomCities ?
             <>
               <Link to={`/cities/${randomCities._id}`}>
-                {/* <Card.Img className='randomImg' src={randomCities.image} /> */}
                 <Card.Body className='randomImg' style={{ backgroundImage: `url(${randomCities.image})` }}>
                   <h1 className='randomImgText'>Discover {randomCities.name}</h1>
-                  <div className='shade'></div>
+
                 </Card.Body>
               </Link>
             </>
@@ -84,16 +82,8 @@ const CitiesIndex = () => {
               {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
             </div>
         }
-
-
       </Container>
 
-      {/* //? input for filter below  */}
-      {/* <Container>
-        <input type="text" name="searchTerm" placeholder='Where do you want to go?' value={filters.searchTerm} onChange={handleChange} />
-      </Container>
-
-      <CityList filteredCities={filteredCities} /> */}
       <Form>
         <Form.Group className='search'>
           <FormControl className='search-bar' type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go?" onChange={handleChange} />
