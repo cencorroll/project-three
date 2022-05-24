@@ -11,8 +11,4 @@ const Stars = ({ rating }) => {
     <div className="stars">{stars}</div>
   )
 }
-<<<<<<< HEAD
 export default Stars
-=======
-export default Stars
->>>>>>> development

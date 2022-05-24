@@ -63,19 +63,6 @@ const GetOneRestaurant = () => {
                 <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
               }
               <ul>
-<<<<<<< HEAD
-                {restaurant.reviews.map((review, n) => {
-                  return <li key={n}>
-                    {/* <Link to={`/user/${review.owner._id}`}> */}
-                    <Link to={'/profile'}>
-                      <div className="reviewHeader">
-                        <p><strong>By {review.name}</strong></p>
-                      </div>
-                      {/* <FaStar value={review.rating} color={'#ffc107'} size={20}/> */}
-                      <Stars rating={review.rating} />
-                      <p>{review.text}</p>
-                      {review.image &&
-=======
                 {restaurant.reviews.map((review, i) => {
                   return <li key={i}>
                     {/* <Link to={`/user/${review.owner._id}`}> */}
@@ -85,7 +72,6 @@ const GetOneRestaurant = () => {
                     <Stars rating={review.rating} />
                     <p>{review.text}</p>
                     {/* {review.image &&
->>>>>>> development
                       <img src={review.image} className='reviewImage' alt="User Review Picture" />
                     } */}
                     <img src={review.image} className='reviewImage' alt="User Review Picture" />
