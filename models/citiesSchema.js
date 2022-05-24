@@ -4,22 +4,12 @@ import mongoose from 'mongoose'
 const reviewSchema = new mongoose.Schema({
   text: { type: String, maxlength: 1000, required: true },
   name: { type: String },
-  rating: { type: String,  'default': 3, min: 0, max: 5, required: true },
+  rating: { type: Number, min: 1, max: 100, required: true },
   image: { type: String },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
 })
-
-// const reviewSchemaThingsToDo = new mongoose.Schema({
-//   text: { type: String, required: true, maxlength: 1000 },
-//   description: { type: String, required: true },
-//   rating: { type: String, required: true, min: 1, max: 5 },
-//   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-// }, {
-//   timestamps: true, 
-// })
-
 
 export const thingsToDoSchema = new mongoose.Schema({
   name: { type: String, required: true, maxlength: 50 },

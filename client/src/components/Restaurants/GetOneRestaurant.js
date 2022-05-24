@@ -7,9 +7,7 @@ import { userIsAuthenticated } from '../helpers/auth.js'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
-import { FaStar } from 'react-icons/fa'
 import Stars from '../Reviews/StarRating'
 
 
@@ -65,6 +63,7 @@ const GetOneRestaurant = () => {
                 <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
               }
               <ul>
+<<<<<<< HEAD
                 {restaurant.reviews.map((review, n) => {
                   return <li key={n}>
                     {/* <Link to={`/user/${review.owner._id}`}> */}
@@ -76,9 +75,21 @@ const GetOneRestaurant = () => {
                       <Stars rating={review.rating} />
                       <p>{review.text}</p>
                       {review.image &&
+=======
+                {restaurant.reviews.map((review, i) => {
+                  return <li key={i}>
+                    {/* <Link to={`/user/${review.owner._id}`}> */}
+                    <div className="reviewHeader">
+                      <p><strong>By {review.name}</strong></p>
+                    </div>
+                    <Stars rating={review.rating} />
+                    <p>{review.text}</p>
+                    {/* {review.image &&
+>>>>>>> development
                       <img src={review.image} className='reviewImage' alt="User Review Picture" />
-                      }
-                    </Link>
+                    } */}
+                    <img src={review.image} className='reviewImage' alt="User Review Picture" />
+                    {/* </Link> */}
                   </li>
                 })}
               </ul>

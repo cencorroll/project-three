@@ -17,7 +17,8 @@ const NewReviewFun = () => {
 
   const [ formData, setFormData ] = useState({
     text: '',
-    rating: Number,
+    name: '',
+    rating: 0,
     image: '',
   })
 
@@ -65,34 +66,18 @@ const NewReviewFun = () => {
         <Row>
           <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5'  onSubmit={handleSubmit}>
             <h1>Leave a Review!</h1>
-            <label htmlFor="text">Text</label>
-            <textarea className='input' name="text" placeholder='Text' value={formData.name} onChange={handleChange}/>
+            <label htmlFor="name">Username</label>
+            <input type='text' className='input' name="name" placeholder='Username' value={formData.name} onChange={handleChange}/>
+            {errors.name ? <p className='text-danger'>{errors.name}</p> : '' }
+            <label htmlFor="text">Comments</label>
+            <textarea className='input' name="text" placeholder='Comments' value={formData.text} onChange={handleChange}/>
             {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
-            {/* <label htmlFor='origin'>Origin</label>
-            <input type='text' name='origin' placeholder='Origin'className='input' value={formData.origin} onChange={handleChange}/>
-            {errors.origin ? <p className='text-danger'>{errors.origin}</p> : ''}
-            <label htmlFor='description'>Description</label>
-            <input type='text' name='description' placeholder='Description' className='input' value={formData.description} onChange={handleChange}/>
-            {errors.description && <p className='text-danger'>{errors.description}</p>} */}
             <label htmlFor='image'>Picture</label>
             <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
             {errors.image && <p className='text-danger'>{errors.image}</p>}
-            <div>
-              {[ ...Array(5)].map((star, i)=>{
-                const ratingValue = i + 1
-                return (
-                  <label htmlFor='rating' key={i}>
-                    <input type='radio' name='rating' value={ratingValue} 
-                      onClick={() => setRating(ratingValue)} 
-                    />
-                    <FaStar className='star' color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9' } 
-                      onMouseEnter={() => setHover(ratingValue)}
-                      onMouseLeave={() => setHover(null)}
-                      size={ 30 }
-                    />
-                  </label>
-                )
-              })}
+            <div className="form">
+              <label htmlFor="rating" >Rating</label>
+              <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />
             </div>
         
             <button type='submit' className='btn w-100'>Submit</button>

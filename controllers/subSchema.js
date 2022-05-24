@@ -1,5 +1,4 @@
 import City from '../models/citiesSchema.js'
-import { thingsToDoSchema } from '../models/citiesSchema.js'
 
 // REVIEWS
 export const addReviewCities = async (req, res) => { 
@@ -16,40 +15,6 @@ export const addReviewCities = async (req, res) => {
     return res.status(422).json(error.name)
   }
 }
-
-export const addReviewFun = async (req, res) => { 
-  const { id } = req.params
-  try {
-    console.log('THings TO Do ->>>>>',thingsToDoSchema)
-    const review = await City.findById(id)
-    if (!review) throw new Error('City Not Found')
-    const reviewOwner = { ...req.body, owner: req.verifiedUser._id }
-    review.reviews.push(reviewOwner)
-    review.save()
-    return res.status(200).json(reviewOwner)
-  } catch (error) {
-    console.log(error)
-    return res.status(422).json(error.name)
-  }
-}
-
-// export const deleteReviewFun = async (req, res) => { 
-//   const { id, reviewId } = req.params
-//   try {
-//     const review = await thingsToDoSchema.findById(id)
-//     if (!review) throw new Error('Not Found !')
-//     const reviewDelete = review.reviews.id(reviewId)
-//     if (!reviewDelete) throw new Error()
-//     if (!reviewDelete.owner.equals(req.verifiedUser._id)) throw new Error('Unauthorised !')
-//     reviewDelete.remove()
-//     review.save()
-//     return res.sendStatus(204)
-//   } catch (error) {
-//     console.log(error)
-//     return res.status(401).json({ message: 'Unauthorised:( ' })
-//   }
-// }
-
 
 export const deleteReviewCities = async (req, res) => { 
   const { id, reviewId } = req.params
