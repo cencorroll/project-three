@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 import { userIsAuthenticated } from '../helpers/auth'
-
+import { Rating } from 'react-simple-star-rating'
 import { FaStar } from 'react-icons/fa'
 // import { Rating } from 'react-simple-star-rating'
 import Container from 'react-bootstrap/Container'

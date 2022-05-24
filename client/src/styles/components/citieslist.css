@@ -3,6 +3,13 @@
   margin-top: 30px;
 }
 
+.city-list .city {
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
 .city-list .city > a {
   text-decoration: none;
   color: #000;
@@ -11,5 +18,10 @@
 .city-list .city .card {
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.city-list .city:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=citieslist.css.map */
