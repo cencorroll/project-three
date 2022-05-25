@@ -45,6 +45,10 @@ const CitiesShow = () => {
                 <Card.Img src={cities.image} />
                 <Card.ImgOverlay>
                   <Card.Header className='card-header text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
+                  <div className='button-box' style={{ position: 'absolute', bottom: 10, left: 20 }}>
+                    <hr />
+                    <Link to={'/'} rel="noreferrer" className=' btn ' >Return to Cities</Link>
+                  </div>
                 </Card.ImgOverlay>
               </Card>
             </div>
@@ -55,6 +59,10 @@ const CitiesShow = () => {
               <Card.Img src={cities.image} />
               <Card.ImgOverlay>
                 <Card.Header className='card-header text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
+                <div className='button-box' style={{ position: 'absolute', bottom: 10, left: 20 }}>
+                  <hr />
+                  <Link to={'/'} rel="noreferrer" className=' btn ' >Return to Cities</Link>
+                </div>
               </Card.ImgOverlay>
             </Card>
           </div>
@@ -72,7 +80,6 @@ const CitiesShow = () => {
           </Card>
         </div> */}
       </>
-      <Link to="/" className="btn btn-secondary mr-5">Back to Cities</Link>
 
       {/* <hr /> */}
       <h3 className='carousel-title' id='todo'>Things to do</h3>
