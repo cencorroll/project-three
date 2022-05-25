@@ -13,17 +13,17 @@ import { Card, Button } from 'react-bootstrap'
 
 
 
-const GetFun = () => { 
+const GetFun = () => {
 
   const navigate = useNavigate()
 
   const { id, funId } = useParams()
 
-  const [ city, setCity ] = useState([])
-  const [ fun, setFun ] = useState(null)
-  const [ errors, setErrors ] = useState(false)
+  const [city, setCity] = useState([])
+  const [fun, setFun] = useState(null)
+  const [errors, setErrors] = useState(false)
 
-  useEffect(() => { 
+  useEffect(() => {
     const getFun = async () => {
       try {
         const { data } = await axios.get(`/api/cities/${id}/fun/${funId}`)
@@ -61,28 +61,37 @@ const GetFun = () => {
                       <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
                     }
                   </div>
-
                 </div>
-
-
               </Card.ImgOverlay>
             </Card>
-            <Col md='6'>
+            <Container>
+              <Row className='review-row'>
+                {fun.reviews.map((review, n) => {
+                  return (
+                    <Card className='reviewCard' key={id}>
+                      <div>
+                        <Stars rating={review.rating} />
+                        <h2>By {review.name}</h2>
+                        <p>{review.text}</p>
+                      </div>
+                      <img variant="top" src={review.image} className='reviewImage' />
+                    </Card>
+                  )
+                })}
+              </Row>
+            </Container>
+            {/* <Col md='6'>
               <ul>
                 {fun.reviews.map((review, n) => {
                   return <li key={n}>
-                    {/* <Link to={`/user/${review.owner._id}`}> */}
                     <div className="reviewHeader">
                       <p><strong>By {review.name}</strong></p>
                     </div>
-                    <Stars rating={review.rating} />
-                    <p>{review.text}</p>
                     <img src={review.image} className='reviewImage' alt="User Review Picture" />
-                    {/* </Link> */}
                   </li>
                 })}
               </ul>
-            </Col>
+            </Col> */}
           </>
           :
           <h2 className='text-center'>

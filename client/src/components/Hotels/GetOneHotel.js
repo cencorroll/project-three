@@ -67,22 +67,22 @@ const GetOneHotel = () => {
 
               </Card.ImgOverlay>
             </Card>
-            <Col md='6'>
-              <ul>
+            <Container>
+              <Row className='review-row'>
                 {hotel.reviews.map((review, n) => {
-                  return <li key={n}>
-                    {/* <Link to={`/user/${review.owner._id}`}> */}
-                    <div className="reviewHeader">
-                      <p><strong>By {review.username}</strong></p>
-                    </div>
-                    <Stars rating={review.rating} />
-                    <p>{review.text}</p>
-                    <img src={review.image} className='reviewImage' alt="User Review Picture" />
-                    {/* </Link> */}
-                  </li>
+                  return (
+                    <Card className='reviewCard' key={id}>
+                      <div>
+                        <Stars rating={review.rating} />
+                        <h2>By {review.name}</h2>
+                        <p>{review.text}</p>
+                      </div>
+                      <img variant="top" src={review.image} className='reviewImage' />
+                    </Card>
+                  )
                 })}
-              </ul>
-            </Col>
+              </Row>
+            </Container>
           </>
           :
           <h2 className='text-center'>
