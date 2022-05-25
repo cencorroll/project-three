@@ -1,26 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate, Link, useParams, useLocation } from 'react-router-dom'
-
-
+import { useNavigate, Link, useParams } from 'react-router-dom'
 
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import Image from 'react-bootstrap/Image'
-import PageNotFound from '../utilities/PageNotFound'
 import { userIsAuthenticated } from '../helpers/auth'
 
 const CitiesShow = () => {
 
-
-  const navigate = useNavigate()
   const { id } = useParams()
-
 
   const [cities, setCities] = useState([])
   const [citiesHotels, setCitiesHotels] = useState([])

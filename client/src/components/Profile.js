@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
+import Card from 'react-bootstrap/Card'
+
 const Profile = () => {
 
   const [userData, setUserData] = useState([])
@@ -22,7 +24,12 @@ const Profile = () => {
 
 
   return (
-    <h1>welcome</h1>
+    <Card>
+      <p>Profile coming soon!</p>
+      <br />
+
+
+    </Card>
   )
 }
 

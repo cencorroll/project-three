@@ -73,7 +73,7 @@ const GetOneHotel = () => {
                   return <li key={n}>
                     {/* <Link to={`/user/${review.owner._id}`}> */}
                     <div className="reviewHeader">
-                      <p><strong>By {review.name}</strong></p>
+                      <p><strong>By {review.username}</strong></p>
                     </div>
                     <Stars rating={review.rating} />
                     <p>{review.text}</p>

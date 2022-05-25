@@ -59,10 +59,7 @@ const GetOneRestaurant = () => {
                       <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
                     }
                   </div>
-
                 </div>
-
-
               </Card.ImgOverlay>
             </Card>
             {/* <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr /></Col> */}

@@ -9,9 +9,6 @@ import Row from 'react-bootstrap/Row'
 import { Rating } from 'react-simple-star-rating'
 import ImageUpload from '../helpers/ImageUpload'
 
-
-
-
 const NewReviewFun = () => { 
   const { id, funId } = useParams()
   const navigate = useNavigate()
