@@ -1,28 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate, Link, useParams, useLocation } from 'react-router-dom'
-
-
+import { useNavigate, Link, useParams } from 'react-router-dom'
 
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-// import '~mdb-ui-kit/css/mdb.min.css'
-// import { MDBRipple } from 'mdb-react-ui-kit'
-
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import Image from 'react-bootstrap/Image'
-import PageNotFound from '../utilities/PageNotFound'
+import { userIsAuthenticated } from '../helpers/auth'
 
 const CitiesShow = () => {
 
-
-  const navigate = useNavigate()
   const { id } = useParams()
-
 
   const [cities, setCities] = useState([])
   const [citiesHotels, setCitiesHotels] = useState([])
@@ -49,7 +38,28 @@ const CitiesShow = () => {
   return (
     <Container className="mt-4">
       <>
-        <div className='header-img'>
+        {userIsAuthenticated() ?
+          <Link to={`/cities/${id}/reviews`}>
+            <div className='header-img'>
+              <Card className='city-hero'>
+                <Card.Img src={cities.image} />
+                <Card.ImgOverlay>
+                  <Card.Header className='card-header text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
+                </Card.ImgOverlay>
+              </Card>
+            </div>
+          </Link>
+          :
+          <div className='header-img'>
+            <Card className='city-hero'>
+              <Card.Img src={cities.image} />
+              <Card.ImgOverlay>
+                <Card.Header className='card-header text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
+              </Card.ImgOverlay>
+            </Card>
+          </div>
+        }
+        {/* <div className='header-img'>
           <Card className='city-hero'>
             <Card.Img src={cities.image} />
             <Card.ImgOverlay>
@@ -60,9 +70,11 @@ const CitiesShow = () => {
               </div>
             </Card.ImgOverlay>
           </Card>
-        </div>
+        </div> */}
       </>
-      <hr />
+      <Link to="/" className="btn btn-secondary mr-5">Back to Cities</Link>
+
+      {/* <hr /> */}
       <h3 className='carousel-title' id='todo'>Things to do</h3>
       <Carousel className='carousel' variant="dark" style={{ cursor: 'pointer' }}>
         {citiesFun.map((fun) => {
