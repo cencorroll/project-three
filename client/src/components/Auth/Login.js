@@ -44,7 +44,7 @@ const Login = () => {
     <section className="form-page">
       <Container>
         <Row>
-          <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5' onSubmit={handleSubmit}>
+          <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mb-5' onSubmit={handleSubmit}>
             <h1>Login</h1>
             <label htmlFor="email">Email</label>
             <input type="email" name="email" className='input' placeholder='Email' required value={formData.email} onChange={handleChange} />
