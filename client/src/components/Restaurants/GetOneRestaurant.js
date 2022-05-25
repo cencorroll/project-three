@@ -21,6 +21,7 @@ const GetOneRestaurant = () => {
   const [restaurant, setRestaurant] = useState(null)
   const [errors, setErrors] = useState(false)
 
+  
   useEffect(() => {
     const getRestaurant = async () => {
       try {
