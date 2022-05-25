@@ -139,7 +139,7 @@ export const getSingleRestaurant = async (req, res) => {
 export const addRestaurantReview = async (req, res) => { 
   const { id, restaurantId } = req.params
   try {
-    const city = await (await City.findById(id).populate('restaurants').populate('reviews').populate('restaurants.reviews.owners'))
+    const city = await (await City.findById(id).populate('restaurants').populate('reviews'))
     if (!city) return res.status(404).json({ message: 'City Not Found' })
     const restaurant = await city.restaurants.find(restaurant => restaurant._id.toString() === restaurantId)
     if (!restaurant) {
