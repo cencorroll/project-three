@@ -56,7 +56,7 @@ const GetOneHotel = () => {
                     <Button href={hotel.link} target='_blank' rel="noreferrer">Website</Button>
 
                     {userIsAuthenticated() ?
-                      <Link className='btn btn-success mtb-3' to={`/cities/${id}/hotel/${hotelId}/review`}>Add Review</Link>
+                      <Link className='btn btn-success mtb-3' to={`/cities/${id}/hotels/${hotelId}/review`}>Add Review</Link>
                       :
                       <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
                     }
@@ -73,7 +73,7 @@ const GetOneHotel = () => {
                   return <li key={n}>
                     {/* <Link to={`/user/${review.owner._id}`}> */}
                     <div className="reviewHeader">
-                      <p><strong>By {review.name}</strong></p>
+                      <p><strong>By {review.username}</strong></p>
                     </div>
                     <Stars rating={review.rating} />
                     <p>{review.text}</p>

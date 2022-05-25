@@ -59,10 +59,7 @@ const GetOneRestaurant = () => {
                       <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
                     }
                   </div>
-
                 </div>
-
-
               </Card.ImgOverlay>
             </Card>
             {/* <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr /></Col> */}
@@ -92,7 +89,7 @@ const GetOneRestaurant = () => {
                   return <li key={i}>
                     {/* <Link to={`/user/${review.owner._id}`}> */}
                     <div className="reviewHeader">
-                      <p><strong>By {review.owner}</strong></p>
+                      <p><strong>By {review.name}</strong></p>
                     </div>
                     <Stars rating={review.rating} />
                     <p>{review.text}</p>

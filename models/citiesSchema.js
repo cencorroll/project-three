@@ -7,7 +7,7 @@ const reviewSchema = new mongoose.Schema({
   rating: { type: Number, min: 1, max: 100, required: true },
   image: { type: String },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  username: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  // username: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
 })
@@ -26,7 +26,7 @@ export const thingsToDoSchema = new mongoose.Schema({
 })
 
 const restaurantSchema = new mongoose.Schema({
-  name: { type: String, required: true, },
+  name: { type: String, required: true },
   description: { type: String, required: true, maxlength: 1500 },
   image: { type: String, required: true },
   price: { type: String, required: true },
