@@ -81,7 +81,7 @@ const CitiesIndex = () => {
 
       <Form>
         <Form.Group className='search'>
-          <FormControl className='search-bar' type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go?" onChange={handleChange} />
+          <FormControl className='search-bar' type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go? 🇪🇺" onChange={handleChange} />
         </Form.Group>
       </Form>
 

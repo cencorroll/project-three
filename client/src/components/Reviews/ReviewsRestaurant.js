@@ -72,9 +72,6 @@ const NewReview = () => {
             <label htmlFor="text">Comments</label>
             <textarea className='input' name="text" placeholder='Comments' value={formData.text} onChange={handleChange}/>
             {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
-            {/* <label htmlFor='image'>Picture</label>
-            <input type='text' name='image' placeholder='Picture' className='input' value={formData.image} onChange={handleChange}/>
-            {errors.image && <p className='text-danger'>{errors.image}</p>} */}
             <div className="field">
               <ImageUpload
                 value= {formData.image} onChange={handleChange}
