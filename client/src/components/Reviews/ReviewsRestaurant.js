@@ -64,7 +64,7 @@ const NewReview = () => {
     <section className='form-page'>
       <Container>
         <Row>
-          <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5'  onSubmit={handleSubmit}>
+          <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mb-5'  onSubmit={handleSubmit}>
             <h1>Leave a Review!</h1>
             <label htmlFor="name">Username</label>
             <input type='text' className='input' name="name" placeholder='Username' value={formData.name} onChange={handleChange}/>

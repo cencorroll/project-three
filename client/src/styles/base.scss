@@ -180,3 +180,19 @@ input[type="radio"]{
   font-weight: 600;
   font-size: 1.5em;
 }
+
+
+// ? REGISTER LOGIN REVIEW PAGES
+.form-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://www.teahub.io/photos/full/188-1888557_city-of-london-skyline-4k.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav-link{
+  color: black;
+}

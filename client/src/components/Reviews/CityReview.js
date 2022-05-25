@@ -7,20 +7,17 @@ import { userIsAuthenticated } from '../helpers/auth'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { Rating } from 'react-simple-star-rating'
-import ImageUpload from '../helpers/ImageUpload'
 
 
+const ReviewCity = () => { 
 
-
-const NewReviewFun = () => { 
-  const { id, funId } = useParams()
+  const { id } = useParams()
   const navigate = useNavigate()
 
   const [ formData, setFormData ] = useState({
     text: '',
     name: '',
     rating: 0,
-    image: '',
   })
 
   const [ errors, setErrors ] = useState({})
@@ -39,11 +36,11 @@ const NewReviewFun = () => {
     e.preventDefault()
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`/api/cities/${id}/fun/${funId}/review`, formData, { 
+      await axios.post(`/api/cities/${id}/reviews`, formData, { 
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`, 
         },
       })
-      navigate(`/cities/${id}/fun/${funId}`)
+      navigate(`/cities/${id}`)
 
     } catch (error) {
       if (error.response.data.errors) setErrors(error.response.data.errors)
@@ -62,12 +59,6 @@ const NewReviewFun = () => {
             <label htmlFor="text">Comments</label>
             <textarea className='input' name="text" placeholder='Comments' value={formData.text} onChange={handleChange}/>
             {errors.text ? <p className='text-danger'>{errors.text}</p> : '' }
-            <div className="field">
-              <ImageUpload
-                value= {formData.image} onChange={handleChange}
-                setFormData={setFormData}
-              />
-            </div>
             <div className="form">
               <label htmlFor="rating" >Rating</label>
               <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />
@@ -79,7 +70,6 @@ const NewReviewFun = () => {
       </Container>
     </section>
   )
-
 }
 
-export default NewReviewFun
+export default ReviewCity
