@@ -21,8 +21,10 @@ router.route('/cities')
 
 router.route('/cities/:id')
   .get(getSingleCity)
-  .put(secureRoute, updateCity)
+  // .put(secureRoute, updateCity)
   .delete(secureRoute, deleteCity)
+router.route('/cities/:id/edit')
+  .put(secureRoute, updateCity)
 
 
 // ?SubSchema ROUTES

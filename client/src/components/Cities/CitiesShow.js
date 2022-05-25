@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import { userIsAuthenticated } from '../helpers/auth'
+import Stars from '../Reviews/StarRating'
 
 const CitiesShow = () => {
 
@@ -46,8 +47,8 @@ const CitiesShow = () => {
                 <Card.ImgOverlay>
                   <Card.Header className='card-header text-white bg-secondary.bgtransparent fs-1 fw-bold text-uppercase' >{cities.name}</Card.Header>
                   <div className='button-box' style={{ position: 'absolute', bottom: 10, left: 20 }}>
-                    <hr />
-                    <Link to={'/'} rel="noreferrer" className=' btn ' >Return to Cities</Link>
+                    <Link to={'/'} rel="noreferrer" className=' btn' >Return to Cities</Link>
+                    {/* <Link to={`/cities/${id}/edit`} className='btn'>Edit City</Link> */}
                   </div>
                 </Card.ImgOverlay>
               </Card>
@@ -80,7 +81,6 @@ const CitiesShow = () => {
           </Card>
         </div> */}
       </>
-
       {/* <hr /> */}
       <h3 className='carousel-title' id='todo'>Things to do</h3>
       <Carousel className='carousel' variant="dark" style={{ cursor: 'pointer' }}>

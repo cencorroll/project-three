@@ -23,6 +23,7 @@ import NewReview from './components/Reviews/ReviewsRestaurant'
 import NewReviewHotel from './components/Reviews/HotelReviews'
 import NewReviewFun from './components/Reviews/FunReview'
 import ReviewCity from './components/Reviews/CityReview'
+import CityEdit from './components/Cities/CityEdit'
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/cities" element={<CitiesIndex/>} />
           <Route path="/" element={<CitiesIndex />} />
+          <Route path="/cities/:id/edit" element={<CityEdit />} />
           <Route path="/cities/:id" element={<CitiesShow />} />
           <Route path="/cities/:id/reviews" element={<ReviewCity />} />
           <Route path="/api/cities/:id/fun" element={<AllThingsToDo />} />
