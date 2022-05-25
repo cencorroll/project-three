@@ -66,39 +66,22 @@ const GetOneRestaurant = () => {
             {/* <Col md='6' className='p-0'>
               <img className='one-image' src={restaurant.image} alt={restaurant.name} />
             </Col> */}
-            <Col md='6'>
-              {/* <div className="info-box">
-                <h3><span>🤤</span> Description </h3>
-                <p>{restaurant.description}</p>
-                <hr />
-                <p>{restaurant.location}</p>
-                <hr />
-                <p>{restaurant.price}</p>
-                <Button href={restaurant.link} target='_blank' rel="noreferrer">Website</Button>
-              </div>
-
-
-              <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 mb-3' style={{ marginRight: '1.5rem' }}>Back to List</Link>
-              {userIsAuthenticated() ?
-                <Link className='btn btn-success mtb-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
-                :
-                <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
-              } */}
-              <ul>
-                {restaurant.reviews.map((review, i) => {
-                  return <li key={i}>
-                    {/* <Link to={`/user/${review.owner._id}`}> */}
-                    <div className="reviewHeader">
-                      <p><strong>By {review.name}</strong></p>
-                    </div>
-                    <Stars rating={review.rating} />
-                    <p>{review.text}</p>
-                    <img src={review.image} className='reviewImage' alt="User Review Picture" />
-                    {/* </Link> */}
-                  </li>
+            <Container>
+              <Row className='review-row'>
+                {restaurant.reviews.map((review, n) => {
+                  return (
+                    <Card className='reviewCard' key={id}>
+                      <div>
+                        <Stars rating={review.rating} />
+                        <h2>By {review.name}</h2>
+                        <p>{review.text}</p>
+                      </div>
+                      <img variant="top" src={review.image} className='reviewImage' />
+                    </Card>
+                  )
                 })}
-              </ul>
-            </Col>
+              </Row>
+            </Container>
           </>
           :
           <h2 className='text-center'>

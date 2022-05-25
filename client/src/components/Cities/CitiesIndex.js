@@ -68,7 +68,6 @@ const CitiesIndex = () => {
               <Link to={`/cities/${randomCities._id}`}>
                 <Card.Body className='randomImg' style={{ backgroundImage: `url(${randomCities.image})` }}>
                   <h1 className='randomImgText'>Discover {randomCities.name}</h1>
-
                 </Card.Body>
               </Link>
             </>

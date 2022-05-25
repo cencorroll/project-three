@@ -13,7 +13,6 @@ const Profile = () => {
       try {
         const { data } = await axios.get('/api/profile')
         setUserData(data)
-        
       } catch (error) {
         console.log(error)
       }

@@ -37,10 +37,10 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   .randomImgText {
     font-size: 2.5em;
     color: white;
+    text-decoration: none;
   }
 }
 
@@ -96,7 +96,6 @@ img {
     color: white;
     border-radius: 10px;
   }
-
 }
 
 //
@@ -185,6 +184,7 @@ input[type="radio"] {
   .card-title {
     font-size: 2em;
   }
+  
 
   h1 {
     text-align: center;
@@ -265,8 +265,10 @@ input[type="radio"] {
 
 // ? REGISTER LOGIN REVIEW PAGES
 .reviewImage {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   max-width: 100%;
   min-width: 100px;
   min-height: 100px;
@@ -284,4 +286,29 @@ input[type="radio"] {
 
 .nav-link{
   color: black;
+}
+
+.reviewCard {
+margin-top: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+height: auto;
+margin-top: 10px;
+width: 500px;
+margin: 0 auto;
+padding: 15px 10px 10px 15px;
+h2 {
+  font-size: 1.3em;
+  font-weight: 700;
+  text-decoration: underline;
+}
+p {
+  padding-bottom: -10px;
+}
+}
+
+.review-row {
+  display: flex;
+  flex-direction: column;
 }
