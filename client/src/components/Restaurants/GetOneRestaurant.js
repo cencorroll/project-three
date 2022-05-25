@@ -75,6 +75,7 @@ const GetOneRestaurant = () => {
                 <p>{restaurant.description}</p>
                 <hr />
                 <p>{restaurant.location}</p>
+                <hr />
                 <p>{restaurant.price}</p>
                 <Button href={restaurant.link} target='_blank' rel="noreferrer">Website</Button>
               </div>

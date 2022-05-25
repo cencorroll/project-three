@@ -120,7 +120,7 @@ const CitiesShow = () => {
       <Carousel className='carousel' variant="dark" style={{ cursor: 'pointer' }}>
         {citiesRestaurants.map((restaurant) => {
           return (
-            <Carousel.Item interval={4000} key={restaurant._id}>
+            <Carousel.Item className='carousel-flexbox' interval={4000} key={restaurant._id}>
               <Link to={`/cities/${cities._id}/restaurants/${restaurant._id}`} >
                 <img className="d-block w-100 carousel-img" src={restaurant.image} alt={restaurant.name} />
               </Link>
