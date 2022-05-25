@@ -47,7 +47,7 @@ const CitiesShow = () => {
   return (
     <Container className="mt-4">
       <>
-        {userIsAuthenticated() ?
+        {/* {userIsAuthenticated() ?
           <Link to={`/cities/${id}/reviews`}>
             <div className='header-img'>
               <Card className='city-hero'>
@@ -67,8 +67,8 @@ const CitiesShow = () => {
               </Card.ImgOverlay>
             </Card>
           </div>
-        }
-        {/* <div className='header-img'>
+        } */}
+        <div className='header-img'>
           <Card className='city-hero'>
             <Card.Img src={cities.image} />
             <Card.ImgOverlay>
@@ -79,7 +79,7 @@ const CitiesShow = () => {
               </div>
             </Card.ImgOverlay>
           </Card>
-        </div> */}
+        </div>
       </>
       <Link to="/" className="btn btn-secondary mr-5">Back to Cities</Link>
 

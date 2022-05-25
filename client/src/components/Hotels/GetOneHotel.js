@@ -56,7 +56,7 @@ const GetOneHotel = () => {
                     <Button href={hotel.link} target='_blank' rel="noreferrer">Website</Button>
 
                     {userIsAuthenticated() ?
-                      <Link className='btn btn-success mtb-3' to={`/cities/${id}/hotel/${hotelId}/review`}>Add Review</Link>
+                      <Link className='btn btn-success mtb-3' to={`/cities/${id}/hotels/${hotelId}/review`}>Add Review</Link>
                       :
                       <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
                     }
