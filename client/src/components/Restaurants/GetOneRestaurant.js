@@ -5,7 +5,7 @@ import { useNavigate, Link, useParams, Pathname } from 'react-router-dom'
 import { userIsAuthenticated } from '../helpers/auth.js'
 
 import Container from 'react-bootstrap/Container'
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col, Button, Card } from 'react-bootstrap'
 import Stars from '../Reviews/StarRating'
 
 
@@ -36,16 +36,41 @@ const GetOneRestaurant = () => {
 
 
   return (
-    <Container className='mt-3'>
+    <Container className='mt-3 one-restaurant'>
       <Row className='get-one-row'>
         {restaurant ?
           <>
-            <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr /></Col>
+            <Card className='p-0 one-card text-white'>
+              <Card.Img className='one-image' src={restaurant.image} alt={restaurant.name} />
+              <Card.ImgOverlay>
+                <Card.Title className='card-title'>{restaurant.name} </Card.Title>
+                <hr />
+                <Card.Text>
+                  {restaurant.description}
+                </Card.Text>
+                <div className='button-box' style={{ position: 'absolute', bottom: 10, left: 10 }}>
+                  <Link to={`/cities/${id}`} rel="noreferrer" className=' btn ' >Return to City</Link>
+                  <div>
+                    <Button href={restaurant.link} target='_blank' rel="noreferrer">Website</Button>
+
+                    {userIsAuthenticated() ?
+                      <Link className='btn btn-success mtb-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
+                      :
+                      <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
+                    }
+                  </div>
+
+                </div>
+
+
+              </Card.ImgOverlay>
+            </Card>
+            {/* <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr /></Col> */}
+            {/* <Col md='6' className='p-0'>
+              <img className='one-image' src={restaurant.image} alt={restaurant.name} />
+            </Col> */}
             <Col md='6'>
-              <img src={restaurant.image} alt={restaurant.name} />
-            </Col>
-            <Col md='6'>
-              <div className="info-box">
+              {/* <div className="info-box">
                 <h3><span>🤤</span> Description </h3>
                 <p>{restaurant.description}</p>
                 <hr />
@@ -54,13 +79,13 @@ const GetOneRestaurant = () => {
                 <Button href={restaurant.link} target='_blank' rel="noreferrer">Website</Button>
               </div>
 
-              
+
               <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 mb-3' style={{ marginRight: '1.5rem' }}>Back to List</Link>
               {userIsAuthenticated() ?
                 <Link className='btn btn-success mtb-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
                 :
                 <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
-              }
+              } */}
               <ul>
                 {restaurant.reviews.map((review, i) => {
                   return <li key={i}>

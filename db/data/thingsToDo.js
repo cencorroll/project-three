@@ -236,9 +236,9 @@ export const thingsToDoInAberdeen = [
 
 export const thingsToDo = [
   {
-    name: 'place holder',
-    description: 'placeholder description.',
-    image: 'sssss',
+    name: 'Harder, Better, Faster, Stronger',
+    description: 'Work it harder, make it better, Do it faster, makes us stronger, More than ever, hour after hour, Work is never over',
+    image: 'https://images.unsplash.com/photo-1504805572947-34fad45aed93?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770',
     price: '$free',
     link: 'https:www.google.com',
   }
