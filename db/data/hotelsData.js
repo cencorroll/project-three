@@ -196,7 +196,7 @@ export const hotelsoInAmsterdam = [
     link: 'https://hoteljakarta.com/',
   },
   {
-    name: 'hotel estherea',
+    name: 'Hotel Estherea',
     description: 'Located in the heart of the city, Hotel Estherea is housed in a row of historic buildings on the major canal. Behind the 17th century façade, guests find a warm welcome in comfortable surroundings. With its woolen carpets, crystal chandeliers and sumptuous furniture, the hotel is an oasis of tranquility in the middle of the bustling city.The Estherea first opened its doors in the 1940s. this family business is currently run by the third generation. Although the hotel’s comforts and facilities have been brought up to date over the past sixty years, the concept of personal service and attention remains unchanged. All 92 rooms have been recently renovated and are all accessible by elevator. Each room has its own unique character: a wonderful place to unwind a day of exploring the city.',
     image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/f6/50/35/classic-room.jpg?w=1200&h=-1&s=1',
     price: '$$$$',

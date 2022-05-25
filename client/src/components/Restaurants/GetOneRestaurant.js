@@ -45,10 +45,11 @@ const GetOneRestaurant = () => {
             </Col>
             <Col md='6'>
               <div className="info-box">
-                <h3><span>🤤</span> Description </h3>
+                <h3><span>🤤</span> About </h3>
                 <p>{restaurant.description}</p>
                 <hr />
                 <p>{restaurant.location}</p>
+                <hr />
                 <p>{restaurant.price}</p>
                 <Button href={restaurant.link} target='_blank' rel="noreferrer">Website</Button>
               </div>

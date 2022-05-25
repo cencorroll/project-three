@@ -86,6 +86,7 @@ img{
 
 //
 .form-page{
+  padding-top: 50px;
   flex-grow: 1;
   background-color: grey;
   form {
@@ -104,7 +105,9 @@ img{
       display: block;
       width: 100%;
       border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 5px;
       margin-bottom: 10px;
+      padding: 4px;
     }
     p{
       font-size: 0.8rem;
@@ -143,6 +146,11 @@ input[type="radio"]{
     //! this affects review image as well
     max-width: 100%;
   }
+  h3 {
+    font-size: 1.5em;
+    text-decoration: underline;
+    padding: 1px;
+  }
   .info-box {
     margin-top: 20px;
     padding: 10px;
@@ -154,6 +162,7 @@ input[type="radio"]{
   }
 }
 
+// individual cities carousels
 .carousel {
   margin-bottom: 30px;
   .carousel-img {
@@ -170,7 +179,8 @@ input[type="radio"]{
   }
   .caption {
     color: white;
-    
+    font-size: 1.5em;
+    margin-bottom: 70px;
   }
 }
 
