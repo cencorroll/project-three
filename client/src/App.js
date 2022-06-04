@@ -50,8 +50,6 @@ const App = () => {
           <Route path='/cities/:id/hotels/:hotelId/review' element={<NewReviewHotel />} />
           <Route path="*" element={<PageNotFound />} />
 
-
-          {/* <Route path="/" element={<CitiesIndex/>} /> */}
         </Routes>
       </BrowserRouter>
     </main>
