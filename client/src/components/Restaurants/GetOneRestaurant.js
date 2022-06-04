@@ -5,12 +5,9 @@ import { useNavigate, Link, useParams, Pathname } from 'react-router-dom'
 import { userIsAuthenticated } from '../helpers/auth.js'
 
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-import Image from 'react-bootstrap/Image'
-import { FaStar } from 'react-icons/fa'
+import { Row, Col, Button, Card } from 'react-bootstrap'
 import Stars from '../Reviews/StarRating'
+
 
 
 
@@ -24,6 +21,7 @@ const GetOneRestaurant = () => {
   const [restaurant, setRestaurant] = useState(null)
   const [errors, setErrors] = useState(false)
 
+  
   useEffect(() => {
     const getRestaurant = async () => {
       try {
@@ -39,49 +37,52 @@ const GetOneRestaurant = () => {
 
 
   return (
-    <Container className='mt-3'>
+    <Container className='mt-3 one-restaurant'>
       <Row className='get-one-row'>
         {restaurant ?
           <>
-            <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr /></Col>
-            <Col md='6'>
-              <img src={restaurant.image} alt={restaurant.name} />
-            </Col>
-            <Col md='6'>
-              <div className="info-box">
-                <h3><span>🤤</span> Description </h3>
-                <p>{restaurant.description}</p>
+            <Card className='p-0 one-card text-white'>
+              <Card.Img className='one-image' src={restaurant.image} alt={restaurant.name} />
+              <Card.ImgOverlay>
+                <Card.Title className='card-title'>{restaurant.name} </Card.Title>
                 <hr />
-                <p>{restaurant.location}</p>
-                <p>{restaurant.price}</p>
-                <Link to={restaurant.link} className='btn btn-primary mt-5'>Website</Link>
-              </div>
+                <Card.Text>
+                  {restaurant.description}
+                </Card.Text>
+                <div className='button-box' style={{ position: 'absolute', bottom: 10, left: 10 }}>
+                  <Link to={`/cities/${id}`} rel="noreferrer" className=' btn ' >Return to City</Link>
+                  <div>
+                    <Button href={restaurant.link} target='_blank' rel="noreferrer">Website</Button>
 
-              
-              <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 mb-3' style={{ marginRight: '1.5rem' }}>Back to List</Link>
-              {userIsAuthenticated() ?
-                <Link className='btn btn-success mtb-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
-                :
-                <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
-              }
-              <ul>
+                    {userIsAuthenticated() ?
+                      <Link className='btn btn-success mtb-3' to={`/cities/${id}/restaurants/${restaurantId}/review`}>Add Review</Link>
+                      :
+                      <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
+                    }
+                  </div>
+                </div>
+              </Card.ImgOverlay>
+            </Card>
+            {/* <Col xs='12'><h1 className='fs-1'>{restaurant.name}</h1><hr /></Col> */}
+            {/* <Col md='6' className='p-0'>
+              <img className='one-image' src={restaurant.image} alt={restaurant.name} />
+            </Col> */}
+            <Container>
+              <Row className='review-row'>
                 {restaurant.reviews.map((review, n) => {
-                  return <li key={n}>
-                    <Link to={`/user/${review.owner._id}`}>
-                      <div className="reviewHeader">
-                        <p><strong>By {review.name}</strong></p>
+                  return (
+                    <Card className='reviewCard' key={id}>
+                      <div>
+                        <Stars rating={review.rating} />
+                        <h2>By {review.name}</h2>
+                        <p>{review.text}</p>
                       </div>
-                      {/* <FaStar value={review.rating} color={'#ffc107'} size={20}/> */}
-                      <Stars rating={review.rating} />
-                      <p>{review.text}</p>
-                      {review.image &&
-                      <img src={review.image} className='reviewImage' alt="User Review Picture" />
-                      }
-                    </Link>
-                  </li>
+                      <img variant="top" src={review.image} className='reviewImage' />
+                    </Card>
+                  )
                 })}
-              </ul>
-            </Col>
+              </Row>
+            </Container>
           </>
           :
           <h2 className='text-center'>

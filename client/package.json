@@ -13,8 +13,9 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
-    "react-simple-star-rating": "^2.1.0",
+    "react-simple-star-rating": "2.1.0",
     "sass": "^1.51.0",
+    "tailwind": "^4.0.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "scripts": {
@@ -42,7 +43,6 @@
   "proxy": "http://localhost:5003",
   "devDependencies": {
     "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24"
   }
 }

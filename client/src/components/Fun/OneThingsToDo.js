@@ -8,21 +8,22 @@ import { FaStar } from 'react-icons/fa'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-import Image from 'react-bootstrap/Image'
+import Stars from '../Reviews/StarRating'
+import { Card, Button } from 'react-bootstrap'
 
 
-const GetFun = () => { 
+
+const GetFun = () => {
 
   const navigate = useNavigate()
 
   const { id, funId } = useParams()
 
-  const [ city, setCity ] = useState([])
-  const [ fun, setFun ] = useState(null)
-  const [ errors, setErrors ] = useState(false)
+  const [city, setCity] = useState([])
+  const [fun, setFun] = useState(null)
+  const [errors, setErrors] = useState(false)
 
-  useEffect(() => { 
+  useEffect(() => {
     const getFun = async () => {
       try {
         const { data } = await axios.get(`/api/cities/${id}/fun/${funId}`)
@@ -38,40 +39,59 @@ const GetFun = () => {
 
   return (
     <Container className='mt-3'>
-      <Row>
-        { fun ? 
+      <Row className='get-one-row'>
+        {fun ?
           <>
-            <Col xs='12'><h1>{fun.name}</h1><hr/></Col>
-            <Col md='6'>
-              <img src={fun.image} alt={fun.name} />
-            </Col>
-            <Col md='6'>
-              <h3><span>🤤</span> Description </h3>
-              <p>{fun.description}</p>
-              <hr />
-              <Link to={`/cities/${id}`} className='btn btn-secondary mt-3 ' style={{ marginRight: '1.5rem' }}>Back to List</Link>
-              {userIsAuthenticated() ? 
-                <Link className='btn btn-success mt-3' to={`/cities/${id}/fun/${funId}/review`}>Add Review</Link>
-                :
-                <Link className='btn btn-success mt-3' to={'/login'}>Add Review</Link>
-              }
+            <Card className='p-0 one-card text-white'>
+              <Card.Img className='one-image' src={fun.image} alt={fun.name} />
+              <Card.ImgOverlay>
+                <Card.Title className='card-title'>{fun.name} </Card.Title>
+                <hr />
+                <Card.Text>
+                  {fun.description}
+                </Card.Text>
+                <div className='button-box' style={{ position: 'absolute', bottom: 10 }}>
+                  <Link to={`/cities/${id}`} rel="noreferrer" className=' btn ' >Return to City</Link>
+                  <div>
+                    <Button href={fun.link} target='_blank' rel="noreferrer">Website</Button>
+
+                    {userIsAuthenticated() ?
+                      <Link className='btn btn-success mtb-3' to={`/cities/${id}/fun/${funId}/review`}>Add Review</Link>
+                      :
+                      <Link className='btn btn-success mtb-3' to={'/login'}>Login</Link>
+                    }
+                  </div>
+                </div>
+              </Card.ImgOverlay>
+            </Card>
+            <Container>
+              <Row className='review-row'>
+                {fun.reviews.map((review, n) => {
+                  return (
+                    <Card className='reviewCard' key={id}>
+                      <div>
+                        <Stars rating={review.rating} />
+                        <h2>By {review.name}</h2>
+                        <p>{review.text}</p>
+                      </div>
+                      <img variant="top" src={review.image} className='reviewImage' />
+                    </Card>
+                  )
+                })}
+              </Row>
+            </Container>
+            {/* <Col md='6'>
               <ul>
                 {fun.reviews.map((review, n) => {
                   return <li key={n}>
-                    {/* <Link to={`/user/${review.owner._id}`}> */}
                     <div className="reviewHeader">
-                      <p><strong>By {review.owner.username}</strong></p>
+                      <p><strong>By {review.name}</strong></p>
                     </div>
-                    {/* <FaStar rating={review.rating} /> */}
-                    <p>{review.text}</p>
-                    {review.image &&
-                      <img src={review.image} className='reviewImage' alt="users attempt" />
-                    }
-                    {/* </Link> */}
+                    <img src={review.image} className='reviewImage' alt="User Review Picture" />
                   </li>
                 })}
               </ul>
-            </Col>
+            </Col> */}
           </>
           :
           <h2 className='text-center'>

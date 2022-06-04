@@ -27,10 +27,16 @@ img {
   height: 500px;
 }
 
+.carousel-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .randomImg {
   border-radius: 30px;
   height: 400px;
   max-width: 100%;
+  max-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,6 +46,9 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .randomImg .randomImgText {
@@ -47,10 +56,55 @@ img {
   color: white;
 }
 
+.search {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search .search-bar {
+  width: 40%;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.card-img {
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .city-hero {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 20px;
+}
+
+.city-hero .card-header {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+.city-hero .card-img {
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .city-hero .city-control {
@@ -100,5 +154,25 @@ img {
 
 .get-one-row {
   border: 1px solid grey;
+  border-radius: 30px;
+}
+
+.get-one-row h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.get-one-row img {
+  width: 100%;
+}
+
+.get-one-row .info-box {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.get-one-row .info-box p {
+  margin-top: 5px;
 }
 /*# sourceMappingURL=base.css.map */

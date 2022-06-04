@@ -3,12 +3,7 @@ import axios from 'axios'
 
 import { useNavigate, Link, useParams } from 'react-router-dom'
 
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
+import { Container, Row, Col, Card, Form, FormControl, Spinner } from 'react-bootstrap'
 
 const CitiesIndex = () => {
 
@@ -73,20 +68,19 @@ const CitiesIndex = () => {
               <Link to={`/cities/${randomCities._id}`}>
                 <Card.Body className='randomImg' style={{ backgroundImage: `url(${randomCities.image})` }}>
                   <h1 className='randomImgText'>Discover {randomCities.name}</h1>
-
                 </Card.Body>
               </Link>
             </>
             :
             <div className='text-center'>
-              {errors ? 'Something went wrong. Please try again later!' : <h2>Loading...</h2>}
+              {errors ? 'Something went wrong. Please try again later!' : <Spinner animation="border" role="status"><span className="visually-hidden">Loading...</span></Spinner>}
             </div>
         }
       </Container>
 
       <Form>
         <Form.Group className='search'>
-          <FormControl className='search-bar' type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go?" onChange={handleChange} />
+          <FormControl className='search-bar' type="search" name="searchTerm" value={filters.searchTerm} placeholder="Where do you want to go? 🇪🇺" onChange={handleChange} />
         </Form.Group>
       </Form>
 
