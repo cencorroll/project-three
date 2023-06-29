@@ -82,7 +82,7 @@ const NewReview = () => {
               <label htmlFor="rating" >Rating</label>
               <Rating onClick={handleRating} emptyColor="#e4e5e9" fillColor="#ffc107" ratingValue={formData.rating} />
             </div>
-        
+
             <button type='submit' className='btn w-100'>Submit</button>
           </form>
         </Row>

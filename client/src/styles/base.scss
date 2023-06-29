@@ -37,11 +37,14 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  .randomImgText {
-    font-size: 2.5em;
-    color: white;
-    text-decoration: none;
-  }
+  // filter: brightness(70%);
+}
+
+.randomImgText {
+  font-size: 2.5em;
+  color: white;
+  text-decoration:underline;//!
+  filter: brightness(100%);
 }
 
 .search {
@@ -61,7 +64,6 @@ img {
 .card-img {
   height: 220px;
   object-fit: cover;
-
 }
 
 //single city
@@ -158,7 +160,7 @@ input[type="radio"] {
 .one-card {
   border-radius: 15px;
 
-  Card.Text {
+  .Card.Text {
     color: white;
   }
 }
@@ -210,10 +212,6 @@ input[type="radio"] {
     p {
       margin-top: 5px;
     }
-<<<<<<< HEAD
-  }
-}
-=======
   }
 
   .one-image {
@@ -282,7 +280,7 @@ input[type="radio"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://www.teahub.io/photos/full/188-1888557_city-of-london-skyline-4k.jpg');
+  // background-image: url('https://www.teahub.io/photos/full/188-1888557_city-of-london-skyline-4k.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -316,4 +314,3 @@ p {
   display: flex;
   flex-direction: column;
 }
->>>>>>> development

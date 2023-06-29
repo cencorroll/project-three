@@ -69,6 +69,12 @@ const CitiesIndex = () => {
                 <Card.Body className='randomImg' style={{ backgroundImage: `url(${randomCities.image})` }}>
                   <h1 className='randomImgText'>Discover {randomCities.name}</h1>
                 </Card.Body>
+                {/* <Card className='p-0 one-card text-white'>
+                  <Card.Img className='one-image' src={randomCities.image} alt={randomCities.name} />
+                  <Card.ImgOverlay>
+                    <Card.Text className='card-title' style={ { display: 'flex', justifyContent: 'center', alignContent: 'center' } }> Discover {randomCities.name} </Card.Text>
+                  </Card.ImgOverlay>
+                </Card> */}
               </Link>
             </>
             :
